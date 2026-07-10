@@ -25,6 +25,26 @@
       "destination": "https://www.skinnourishers.online-web.co.za/videos/acne-treatment.mp4"
     },
     {
+      "source": "/assets/products/acne-serum.jpg",
+      "destination": "https://skinnourishers.lovable.app/assets/acne-serum-29RpSZke.jpg"
+    },
+    {
+      "source": "/assets/products/acne-oil-treatment.jpg",
+      "destination": "https://skinnourishers.lovable.app/assets/acne-oil-DZa9yLCs.jpg"
+    },
+    {
+      "source": "/assets/products/pigmentation-cleanser.jpg",
+      "destination": "https://skinnourishers.lovable.app/assets/pigmentation-cleanser-Cr-owsJl.jpg"
+    },
+    {
+      "source": "/assets/products/pigmentation-cream.jpg",
+      "destination": "https://skinnourishers.lovable.app/assets/pigmentation-cream-C-RfIQMS.jpg"
+    },
+    {
+      "source": "/assets/products/balanced-skin-toner.jpg",
+      "destination": "https://skinnourishers.lovable.app/assets/skin-toner-QnCUpKnT.jpg"
+    },
+    {
       "source": "/((?!assets/|audio/|videos/|favicon\\.png).*)",
       "destination": "/index.html"
     }

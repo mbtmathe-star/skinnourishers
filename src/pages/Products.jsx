@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { ShoppingBag } from 'lucide-react';
 import Layout from '../components/Layout';
+import products from '../data/products.json';
 
 export default function Products() {
   const [loading, setLoading] = useState(true);
-  const [products] = useState([]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setLoading(false), 250);
@@ -44,7 +44,30 @@ export default function Products() {
             <div className="text-center py-20">
               <p className="text-muted-foreground text-lg">No products available yet.</p>
             </div>
-          ) : null}
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              {products.map((product) => (
+                <div key={product.id} className="group relative">
+                  <div className="relative overflow-hidden rounded-2xl bg-card shadow-elegant hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                    <div className="relative aspect-square overflow-hidden bg-secondary/30">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <span className="text-xs font-medium uppercase tracking-wide text-primary">{product.category}</span>
+                      <h3 className="font-heading text-lg font-medium mt-1 mb-1">{product.name}</h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{product.description}</p>
+                      <p className="text-base font-semibold text-foreground">{product.price}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className="text-center mt-16 p-8 bg-secondary/30 rounded-2xl">
             <p className="text-lg text-foreground mb-2">Looking for personalized recommendations?</p>

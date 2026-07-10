@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "slug": "acne-serum",
+    "name": "Acne Serum",
+    "category": "Serums",
+    "description": "A powerful treatment serum that targets acne breakouts and helps clear blemishes for a clearer complexion.",
+    "price": "R899",
+    "priceValue": 899,
+    "image": "/assets/products/acne-serum.jpg"
+  },
+  {
+    "id": 2,
+    "slug": "acne-oil-treatment",
+    "name": "Acne Oil Treatment",
+    "category": "Acne Care",
+    "description": "Specialized oil formula that penetrates deep into pores to clear breakouts and prevent future blemishes.",
+    "price": "R649",
+    "priceValue": 649,
+    "image": "/assets/products/acne-oil-treatment.jpg"
+  },
+  {
+    "id": 3,
+    "slug": "pigmentation-cleanser",
+    "name": "Pigmentation Cleanser",
+    "category": "Cleansers",
+    "description": "A gentle yet effective cleanser formulated to target pigmentation and even out skin tone.",
+    "price": "R425",
+    "priceValue": 425,
+    "image": "/assets/products/pigmentation-cleanser.jpg"
+  },
+  {
+    "id": 4,
+    "slug": "pigmentation-cream",
+    "name": "Pigmentation Cream",
+    "category": "Pigmentation",
+    "description": "Advanced formula with niacinamide and arbutin to fade hyperpigmentation and even skin tone.",
+    "price": "R1250",
+    "priceValue": 1250,
+    "image": "/assets/products/pigmentation-cream.jpg"
+  },
+  {
+    "id": 5,
+    "slug": "balanced-skin-toner",
+    "name": "Balanced Skin Toner",
+    "category": "Serums",
+    "description": "Multi-purpose toner that balances skin pH, hydrates, and preps skin for other treatments.",
+    "price": "R799",
+    "priceValue": 799,
+    "image": "/assets/products/balanced-skin-toner.jpg"
+  }
+]
