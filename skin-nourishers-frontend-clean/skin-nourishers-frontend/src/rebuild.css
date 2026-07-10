@@ -1,0 +1,9 @@
+html { scroll-behavior: smooth; }
+body { min-width: 320px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.treatment-video-fallback { background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--muted))); }
+
+/* The compiled source bundle shipped utility rules for the captured application.
+   These small source-only additions cover native controls used in the editable rebuild. */
+input, select, textarea { color: hsl(var(--foreground)); }
+select { appearance: auto; }

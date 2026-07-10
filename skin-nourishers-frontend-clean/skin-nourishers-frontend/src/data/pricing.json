@@ -1,0 +1,1146 @@
+[
+  {
+    "category": "Eye Segment",
+    "services": [
+      {
+        "name": "Brow Lamination",
+        "price": "R500",
+        "priceValue": 500,
+        "duration": "30min"
+      },
+      {
+        "name": "Eyebrow Tint",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Eyelash Tint",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Henna Tint & Shape",
+        "price": "R500",
+        "priceValue": 500,
+        "duration": "30min"
+      },
+      {
+        "name": "Lash Lift",
+        "price": "R500",
+        "priceValue": 500,
+        "duration": "30min"
+      }
+    ]
+  },
+  {
+    "category": "Face Treatments",
+    "services": [
+      {
+        "name": "Basic Facial",
+        "price": "R550",
+        "priceValue": 550,
+        "duration": "45min"
+      },
+      {
+        "name": "Signature Facial",
+        "price": "R850",
+        "priceValue": 850,
+        "duration": "1h"
+      },
+      {
+        "name": "Dermaplaning with Mini Facial",
+        "price": "R850",
+        "priceValue": 850,
+        "duration": "30min"
+      },
+      {
+        "name": "Oxygen Therapy Facial",
+        "price": "R1,500",
+        "priceValue": 1500,
+        "duration": "1h"
+      },
+      {
+        "name": "Microneedling",
+        "price": "R1,850",
+        "priceValue": 1850,
+        "duration": "1h"
+      },
+      {
+        "name": "Microneedling Only",
+        "price": "R1,500",
+        "priceValue": 1500,
+        "duration": "45min"
+      },
+      {
+        "name": "Acne Treatment",
+        "price": "R1,600",
+        "priceValue": 1600,
+        "duration": "1h"
+      },
+      {
+        "name": "Pigmentation",
+        "price": "R2,300",
+        "priceValue": 2300,
+        "duration": "1h"
+      },
+      {
+        "name": "Pigmentation (Needles)",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "30min"
+      },
+      {
+        "name": "Derma Peel",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "1h"
+      },
+      {
+        "name": "Derma Peel - Microneedle",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "1h 30min"
+      },
+      {
+        "name": "Formulage Peel - Microneedling",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "1h"
+      },
+      {
+        "name": "Green Sea Spicules (Peel)",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "45min"
+      },
+      {
+        "name": "Spicules",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "45min"
+      },
+      {
+        "name": "Peel (ANESI)",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "45min"
+      },
+      {
+        "name": "Melaclear",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "45min"
+      },
+      {
+        "name": "X-FC Facial",
+        "price": "R2,200",
+        "priceValue": 2200,
+        "duration": "45min"
+      },
+      {
+        "name": "XFC",
+        "price": "R1,800",
+        "priceValue": 1800,
+        "duration": "45min"
+      },
+      {
+        "name": "Hollywood Laser Face Treatment",
+        "price": "R2,100",
+        "priceValue": 2100,
+        "duration": "1h"
+      },
+      {
+        "name": "High Frequency Facial",
+        "price": "R500",
+        "priceValue": 500,
+        "duration": "30min"
+      },
+      {
+        "name": "LED Red Light",
+        "price": "R400",
+        "priceValue": 400,
+        "duration": "10min"
+      },
+      {
+        "name": "Consultation",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "30min"
+      }
+    ]
+  },
+  {
+    "category": "Anti-Aging & Lifting",
+    "services": [
+      {
+        "name": "Under Eyebags/Lifting Lines Fusion",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "30min"
+      },
+      {
+        "name": "Lifting/Tightening Full Face + Neck",
+        "price": "R3,500",
+        "priceValue": 3500,
+        "duration": "30min"
+      },
+      {
+        "name": "Ultraformer Non-Surgical Face Lift",
+        "price": "R4,000",
+        "priceValue": 4000,
+        "duration": "45min"
+      },
+      {
+        "name": "Ultraformer Neck Lift",
+        "price": "R2,000",
+        "priceValue": 2000,
+        "duration": "30min"
+      },
+      {
+        "name": "Ultraformer Double Chin",
+        "price": "R1,500",
+        "priceValue": 1500,
+        "duration": "30min"
+      },
+      {
+        "name": "Double Chin",
+        "price": "R900",
+        "priceValue": 900,
+        "duration": "30min"
+      },
+      {
+        "name": "Advanced Repair and Restore",
+        "price": "R2,200",
+        "priceValue": 2200,
+        "duration": "30min"
+      },
+      {
+        "name": "Prevention and Restore",
+        "price": "R1,800",
+        "priceValue": 1800,
+        "duration": "30min"
+      },
+      {
+        "name": "Rejuvenating Cell Renewal",
+        "price": "R1,800",
+        "priceValue": 1800,
+        "duration": "45min"
+      },
+      {
+        "name": "Plumping and Tightening",
+        "price": "R3,500",
+        "priceValue": 3500,
+        "duration": "45min"
+      },
+      {
+        "name": "Lip Contour",
+        "price": "R980",
+        "priceValue": 980,
+        "duration": "30min"
+      },
+      {
+        "name": "RF Anti-Wrinkle",
+        "price": "R1,350",
+        "priceValue": 1350,
+        "duration": "1h"
+      },
+      {
+        "name": "Dr Shrammek Fresher",
+        "price": "R1,300",
+        "priceValue": 1300,
+        "duration": "45min"
+      },
+      {
+        "name": "Dr Shrammek Energy",
+        "price": "R1,600",
+        "priceValue": 1600,
+        "duration": "45min"
+      },
+      {
+        "name": "Dr Shrammek Classic (Green Peel)",
+        "price": "R2,200",
+        "priceValue": 2200,
+        "duration": "45min"
+      }
+    ]
+  },
+  {
+    "category": "Fibroblast Plasma",
+    "services": [
+      {
+        "name": "Fibroblast Plasma Jaw Line",
+        "price": "R3,500",
+        "priceValue": 3500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Nasal Labia",
+        "price": "R1,500",
+        "priceValue": 1500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Turkey Neck",
+        "price": "R3,500",
+        "priceValue": 3500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Above Lip & 2 Rows",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Hooded Eyes",
+        "price": "R3,500",
+        "priceValue": 3500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Brow Lift",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Crows Feet",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Ear Fold",
+        "price": "R1,500",
+        "priceValue": 1500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Forehead",
+        "price": "R4,000",
+        "priceValue": 4000,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Frown Lines",
+        "price": "R2,000",
+        "priceValue": 2000,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Neck & Chin",
+        "price": "R4,000",
+        "priceValue": 4000,
+        "duration": "1h 30min"
+      },
+      {
+        "name": "Fibroblast Plasma Smokers' Lines",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Under Eye Bag",
+        "price": "R3,000",
+        "priceValue": 3000,
+        "duration": "1h"
+      },
+      {
+        "name": "Fibroblast Plasma Cherry Naevoma",
+        "price": "R800",
+        "priceValue": 800,
+        "duration": "30min"
+      }
+    ]
+  },
+  {
+    "category": "Jet Plasma Ozone",
+    "services": [
+      {
+        "name": "Jet Plasma Ozone",
+        "price": "R1,850",
+        "priceValue": 1850,
+        "duration": "45min"
+      },
+      {
+        "name": "Jet Plasma Ozone - Cycle of 3",
+        "price": "R5,500",
+        "priceValue": 5500,
+        "duration": "45min"
+      },
+      {
+        "name": "Jet Plasma Ozone - Cycle of 6",
+        "price": "R8,500",
+        "priceValue": 8500,
+        "duration": "45min"
+      },
+      {
+        "name": "Jet Plasma Ozone - Course of 3 Sessions",
+        "price": "R12,500",
+        "priceValue": 12500,
+        "duration": "45min"
+      }
+    ]
+  },
+  {
+    "category": "Body Treatments",
+    "services": [
+      {
+        "name": "Body - Vajacial",
+        "price": "R850",
+        "priceValue": 850,
+        "duration": "30min"
+      },
+      {
+        "name": "Body Polish",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "1h"
+      },
+      {
+        "name": "Cellulite Treatment",
+        "price": "R1,000",
+        "priceValue": 1000,
+        "duration": "30min"
+      },
+      {
+        "name": "Stretch Marks - Tummy",
+        "price": "R2,800",
+        "priceValue": 2800,
+        "duration": "45min"
+      },
+      {
+        "name": "Stretch Mark Treatment - Both Thighs",
+        "price": "R2,800",
+        "priceValue": 2800,
+        "duration": "1h"
+      },
+      {
+        "name": "Stretch Marks - Upper Arms",
+        "price": "R1,350",
+        "priceValue": 1350,
+        "duration": "30min"
+      },
+      {
+        "name": "Body Skin Tightening Per Area",
+        "price": "R2,100",
+        "priceValue": 2100,
+        "duration": "30min"
+      },
+      {
+        "name": "Saggy Upper Arms",
+        "price": "R1,800",
+        "priceValue": 1800,
+        "duration": "30min"
+      },
+      {
+        "name": "Spider Veins Per Area",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "30min"
+      },
+      {
+        "name": "Dark Area Treatment Per Area",
+        "price": "R850",
+        "priceValue": 850,
+        "duration": "30min"
+      },
+      {
+        "name": "Skin Tag Removal",
+        "price": "R800",
+        "priceValue": 800,
+        "duration": "30min"
+      },
+      {
+        "name": "Keloid",
+        "price": "R800",
+        "priceValue": 800,
+        "duration": "30min"
+      },
+      {
+        "name": "Heat Lipolysis Contour Therapy",
+        "price": "R1,000",
+        "priceValue": 1000,
+        "duration": "30min"
+      },
+      {
+        "name": "HIFU Abdomen",
+        "price": "R2,800",
+        "priceValue": 2800,
+        "duration": "30min"
+      },
+      {
+        "name": "HIFU - Urinary Stress Incontinence",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "30min"
+      },
+      {
+        "name": "V-Shot, Vagina Rejuvenation & Tightening",
+        "price": "R2,500",
+        "priceValue": 2500,
+        "duration": "30min"
+      },
+      {
+        "name": "Ginko V Shot",
+        "price": "R3,500",
+        "priceValue": 3500,
+        "duration": "30min"
+      },
+      {
+        "name": "Ginko O Shot",
+        "price": "R3,500",
+        "priceValue": 3500,
+        "duration": "45min"
+      },
+      {
+        "name": "Hair Re-growth Therapy",
+        "price": "R3,500",
+        "priceValue": 3500,
+        "duration": "1h"
+      },
+      {
+        "name": "Lymphatic Drainage",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "1h"
+      }
+    ]
+  },
+  {
+    "category": "Massage & Wellness",
+    "services": [
+      {
+        "name": "Swedish Massage",
+        "price": "R800",
+        "priceValue": 800,
+        "duration": "1h"
+      },
+      {
+        "name": "Reflexology",
+        "price": "R500",
+        "priceValue": 500,
+        "duration": "30min"
+      },
+      {
+        "name": "Foot Massage",
+        "price": "R400",
+        "priceValue": 400,
+        "duration": "30min"
+      }
+    ]
+  },
+  {
+    "category": "Laser - Ladies",
+    "services": [
+      {
+        "name": "Laser - Uni Brow",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Lip",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Chin",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Cheeks",
+        "price": "R450",
+        "priceValue": 450,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Forehead",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Side Burns",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Nose",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Full Face",
+        "price": "R1,000",
+        "priceValue": 1000,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Neck Front and Back",
+        "price": "R500",
+        "priceValue": 500,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Underarm",
+        "price": "R420",
+        "priceValue": 420,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Half Arm",
+        "price": "R800",
+        "priceValue": 800,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Full Arm",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Bikini Line",
+        "price": "R550",
+        "priceValue": 550,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Brazilian",
+        "price": "R850",
+        "priceValue": 850,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Hollywood",
+        "price": "R950",
+        "priceValue": 950,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Buttocks",
+        "price": "R600",
+        "priceValue": 600,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Half Leg",
+        "price": "R900",
+        "priceValue": 900,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - 3/4 Leg",
+        "price": "R1,100",
+        "priceValue": 1100,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Full Leg",
+        "price": "R1,350",
+        "priceValue": 1350,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Stomach",
+        "price": "R600",
+        "priceValue": 600,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Tummy Line",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Back and Shoulder",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "45min"
+      },
+      {
+        "name": "Laser - Full Back",
+        "price": "R1,500",
+        "priceValue": 1500,
+        "duration": "30min"
+      }
+    ]
+  },
+  {
+    "category": "Laser - Men",
+    "services": [
+      {
+        "name": "Laser - Uni Brow",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Chin",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Cheeks",
+        "price": "R800",
+        "priceValue": 800,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Forehead",
+        "price": "R450",
+        "priceValue": 450,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Side Burns",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Jaw Line",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Nose",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Neck",
+        "price": "R600",
+        "priceValue": 600,
+        "duration": "20min"
+      },
+      {
+        "name": "Laser - Underarm",
+        "price": "R600",
+        "priceValue": 600,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Half Arm",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - 3/4 Arm",
+        "price": "R1,100",
+        "priceValue": 1100,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Full Arm",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser Chest",
+        "price": "R1,800",
+        "priceValue": 1800,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Tummy - Men",
+        "price": "R600",
+        "priceValue": 600,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Stomach",
+        "price": "R1,200",
+        "priceValue": 1200,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Half Leg",
+        "price": "R1,400",
+        "priceValue": 1400,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Full Leg",
+        "price": "R1,350",
+        "priceValue": 1350,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Lower Back",
+        "price": "R900",
+        "priceValue": 900,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Back and Shoulder",
+        "price": "R2,200",
+        "priceValue": 2200,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Full Back",
+        "price": "R2,200",
+        "priceValue": 2200,
+        "duration": "30min"
+      }
+    ]
+  },
+  {
+    "category": "Laser - Teens",
+    "services": [
+      {
+        "name": "Laser - Neck",
+        "price": "R450",
+        "priceValue": 450,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Cheeks",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Chin",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Forehead",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Nose",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Side Burns",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Full Beard & Neck",
+        "price": "R500",
+        "priceValue": 500,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Underarms",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Half Arm",
+        "price": "R600",
+        "priceValue": 600,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Bikini Line",
+        "price": "R400",
+        "priceValue": 400,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Brazilian",
+        "price": "R600",
+        "priceValue": 600,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Hollywood",
+        "price": "R900",
+        "priceValue": 900,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Buttocks",
+        "price": "R500",
+        "priceValue": 500,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Half Leg",
+        "price": "R1,100",
+        "priceValue": 1100,
+        "duration": "30min"
+      },
+      {
+        "name": "Laser - Full Leg",
+        "price": "R900",
+        "priceValue": 900,
+        "duration": "45min"
+      },
+      {
+        "name": "Laser - Stomach",
+        "price": "R600",
+        "priceValue": 600,
+        "duration": "1h"
+      },
+      {
+        "name": "Laser - Tummy Line",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "15min"
+      },
+      {
+        "name": "Laser - Back and Shoulders",
+        "price": "R1,000",
+        "priceValue": 1000,
+        "duration": "45min"
+      }
+    ]
+  },
+  {
+    "category": "Threading",
+    "services": [
+      {
+        "name": "Threading - Brows",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Threading - Lip",
+        "price": "R120",
+        "priceValue": 120,
+        "duration": "15min"
+      },
+      {
+        "name": "Threading - Chin",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Threading - Side Burns",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Threading - Full Face",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "30min"
+      }
+    ]
+  },
+  {
+    "category": "Waxing - Ladies & Teen",
+    "services": [
+      {
+        "name": "Under Arm",
+        "price": "R200",
+        "priceValue": 200,
+        "duration": "30min"
+      },
+      {
+        "name": "Eye Brow",
+        "price": "R110",
+        "priceValue": 110,
+        "duration": "15min"
+      },
+      {
+        "name": "Lip",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Chin",
+        "price": "R110",
+        "priceValue": 110,
+        "duration": "15min"
+      },
+      {
+        "name": "Side Burns",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Full Face",
+        "price": "R220",
+        "priceValue": 220,
+        "duration": "30min"
+      },
+      {
+        "name": "Nose",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Half Arm",
+        "price": "R190",
+        "priceValue": 190,
+        "duration": "30min"
+      },
+      {
+        "name": "Full Arm",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "30min"
+      },
+      {
+        "name": "Bikini",
+        "price": "R180",
+        "priceValue": 180,
+        "duration": "15min"
+      },
+      {
+        "name": "Brazilian",
+        "price": "R280",
+        "priceValue": 280,
+        "duration": "15min"
+      },
+      {
+        "name": "Hollywood",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "30min"
+      },
+      {
+        "name": "Butt Cheeks",
+        "price": "R200",
+        "priceValue": 200,
+        "duration": "30min"
+      },
+      {
+        "name": "Half Leg",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "30min"
+      },
+      {
+        "name": "Full Leg",
+        "price": "R400",
+        "priceValue": 400,
+        "duration": "30min"
+      },
+      {
+        "name": "Stomach",
+        "price": "R180",
+        "priceValue": 180,
+        "duration": "15min"
+      },
+      {
+        "name": "Tummy Line",
+        "price": "R150",
+        "priceValue": 150,
+        "duration": "15min"
+      },
+      {
+        "name": "Chest",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "30min"
+      },
+      {
+        "name": "Back Shoulder",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "30min"
+      }
+    ]
+  },
+  {
+    "category": "Waxing - Men",
+    "services": [
+      {
+        "name": "Full Leg Wax",
+        "price": "R400",
+        "priceValue": 400,
+        "duration": "30min"
+      },
+      {
+        "name": "3/4 Leg",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "30min"
+      },
+      {
+        "name": "Chest",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "30min"
+      },
+      {
+        "name": "Back",
+        "price": "R350",
+        "priceValue": 350,
+        "duration": "30min"
+      },
+      {
+        "name": "Ears",
+        "price": "R110",
+        "priceValue": 110,
+        "duration": "15min"
+      },
+      {
+        "name": "Combo Ears & Nose",
+        "price": "R200",
+        "priceValue": 200,
+        "duration": "15min"
+      },
+      {
+        "name": "Shaving Time 20min",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "20min"
+      }
+    ]
+  },
+  {
+    "category": "Combo's",
+    "services": [
+      {
+        "name": "Brow & Lash Tint",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "30min"
+      },
+      {
+        "name": "Brow Wax Tint & Lash Tint",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "30min"
+      },
+      {
+        "name": "Brow Wax & Tint",
+        "price": "R250",
+        "priceValue": 250,
+        "duration": "30min"
+      },
+      {
+        "name": "Threading & Tint",
+        "price": "R300",
+        "priceValue": 300,
+        "duration": "30min"
+      }
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+import React, { useCallback, useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const images = [
+  { image: '/assets/hero-spa-1-uAFDrjd0.jpg', position: 'center' },
+  { image: '/assets/hero-spa-2-Dq40jLOj.jpg', position: 'center' },
+  { image: '/assets/hero-spa-3-DzEEcpFL.jpg', position: 'center 30%' },
+  { image: '/assets/hero-spa-4-DIKaffhK.jpg', position: 'center 30%' },
+  { image: '/assets/hero-spa-5-pQT9dTcO.jpg', position: 'center' },
+  { image: '/assets/hero-spa-6-m4zNynn7.jpg', position: 'center' },
+  { image: '/assets/hero-spa-7-24dnnZ-x.jpg', position: 'center' },
+];
+
+export default function PageHero({ tagline = 'Premium Aesthetic Treatments', title, titleHighlight, subtitle, showSecondaryButton = true, secondaryButtonText = 'Explore Treatments', secondaryButtonLink = '/services', imageIndex }) {
+  const fixed = typeof imageIndex === 'number';
+  const fixedIndex = fixed ? Math.max(0, Math.min(imageIndex - 1, images.length - 1)) : 0;
+  const [active, setActive] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const next = useCallback(() => { if (!fixed) { setDirection(1); setActive((v) => (v + 1) % images.length); } }, [fixed]);
+  const prev = useCallback(() => { if (!fixed) { setDirection(-1); setActive((v) => (v - 1 + images.length) % images.length); } }, [fixed]);
+  useEffect(() => { if (fixed) return; const timer = setInterval(next, 5000); return () => clearInterval(timer); }, [next, fixed]);
+  const variants = { enter: (d) => ({ x: d > 0 ? '100%' : '-100%', opacity: 0, scale: 1.1 }), center: { x: 0, opacity: 1, scale: 1 }, exit: (d) => ({ x: d > 0 ? '-100%' : '100%', opacity: 0, scale: .95 }) };
+
+  return <section className="relative h-screen w-full overflow-hidden">
+    {fixed ? <div className="absolute inset-0"><div className="absolute inset-0 bg-cover" style={{ backgroundImage: `url(${images[fixedIndex].image})`, backgroundPosition: images[fixedIndex].position }} /><div className="absolute inset-0 bg-black/30" /></div> : <AnimatePresence initial={false} custom={direction} mode="popLayout"><motion.div key={active} custom={direction} variants={variants} initial="enter" animate="center" exit="exit" className="absolute inset-0"><div className="absolute inset-0 bg-cover" style={{ backgroundImage: `url(${images[active].image})`, backgroundPosition: images[active].position }} /><div className="absolute inset-0 bg-black/30" /></motion.div></AnimatePresence>}
+    <div className="absolute inset-0 pointer-events-none overflow-hidden"><motion.div className="absolute top-20 left-10 w-64 h-64 border border-white/20 rounded-full" animate={{ rotate: 360, scale: [1,1.1,1] }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} /><motion.div className="absolute bottom-20 right-10 w-96 h-96 border-2 border-white/10 rounded-full" animate={{ rotate: -360 }} transition={{ duration: 30, repeat: Infinity, ease: 'linear' }} /><motion.div className="absolute top-1/4 right-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl" animate={{ scale: [1,1.5,1], opacity: [.3,.6,.3] }} transition={{ duration: 5, repeat: Infinity }} /></div>
+    <div className="container relative z-10 h-full flex items-center"><div className="max-w-2xl"><motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6 }} className="mb-6"><span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20"><Sparkles className="w-4 h-4 text-primary animate-pulse" /><span className="text-xs font-body uppercase tracking-widest text-white font-medium">{tagline}</span></span></motion.div><motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6, delay: .2 }}><h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-light text-white mb-4 leading-[1.1]">{title} {titleHighlight && <span className="text-primary italic">{titleHighlight}</span>}</h1>{subtitle && <p className="font-body text-lg md:text-xl text-white/80 mb-8 max-w-md">{subtitle}</p>}</motion.div><motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .5 }} className="flex flex-wrap gap-4"><Link to="/booking" className="group inline-flex items-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-7 text-sm uppercase tracking-widest font-body font-semibold rounded-full shadow-xl shadow-primary/30">Book Consultation <ArrowRight className="ml-2 h-4 w-4" /></Link>{showSecondaryButton && <Link to={secondaryButtonLink} className="inline-flex items-center border-2 border-white bg-white/10 text-white hover:bg-white hover:text-secondary px-8 py-7 text-sm uppercase tracking-widest font-body font-semibold rounded-full backdrop-blur-sm">{secondaryButtonText}</Link>}</motion.div></div></div>
+    {!fixed && <><div className="absolute bottom-1/2 translate-y-1/2 left-4 right-4 flex justify-between z-20 pointer-events-none"><button onClick={prev} className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300 pointer-events-auto"><ArrowLeft className="w-6 h-6" /></button><button onClick={next} className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300 pointer-events-auto"><ArrowRight className="w-6 h-6" /></button></div><div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-3">{images.map((_, i) => <button key={i} onClick={() => { setDirection(i > active ? 1 : -1); setActive(i); }} className={`relative h-2 rounded-full transition-all duration-500 ${i === active ? 'w-10 bg-primary' : 'w-2 bg-white/40'}`} />)}</div><div className="absolute bottom-28 right-8 z-20 hidden lg:flex gap-2">{images.map((img, i) => <button key={i} onClick={() => { setDirection(i > active ? 1 : -1); setActive(i); }} className={`relative w-16 h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 ${i === active ? 'border-primary scale-110' : 'border-white/20 opacity-60 hover:opacity-100'}`}><img src={img.image} alt={`Slide ${i+1}`} className="w-full h-full object-cover" />{i === active && <div className="absolute inset-0 bg-primary/20" />}</button>)}</div></>}
+  </section>;
+}

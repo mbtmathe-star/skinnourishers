@@ -1,0 +1,62 @@
+[
+  {
+    "image": "/assets/acne-result-1-eKDwtebj.png",
+    "treatment": "Acne Treatment",
+    "caption": "Active acne clearing - Before",
+    "category": "Acne"
+  },
+  {
+    "image": "/assets/acne-result-2-BKi4lopZ.png",
+    "treatment": "Acne Treatment",
+    "caption": "Active acne clearing - After",
+    "category": "Acne"
+  },
+  {
+    "image": "/assets/acne-result-3-B42YATcb.png",
+    "treatment": "Acne Treatment",
+    "caption": "Acne & skin tone improvement",
+    "category": "Acne"
+  },
+  {
+    "image": "/assets/acne-result-4-QjVWX3RX.png",
+    "treatment": "Acne Treatment",
+    "caption": "Complete acne clearance",
+    "category": "Acne"
+  },
+  {
+    "image": "/assets/pigmentation-result-1-C-Ovj2xV.png",
+    "treatment": "Pigmentation Correction",
+    "caption": "Pigmentation treatment - Before",
+    "category": "Pigmentation"
+  },
+  {
+    "image": "/assets/pigmentation-result-2-DUWasAE8.png",
+    "treatment": "Pigmentation Correction",
+    "caption": "Pigmentation treatment - After",
+    "category": "Pigmentation"
+  },
+  {
+    "image": "/assets/pigmentation-result-3-ljaq_WbL.jpg",
+    "treatment": "Pigmentation Correction",
+    "caption": "Pigmentation before & after",
+    "category": "Pigmentation"
+  },
+  {
+    "image": "/assets/anti-aging-result-1-BFVv8Bna.png",
+    "treatment": "Anti-Aging / Ultraformer",
+    "caption": "Skin lifting & tightening result",
+    "category": "Anti-Aging"
+  },
+  {
+    "image": "/assets/stretch-marks-result-1-DR6WZQRI.png",
+    "treatment": "Stretch Mark Treatment",
+    "caption": "Stretch marks reduction",
+    "category": "Body"
+  },
+  {
+    "image": "/assets/spider-vein-result-1-CP5o3AgN.jpg",
+    "treatment": "Spider Vein Removal",
+    "caption": "Spider vein removal result",
+    "category": "Body"
+  }
+]

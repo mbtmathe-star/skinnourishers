@@ -1,0 +1,831 @@
+[
+  {
+    "id": "plasma-treatment",
+    "category": "Plasma Treatment",
+    "tagline": "Non-surgical skin lifting and tightening",
+    "description": "Plasma Fibroblast is a revolutionary non-surgical treatment that uses plasma energy to tighten, lift, and rejuvenate the skin. It's the closest thing to a facelift without going under the knife.",
+    "image": "/assets/facial-treatment-BqmdQUGZ.jpg",
+    "video": "/videos/plasma-treatment.mp4",
+    "problem": "Sagging skin, wrinkles, and fine lines making you look older than you feel? Considering surgery but worried about the cost, recovery time, and risks?",
+    "solution": "Plasma Fibroblast harnesses ionized gas to create controlled micro-injuries that trigger your skin's natural healing response, producing new collagen and elastin for tighter, younger-looking skin.",
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Consultation & Preparation",
+        "description": "We assess your skin, discuss your goals, and apply numbing cream for your comfort."
+      },
+      {
+        "step": 2,
+        "title": "Plasma Application",
+        "description": "The plasma pen creates tiny dots on the skin's surface, causing the tissue to contract and tighten."
+      },
+      {
+        "step": 3,
+        "title": "Controlled Healing",
+        "description": "Micro-injuries trigger your body's natural healing response, stimulating collagen production."
+      },
+      {
+        "step": 4,
+        "title": "Skin Regeneration",
+        "description": "Over the following weeks, new collagen forms, lifting and tightening the treated area."
+      },
+      {
+        "step": 5,
+        "title": "Long-lasting Results",
+        "description": "Results continue to improve for 3-6 months and can last 2-3 years."
+      }
+    ],
+    "benefits": [
+      "Non-surgical alternative to facelifts",
+      "Tightens loose, sagging skin",
+      "Reduces fine lines and wrinkles",
+      "Lifts hooded eyelids",
+      "Improves skin texture and tone",
+      "Minimal downtime compared to surgery",
+      "Results last 2-3 years",
+      "Safe for most skin types",
+      "No general anesthesia required"
+    ],
+    "pricing": [
+      {
+        "area": "Hooded Eyes",
+        "singleSession": "R3,500"
+      },
+      {
+        "area": "Brow Lift",
+        "singleSession": "R2,500"
+      },
+      {
+        "area": "Crows Feet",
+        "singleSession": "R2,500"
+      },
+      {
+        "area": "Forehead",
+        "singleSession": "R4,000"
+      },
+      {
+        "area": "Frown Lines",
+        "singleSession": "R2,000"
+      },
+      {
+        "area": "Jaw Line",
+        "singleSession": "R3,500"
+      },
+      {
+        "area": "Turkey Neck",
+        "singleSession": "R3,500"
+      },
+      {
+        "area": "Neck & Chin",
+        "singleSession": "R4,000"
+      },
+      {
+        "area": "Above Lip & 2 Rows",
+        "singleSession": "R2,500"
+      },
+      {
+        "area": "Smokers' Lines",
+        "singleSession": "R2,500"
+      },
+      {
+        "area": "Under Eye Bag",
+        "singleSession": "R3,000"
+      },
+      {
+        "area": "Nasal Labia",
+        "singleSession": "R1,500"
+      },
+      {
+        "area": "Ear Fold",
+        "singleSession": "R1,500"
+      },
+      {
+        "area": "Cherry Naevoma",
+        "singleSession": "R800"
+      }
+    ],
+    "duration": "45-90 min",
+    "sessionsRecommended": "1-2 sessions",
+    "faqs": [
+      {
+        "question": "Is Plasma Treatment painful?",
+        "answer": "We apply a topical numbing cream before treatment, so most clients experience minimal discomfort. You may feel a warm sensation during the procedure."
+      },
+      {
+        "question": "What is the downtime after Plasma Treatment?",
+        "answer": "Expect small carbon crusts (dots) on the treated area for 5-10 days. Mild swelling may occur for 2-3 days, especially around the eyes. Most clients return to normal activities within a week."
+      },
+      {
+        "question": "How long do results last?",
+        "answer": "Results typically last 2-3 years, depending on your skin type, age, and lifestyle factors. Touch-up treatments can maintain results longer."
+      },
+      {
+        "question": "Who is not suitable for Plasma Treatment?",
+        "answer": "Plasma treatment is not recommended for those who are pregnant, breastfeeding, have active skin conditions, keloid scarring tendency, diabetes, or pacemakers."
+      },
+      {
+        "question": "When will I see results?",
+        "answer": "You'll notice immediate tightening, with continued improvement over 3-6 months as collagen production increases."
+      }
+    ],
+    "safetyInfo": "Plasma treatment is performed by trained professionals using sterile equipment. Aftercare is crucial - avoid sun exposure, keep the area clean, and follow post-treatment instructions carefully for optimal results.",
+    "beforeAfterImages": [
+      {
+        "image": "/assets/stretch-marks-result-1-DR6WZQRI.png",
+        "caption": "Stretch Marks Treatment"
+      },
+      {
+        "image": "/assets/spider-vein-result-1-CP5o3AgN.jpg",
+        "caption": "Spider Vein Removal"
+      }
+    ]
+  },
+  {
+    "id": "hydra-facial",
+    "category": "Hydra Facial",
+    "tagline": "Deep cleansing and hydration for radiant skin",
+    "description": "The Hydra Facial is a multi-step treatment that cleanses, exfoliates, extracts, and hydrates the skin using advanced vortex technology. It's the red-carpet favorite for instant glow.",
+    "image": "/assets/service-skincare-DI-uuH_t.jpg",
+    "video": "/videos/hydra-facial.mp4",
+    "problem": "Dull, congested skin with clogged pores, uneven texture, and signs of dehydration? Traditional facials not delivering visible results?",
+    "solution": "Hydra Facial combines cleansing, exfoliation, extraction, hydration, and antioxidant protection in one treatment, delivering immediate and noticeable results without downtime.",
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Cleanse & Exfoliate",
+        "description": "Dead skin cells and impurities are removed, revealing fresh, healthy skin underneath."
+      },
+      {
+        "step": 2,
+        "title": "Acid Peel",
+        "description": "A gentle blend of glycolic and salicylic acids loosens debris from pores without irritation."
+      },
+      {
+        "step": 3,
+        "title": "Extraction",
+        "description": "Painless vortex suction removes blackheads, oil, and impurities from deep within pores."
+      },
+      {
+        "step": 4,
+        "title": "Hydration",
+        "description": "Intense hydration with hyaluronic acid and antioxidants plumps and nourishes skin."
+      },
+      {
+        "step": 5,
+        "title": "Protection",
+        "description": "Peptides and growth factors are infused to protect and maintain your glow."
+      }
+    ],
+    "benefits": [
+      "Instant visible results",
+      "Deep pore cleansing",
+      "Improved skin texture",
+      "Reduced fine lines",
+      "Even skin tone",
+      "No downtime",
+      "Suitable for all skin types",
+      "Hydrated, plump skin",
+      "Long-lasting glow"
+    ],
+    "pricing": [
+      {
+        "area": "Oxygen Therapy Facial",
+        "singleSession": "R1,500"
+      },
+      {
+        "area": "Signature Facial",
+        "singleSession": "R850"
+      },
+      {
+        "area": "Basic Facial",
+        "singleSession": "R550"
+      },
+      {
+        "area": "Add-on: LED Therapy",
+        "singleSession": "R400"
+      },
+      {
+        "area": "Add-on: Lymphatic Drainage",
+        "singleSession": "R1,200"
+      }
+    ],
+    "duration": "30-60 min",
+    "sessionsRecommended": "Monthly maintenance",
+    "faqs": [
+      {
+        "question": "How often should I get a Hydra Facial?",
+        "answer": "For optimal results, we recommend monthly treatments. However, even a single session delivers noticeable improvements."
+      },
+      {
+        "question": "Is there any downtime?",
+        "answer": "No downtime at all! You can apply makeup immediately and return to your daily activities. It's perfect before special events."
+      },
+      {
+        "question": "Can I get a Hydra Facial if I have sensitive skin?",
+        "answer": "Yes! The Hydra Facial is gentle and customizable for all skin types, including sensitive skin. We adjust the treatment to your skin's needs."
+      },
+      {
+        "question": "What results can I expect?",
+        "answer": "You'll see immediate improvements in hydration, radiance, and skin clarity. Fine lines appear reduced and pores look smaller."
+      }
+    ],
+    "safetyInfo": "Hydra Facial is safe for all skin types and colors. Avoid if you have active rashes, sunburn, or rosacea flare-ups. Inform us of any recent chemical peels or laser treatments.",
+    "videoEmbed": "<iframe style=\"position:absolute;top:0;left:0;width:100%;height:100%;border:0;\" scrolling=\"no\" src=\"https://go.screenpal.com/player/cOVUf9n3tqm?ff=1&ahc=1&dcc=1&bg=transparent&share=1&download=1&embed=1&cl=1\" allowfullscreen=\"true\"></iframe>",
+    "beforeAfterImages": [
+      {
+        "image": "/assets/pigmentation-result-1-C-Ovj2xV.png",
+        "caption": "Pigmentation Treatment - Before"
+      },
+      {
+        "image": "/assets/acne-result-2-BKi4lopZ.png",
+        "caption": "Pigmentation Clearing Result"
+      },
+      {
+        "image": "/assets/acne-result-3-B42YATcb.png",
+        "caption": "Pigmentation & Skin Tone Improvement"
+      },
+      {
+        "image": "/assets/pigmentation-result-2-DUWasAE8.png",
+        "caption": "Pigmentation Treatment - After"
+      },
+      {
+        "image": "/assets/pigmentation-result-3-ljaq_WbL.jpg",
+        "caption": "Pigmentation Before & After"
+      }
+    ]
+  },
+  {
+    "id": "hair-regrowth-therapy",
+    "category": "Hair Regrowth Therapy",
+    "tagline": "Advanced solutions for thinning hair and hair loss",
+    "description": "Our Hair Regrowth Therapy uses advanced techniques including scalp microneedling, growth factors, and LED therapy to stimulate dormant hair follicles and promote natural hair growth.",
+    "image": "/assets/facial-treatment-BqmdQUGZ.jpg",
+    "video": "/videos/treatment-d2.mp4",
+    "problem": "Noticing more hair in your brush, a widening part, or thinning patches? Hair loss affecting your confidence and self-image?",
+    "solution": "Our multi-modal hair regrowth protocol awakens dormant follicles, increases blood flow to the scalp, and creates the optimal environment for thicker, healthier hair growth.",
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Scalp Analysis",
+        "description": "We examine your scalp health, hair density, and identify the underlying causes of hair loss."
+      },
+      {
+        "step": 2,
+        "title": "Deep Cleansing",
+        "description": "The scalp is thoroughly cleansed to remove product buildup and unclog hair follicles."
+      },
+      {
+        "step": 3,
+        "title": "Microneedling",
+        "description": "Controlled micro-injuries stimulate blood flow and growth factors to the scalp."
+      },
+      {
+        "step": 4,
+        "title": "Growth Serum Infusion",
+        "description": "Potent growth factors and peptides are infused directly into the scalp."
+      },
+      {
+        "step": 5,
+        "title": "LED Therapy",
+        "description": "Red light therapy energizes hair follicles and promotes cellular regeneration."
+      }
+    ],
+    "benefits": [
+      "Stimulates dormant hair follicles",
+      "Increases hair density",
+      "Strengthens existing hair",
+      "Reduces hair shedding",
+      "Improves scalp health",
+      "Non-surgical solution",
+      "Suitable for men and women",
+      "Natural-looking results",
+      "No harsh chemicals"
+    ],
+    "pricing": [
+      {
+        "area": "Single Treatment",
+        "singleSession": "R3,500"
+      }
+    ],
+    "duration": "45-60 min",
+    "sessionsRecommended": "6-12 sessions",
+    "faqs": [
+      {
+        "question": "How soon will I see results?",
+        "answer": "Most clients notice reduced shedding within 4-6 weeks. Visible new growth typically appears after 3-4 months of consistent treatment."
+      },
+      {
+        "question": "Is this treatment painful?",
+        "answer": "Scalp microneedling may cause mild discomfort, but we use techniques to minimize any pain. Most clients find it very tolerable."
+      },
+      {
+        "question": "Who is a good candidate for hair regrowth therapy?",
+        "answer": "This treatment is effective for those experiencing early to moderate hair loss, thinning, or those wanting to prevent future hair loss. It works best when follicles are still present but dormant."
+      },
+      {
+        "question": "Can I combine this with other hair loss treatments?",
+        "answer": "Yes! Many clients combine our therapy with medications like minoxidil for enhanced results. We can create a comprehensive plan for you."
+      }
+    ],
+    "safetyInfo": "Hair regrowth therapy is safe for most individuals. Not recommended during pregnancy, for those with active scalp infections, or blood clotting disorders. Results vary based on the cause and extent of hair loss."
+  },
+  {
+    "id": "ultraformer-therapy",
+    "category": "Ultraformer Therapy",
+    "tagline": "Non-invasive skin lifting using HIFU technology",
+    "description": "Ultraformer III uses High-Intensity Focused Ultrasound (HIFU) to lift, tighten, and contour the face and body without surgery. It targets the deep structural layers of skin that typically only surgery could reach.",
+    "image": "/assets/service-body-polish-Bq4wBFRH.jpg",
+    "video": "/videos/treatment-d3.mp4",
+    "problem": "Sagging jowls, double chin, or loose skin making you consider a surgical facelift? Worried about the cost, risks, and recovery time of surgery?",
+    "solution": "Ultraformer delivers focused ultrasound energy deep into the skin's foundational layers, triggering collagen regeneration for a natural lifting effect without incisions or downtime.",
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Consultation & Mapping",
+        "description": "We analyze your facial structure and create a customized treatment plan for optimal lifting."
+      },
+      {
+        "step": 2,
+        "title": "HIFU Energy Delivery",
+        "description": "Focused ultrasound waves penetrate 1.5mm to 4.5mm deep, targeting the SMAS layer."
+      },
+      {
+        "step": 3,
+        "title": "Thermal Coagulation",
+        "description": "Precise heating creates controlled injury points that trigger tissue contraction."
+      },
+      {
+        "step": 4,
+        "title": "Collagen Stimulation",
+        "description": "Your body responds by producing new collagen over the following months."
+      },
+      {
+        "step": 5,
+        "title": "Progressive Lifting",
+        "description": "Results improve over 2-3 months as new collagen lifts and tightens skin."
+      }
+    ],
+    "benefits": [
+      "Non-surgical facelift alternative",
+      "Lifts brows and tightens forehead",
+      "Defines jawline and reduces jowls",
+      "Tightens neck and double chin",
+      "Minimal to no downtime",
+      "Long-lasting results (12-18 months)",
+      "Stimulates natural collagen",
+      "Safe for all skin types",
+      "One treatment, significant results"
+    ],
+    "pricing": [
+      {
+        "area": "Full Face",
+        "singleSession": "R4,000"
+      },
+      {
+        "area": "Neck Lift",
+        "singleSession": "R2,000"
+      },
+      {
+        "area": "Double Chin",
+        "singleSession": "R1,500"
+      }
+    ],
+    "duration": "45-90 min",
+    "sessionsRecommended": "1-2 sessions yearly",
+    "faqs": [
+      {
+        "question": "How is Ultraformer different from other skin tightening treatments?",
+        "answer": "Ultraformer reaches the SMAS layer - the same layer surgeons manipulate during facelifts. This deep penetration provides more significant lifting than surface-level treatments."
+      },
+      {
+        "question": "Is HIFU treatment painful?",
+        "answer": "You may feel brief moments of heat and tingling during treatment, especially over bony areas. Discomfort is temporary and manageable for most clients."
+      },
+      {
+        "question": "When will I see results?",
+        "answer": "Some clients notice immediate tightening. However, the full effect develops over 2-3 months as new collagen forms, with continued improvement for up to 6 months."
+      },
+      {
+        "question": "How long do Ultraformer results last?",
+        "answer": "Results typically last 12-18 months. Annual maintenance treatments can help preserve your lifted appearance long-term."
+      },
+      {
+        "question": "Is there any downtime?",
+        "answer": "Most clients return to normal activities immediately. Some experience mild redness or swelling for a few hours to a day."
+      }
+    ],
+    "safetyInfo": "Ultraformer is FDA-cleared and safe when performed by trained professionals. Not suitable during pregnancy, for those with metal implants in the treatment area, or active skin conditions. A full consultation ensures you're a good candidate."
+  },
+  {
+    "id": "laser-hair-removal",
+    "category": "Laser Hair Removal",
+    "tagline": "Permanent hair reduction for smooth, carefree skin",
+    "description": "Our medical-grade laser targets hair follicles at the root, permanently reducing unwanted hair growth. Say goodbye to shaving, waxing, and ingrown hairs for good.",
+    "image": "/assets/service-skincare-DI-uuH_t.jpg",
+    "video": "/videos/treatment-d4.mp4",
+    "problem": "Tired of the endless cycle of shaving, waxing, and dealing with ingrown hairs, razor bumps, and stubble? Spending hours and money on temporary solutions?",
+    "solution": "Laser hair removal provides permanent reduction by targeting melanin in hair follicles, destroying them at the root while keeping surrounding skin safe. After a series of treatments, enjoy smooth skin without the maintenance.",
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Preparation",
+        "description": "Shave the area 24 hours before. Avoid sun exposure and tanning for 2 weeks prior."
+      },
+      {
+        "step": 2,
+        "title": "Laser Application",
+        "description": "The laser emits light that targets melanin in the hair follicle."
+      },
+      {
+        "step": 3,
+        "title": "Follicle Destruction",
+        "description": "Heat from the laser damages the follicle, preventing future hair growth."
+      },
+      {
+        "step": 4,
+        "title": "Multiple Sessions",
+        "description": "Hair grows in cycles, so multiple sessions target hair in different growth phases."
+      },
+      {
+        "step": 5,
+        "title": "Permanent Reduction",
+        "description": "After 6-8 sessions, most clients achieve 80-90% permanent hair reduction."
+      }
+    ],
+    "benefits": [
+      "80-90% permanent hair reduction",
+      "No more ingrown hairs",
+      "Smooth, even skin tone",
+      "Eliminates razor bumps and irritation",
+      "Time and money saved long-term",
+      "Safe for face and body",
+      "Precision targeting",
+      "Quick treatment sessions",
+      "Suitable for various skin tones"
+    ],
+    "pricing": [
+      {
+        "area": "Lip",
+        "singleSession": "R250"
+      },
+      {
+        "area": "Chin",
+        "singleSession": "R300"
+      },
+      {
+        "area": "Full Face",
+        "singleSession": "R1,000"
+      },
+      {
+        "area": "Underarms",
+        "singleSession": "R420"
+      },
+      {
+        "area": "Bikini Line",
+        "singleSession": "R550"
+      },
+      {
+        "area": "Brazilian",
+        "singleSession": "R850"
+      },
+      {
+        "area": "Hollywood",
+        "singleSession": "R950"
+      },
+      {
+        "area": "Half Arm",
+        "singleSession": "R800"
+      },
+      {
+        "area": "Full Arms",
+        "singleSession": "R1,200"
+      },
+      {
+        "area": "Half Leg",
+        "singleSession": "R900"
+      },
+      {
+        "area": "Full Legs",
+        "singleSession": "R1,350"
+      },
+      {
+        "area": "Full Back",
+        "singleSession": "R1,500"
+      }
+    ],
+    "duration": "15-90 min",
+    "sessionsRecommended": "6-18 sessions",
+    "faqs": [
+      {
+        "question": "Does laser hair removal hurt?",
+        "answer": "Most clients describe it as a rubber band snapping against the skin. Our laser has built-in cooling to minimize discomfort. Sensitive areas may feel more intense."
+      },
+      {
+        "question": "How many sessions do I need?",
+        "answer": "Laser treatments require 6-18 sessions, depending on your skin condition and goals. Sessions are typically spaced 4-6 weeks apart. Hair grows in cycles, and the laser only affects hair in the active growth phase."
+      },
+      {
+        "question": "Is laser hair removal permanent?",
+        "answer": "Laser hair removal provides permanent reduction of 80-90%. Some fine hairs may remain or return over time, but they're typically lighter and finer. Occasional maintenance sessions may be needed."
+      },
+      {
+        "question": "Can all skin types be treated?",
+        "answer": "Modern laser technology can safely treat most skin types. We assess your skin and hair type during consultation to ensure safe and effective treatment."
+      },
+      {
+        "question": "What should I avoid before treatment?",
+        "answer": "Avoid sun exposure, tanning, waxing, and plucking for 2 weeks before treatment. Shave the area 24 hours prior."
+      }
+    ],
+    "safetyInfo": "Laser hair removal is safe when performed by trained professionals. Avoid sun exposure before and after treatment. Not recommended during pregnancy or for those on photosensitizing medications. We perform a patch test for first-time clients."
+  },
+  {
+    "id": "anti-aging-treatment",
+    "category": "Anti-Aging Treatment",
+    "tagline": "Ultraformer HIFU – Our Primary Anti-Aging Solution",
+    "description": "Experience the gold standard in non-surgical face lifting with Ultraformer HIFU technology. This advanced treatment delivers focused ultrasound energy deep into the skin to lift, tighten, and rejuvenate—without surgery or downtime.",
+    "image": "/assets/service-lash-lift-DEJnYtOh.jpg",
+    "video": "/videos/treatment-d5.mp4",
+    "problem": "Fine lines, wrinkles, sagging skin, and loss of facial volume making you look tired and older? Creams and serums not delivering the results you want?",
+    "solution": "Ultraformer HIFU targets aging at every level—from stimulating collagen in deep tissues to smoothing surface texture—for comprehensive, natural-looking rejuvenation that lasts.",
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Comprehensive Assessment",
+        "description": "We analyze your skin, discuss concerns, and create a personalized anti-aging plan."
+      },
+      {
+        "step": 2,
+        "title": "Ultraformer HIFU Treatment",
+        "description": "Focused ultrasound energy targets the SMAS layer to lift and tighten from within."
+      },
+      {
+        "step": 3,
+        "title": "Surface Renewal",
+        "description": "Microneedling or laser resurfacing improves texture, tone, and fine lines."
+      },
+      {
+        "step": 4,
+        "title": "Active Infusion",
+        "description": "Growth factors, peptides, and antioxidants are delivered deep into the skin."
+      },
+      {
+        "step": 5,
+        "title": "Ongoing Optimization",
+        "description": "Regular maintenance and homecare ensure lasting, progressive results."
+      }
+    ],
+    "benefits": [
+      "Reduced fine lines and wrinkles",
+      "Improved skin firmness",
+      "Restored facial volume",
+      "Even skin tone and texture",
+      "Natural collagen stimulation",
+      "Lifted, contoured appearance",
+      "Hydrated, glowing skin",
+      "Non-surgical approach",
+      "Customized to your needs"
+    ],
+    "pricing": [
+      {
+        "area": "Rejuvenating Cell Renewal",
+        "singleSession": "R1,800"
+      },
+      {
+        "area": "Prevention and Restore",
+        "singleSession": "R1,800"
+      },
+      {
+        "area": "Advanced Repair and Restore",
+        "singleSession": "R2,200"
+      },
+      {
+        "area": "RF Anti-Wrinkle",
+        "singleSession": "R1,350"
+      },
+      {
+        "area": "Plumping and Tightening",
+        "singleSession": "R3,500"
+      },
+      {
+        "area": "Lifting Full Face + Neck",
+        "singleSession": "R3,500"
+      }
+    ],
+    "duration": "60-90 min",
+    "sessionsRecommended": "6+ sessions",
+    "faqs": [
+      {
+        "question": "At what age should I start anti-aging treatments?",
+        "answer": "Prevention is easier than correction! We recommend starting in your late 20s to early 30s. However, it's never too late to see improvements."
+      },
+      {
+        "question": "How long before I see results?",
+        "answer": "Some treatments offer immediate glow. Collagen-stimulating treatments show progressive improvement over 2-6 months as new collagen forms."
+      },
+      {
+        "question": "Are these treatments safe for all skin types?",
+        "answer": "Yes, we customize treatments for all skin types and tones. During your consultation, we'll select the safest and most effective approach for you."
+      },
+      {
+        "question": "How do I maintain results at home?",
+        "answer": "We'll recommend a personalized skincare routine including SPF, retinoids, antioxidants, and hydrating products to maximize and maintain your results."
+      }
+    ],
+    "safetyInfo": "Anti-aging treatments are safe when performed by qualified professionals. We customize intensity based on your skin type and concerns. Avoid if pregnant, have active infections, or are on certain medications.",
+    "beforeAfterImages": [
+      {
+        "image": "/assets/anti-aging-result-1-BFVv8Bna.png",
+        "caption": "Ultraformer HIFU – Neck Tightening & Rejuvenation"
+      }
+    ]
+  },
+  {
+    "id": "acne-treatment",
+    "category": "Acne Treatment",
+    "tagline": "Clear skin confidence starts here",
+    "description": "Our medical-grade acne treatment protocols target breakouts at every stage - from active acne to scarring. Using LED therapy, professional extractions, and clinical-strength products for lasting clarity.",
+    "image": "/assets/spa-treatment-B3sJ4dPB.jpg",
+    "video": "/videos/acne-treatment.mp4",
+    "problem": "Battling persistent breakouts, painful cysts, or embarrassing acne that won't clear despite trying every product on the shelf?",
+    "solution": "Our clinical acne protocol combines multiple proven therapies to kill acne-causing bacteria, reduce inflammation, clear clogged pores, and prevent future breakouts without the harsh side effects of prescription medications.",
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Skin Analysis",
+        "description": "We identify your acne type, triggers, and create a targeted treatment plan."
+      },
+      {
+        "step": 2,
+        "title": "Deep Cleansing",
+        "description": "Medical-grade cleansing removes excess oil, bacteria, and impurities."
+      },
+      {
+        "step": 3,
+        "title": "Professional Extraction",
+        "description": "Skilled extraction of blackheads, whiteheads, and comedones without scarring."
+      },
+      {
+        "step": 4,
+        "title": "LED Light Therapy",
+        "description": "Blue light kills acne bacteria; red light reduces inflammation and promotes healing."
+      },
+      {
+        "step": 5,
+        "title": "Balancing Treatment",
+        "description": "Clinical products calm, heal, and balance the skin to prevent recurrence."
+      }
+    ],
+    "benefits": [
+      "Visible clearing within weeks",
+      "Reduced inflammation and redness",
+      "Fewer future breakouts",
+      "Improved skin texture",
+      "Faded acne marks",
+      "Balanced oil production",
+      "Boosted confidence",
+      "No harsh chemicals",
+      "Personalized approach"
+    ],
+    "pricing": [
+      {
+        "area": "Acne Treatment",
+        "singleSession": "R1,600"
+      },
+      {
+        "area": "LED Red Light Therapy",
+        "singleSession": "R400"
+      },
+      {
+        "area": "Microneedling",
+        "singleSession": "R1,850"
+      },
+      {
+        "area": "Derma Peel - Microneedle",
+        "singleSession": "R2,500"
+      }
+    ],
+    "duration": "45-60 min",
+    "sessionsRecommended": "6-12 sessions",
+    "faqs": [
+      {
+        "question": "How quickly will I see results?",
+        "answer": "Many clients notice improvement within 2-4 weeks. Significant clearing typically occurs over 6-12 weeks with consistent treatment."
+      },
+      {
+        "question": "Will my acne get worse before it gets better?",
+        "answer": "Some clients experience a brief purging period as impurities come to the surface. This is normal and temporary."
+      },
+      {
+        "question": "Can you treat hormonal acne?",
+        "answer": "Yes! While we can't change hormones, our treatments effectively manage hormonal breakouts and minimize their impact."
+      },
+      {
+        "question": "What about acne scars?",
+        "answer": "We offer specific treatments for acne scarring including microneedling and laser therapy. Once active acne is controlled, we can address scarring."
+      },
+      {
+        "question": "Do I need to change my skincare routine?",
+        "answer": "We'll recommend products that complement your treatment and help maintain results. Some products may need to be paused during treatment."
+      }
+    ],
+    "safetyInfo": "Acne treatments are safe and customized to your skin type. Inform us of any medications, particularly Accutane (wait 6 months after stopping). Sun protection is essential during treatment.",
+    "beforeAfterImages": [
+      {
+        "image": "/assets/acne-result-1-eKDwtebj.png",
+        "caption": "Acne Clearing - Client Result"
+      },
+      {
+        "image": "/assets/acne-result-4-QjVWX3RX.png",
+        "caption": "Severe Acne Transformation"
+      }
+    ]
+  },
+  {
+    "id": "cellulite-treatment",
+    "category": "Cellulite Treatment",
+    "tagline": "Smooth, firm skin you'll love to show off",
+    "description": "Our advanced cellulite treatment combines radiofrequency, vacuum therapy, and lymphatic drainage to break down fat deposits, tighten skin, and smooth the appearance of cellulite for firmer, more contoured results.",
+    "image": "/assets/facial-treatment-BqmdQUGZ.jpg",
+    "video": "/videos/treatment-ddd.mp4",
+    "problem": "Dimpled, uneven skin on your thighs, buttocks, or stomach making you self-conscious in swimwear and shorts? Creams and exercise not making a dent?",
+    "solution": "Our multi-technology approach targets all three causes of cellulite: fat deposits, poor circulation, and weakened connective tissue. The result is smoother, firmer skin and improved body confidence.",
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Body Assessment",
+        "description": "We analyze your cellulite grade, skin elasticity, and create a customized treatment plan."
+      },
+      {
+        "step": 2,
+        "title": "Radiofrequency Heating",
+        "description": "RF energy heats fat cells and tightens collagen fibers in the dermis."
+      },
+      {
+        "step": 3,
+        "title": "Vacuum Massage",
+        "description": "Mechanical massage breaks up fat deposits and stimulates blood flow."
+      },
+      {
+        "step": 4,
+        "title": "Lymphatic Drainage",
+        "description": "Toxins and excess fluid are moved toward lymph nodes for elimination."
+      },
+      {
+        "step": 5,
+        "title": "Skin Tightening",
+        "description": "Collagen stimulation firms and smooths the skin's surface over time."
+      }
+    ],
+    "benefits": [
+      "Visibly smoother skin texture",
+      "Reduced dimpling appearance",
+      "Improved skin firmness",
+      "Better circulation",
+      "Reduced fluid retention",
+      "Contoured body shape",
+      "No surgery or needles",
+      "Comfortable treatment",
+      "Progressive, lasting results"
+    ],
+    "pricing": [
+      {
+        "area": "Cellulite Treatment",
+        "singleSession": "R1,000"
+      },
+      {
+        "area": "Body Skin Tightening Per Area",
+        "singleSession": "R2,100"
+      },
+      {
+        "area": "Saggy Upper Arms",
+        "singleSession": "R1,800"
+      }
+    ],
+    "duration": "45-60 min",
+    "sessionsRecommended": "6-12 sessions",
+    "faqs": [
+      {
+        "question": "How many sessions do I need to see results?",
+        "answer": "Most clients notice improvement after 3-4 sessions. A course of 6-12 treatments provides optimal, lasting results."
+      },
+      {
+        "question": "Is cellulite treatment permanent?",
+        "answer": "Results can be long-lasting with proper maintenance, healthy diet, and exercise. Periodic maintenance sessions help preserve your results."
+      },
+      {
+        "question": "Is the treatment painful?",
+        "answer": "Most clients find it comfortable - like a warm deep tissue massage. You may experience mild redness or warmth afterward."
+      },
+      {
+        "question": "Can thin people get cellulite treatment?",
+        "answer": "Absolutely! Cellulite affects people of all body types. Our treatment is effective regardless of your weight."
+      },
+      {
+        "question": "What can I do to enhance results?",
+        "answer": "Stay hydrated, maintain a healthy diet, exercise regularly, and avoid tight clothing. Dry brushing and massage between sessions can also help."
+      }
+    ],
+    "safetyInfo": "Cellulite treatment is safe and non-invasive. Not recommended during pregnancy, for those with pacemakers, or active skin conditions in the treatment area. Best results when combined with healthy lifestyle habits."
+  }
+]
