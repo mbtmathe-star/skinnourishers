@@ -46,17 +46,20 @@ The HAR recorded these six original MP4 paths but did not embed their binary res
 
 The frontend resolves them to the exact old source-of-truth host. No substitute video content is used.
 
+## PayFast payment function (added)
+
+- `/api/payfast/checkout` (Vercel serverless function) signs and initiates PayFast payments for both the booking deposit flow and the product shop cart. Amount is always recomputed server-side from `src/data/pricing.json` / `src/data/products.json` — never trusted from the client.
+- `/api/payfast/notify` handles the ITN webhook: signature verification, source-IP verification against PayFast's published hosts, amount verification (recomputed independently, no DB needed), and PayFast's server-side `/eng/query/validate` confirmation.
+- Requires `PAYFAST_MERCHANT_ID`, `PAYFAST_MERCHANT_KEY`, `PAYFAST_PASSPHRASE`, `PAYFAST_MODE` (`sandbox`|`live`, defaults to `sandbox`) as Vercel environment variables.
+
 ## Deferred backend work
 
 - Supabase product loading and realtime updates
-- Cart persistence/checkout backend
-- Booking database writes
-- PayFast payment function
-- Order records
+- Order persistence (there is still no database — a validated PayFast payment is currently only recorded as a structured log line in Vercel function logs, not stored anywhere durable or emailed to the merchant)
 - Admin authentication and dashboards
-- Email/server functions
+- Transactional email / server functions
 
-The booking frontend does not falsely report payment success when backend processing is unavailable.
+The booking and shop frontend does not falsely report payment success when backend processing is unavailable; the `/payment-success` page describes the payment as being processed rather than definitively confirmed, since only the asynchronous ITN webhook is authoritative.
 
 ## Verification limitation
 

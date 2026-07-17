@@ -45,7 +45,7 @@
       "destination": "https://skinnourishers.lovable.app/assets/skin-toner-QnCUpKnT.jpg"
     },
     {
-      "source": "/((?!assets/|audio/|videos/|favicon\\.png).*)",
+      "source": "/((?!assets/|audio/|videos/|favicon\\.png|api/).*)",
       "destination": "/index.html"
     }
   ]

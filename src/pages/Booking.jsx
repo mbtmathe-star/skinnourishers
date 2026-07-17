@@ -9,6 +9,7 @@ import Layout from '../components/Layout';
 import PageHero from '../components/PageHero';
 import { Card, CardContent, CardHeader } from '../components/ui';
 import pricing from '../data/pricing.json';
+import { startPayfastCheckout } from '../lib/payfast';
 
 function findService(name, category) {
   const group = pricing.find((item) => item.category === category);
@@ -58,7 +59,7 @@ export default function Booking() {
     if (service) setForm((current) => ({ ...current, service: name, price: service.priceValue, duration: service.duration }));
   };
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
     setError('');
     if (!form.name || !form.email || !form.phone || !form.service) {
@@ -70,13 +71,19 @@ export default function Booking() {
       return;
     }
     setSubmitting(true);
-    // The captured frontend is complete, but payment processing depends on the old
-    // Supabase/PayFast backend. Keep the draft without pretending a payment happened.
     window.sessionStorage.setItem('skin-nourishers-booking-draft', JSON.stringify({ ...form, deposit }));
-    window.setTimeout(() => {
+    try {
+      await startPayfastCheckout({
+        type: 'booking',
+        category: form.category,
+        service: form.service,
+        customer: { name: form.name, email: form.email, phone: form.phone },
+      });
+      // startPayfastCheckout navigates the browser away to PayFast on success.
+    } catch (err) {
       setSubmitting(false);
-      setError('Deposit payment will be connected during the backend restoration phase.');
-    }, 350);
+      setError(err.message || 'Unable to start payment. Please try again.');
+    }
   };
 
   return (
