@@ -82,14 +82,12 @@ export default function Pricing() {
             <p className="text-muted-foreground mb-6">
               All prices are subject to change. A consultation may be required before certain treatments.
             </p>
-            <a
-              href="https://skinnourishers.booksy.com/a/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/booking"
               className="inline-flex items-center justify-center h-11 px-8 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               Book Your Treatment <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import { Plus, ShoppingBag, X } from 'lucide-react';
 import Layout from '../components/Layout';
 import products from '../data/products.json';
 import { startPayfastCheckout } from '../lib/payfast';
+import { sendInquiry } from '../lib/inquiry';
 
 function readCart() {
   try {
@@ -21,6 +22,11 @@ export default function Products() {
   const [checkingOut, setCheckingOut] = useState(false);
   const [checkoutError, setCheckoutError] = useState('');
   const [customer, setCustomer] = useState({ name: '', email: '', phone: '' });
+  const [consultOpen, setConsultOpen] = useState(false);
+  const [consultSubmitting, setConsultSubmitting] = useState(false);
+  const [consultError, setConsultError] = useState('');
+  const [consultSent, setConsultSent] = useState(false);
+  const [consultForm, setConsultForm] = useState({ name: '', email: '', phone: '' });
 
   useEffect(() => {
     const timer = window.setTimeout(() => setLoading(false), 250);
@@ -70,6 +76,30 @@ export default function Products() {
     } catch (err) {
       setCheckingOut(false);
       setCheckoutError(err.message || 'Unable to start checkout. Please try again.');
+    }
+  };
+
+  const submitConsultation = async (event) => {
+    event.preventDefault();
+    setConsultError('');
+    if (!consultForm.name || !consultForm.email || !consultForm.phone) {
+      setConsultError('Please fill in all fields');
+      return;
+    }
+    setConsultSubmitting(true);
+    try {
+      await sendInquiry({
+        formName: 'Free Skin Consultation Request',
+        name: consultForm.name,
+        email: consultForm.email,
+        phone: consultForm.phone,
+        fields: {},
+      });
+      setConsultSent(true);
+    } catch (err) {
+      setConsultError(err.message || 'Unable to send. Please try again.');
+    } finally {
+      setConsultSubmitting(false);
     }
   };
 
@@ -199,14 +229,13 @@ export default function Products() {
           <div className="text-center mt-16 p-8 bg-secondary/30 rounded-2xl">
             <p className="text-lg text-foreground mb-2">Looking for personalized recommendations?</p>
             <p className="text-muted-foreground mb-4">Visit our clinic for a free skin consultation.</p>
-            <a
-              href="https://skinnourishers.booksy.com/a/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => setConsultOpen(true)}
               className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
             >
               Book a Consultation
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -242,6 +271,44 @@ export default function Products() {
                 {checkingOut ? 'Redirecting to PayFast...' : `Pay R${cartTotal} with PayFast`}
               </button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {consultOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setConsultOpen(false)}>
+          <div className="w-full max-w-md rounded-2xl bg-card shadow-elegant p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-heading text-xl font-medium">Book a Free Consultation</h3>
+              <button type="button" aria-label="Close" onClick={() => setConsultOpen(false)} className="text-muted-foreground hover:text-foreground">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            {consultSent ? (
+              <div className="text-center py-6">
+                <p className="text-foreground font-medium mb-2">Thank you!</p>
+                <p className="text-sm text-muted-foreground">We've received your request and will be in touch shortly to schedule your free skin consultation.</p>
+              </div>
+            ) : (
+              <form onSubmit={submitConsultation} className="space-y-4">
+                <label className="space-y-2 block">
+                  <span className="text-sm font-medium">Full Name *</span>
+                  <input className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" value={consultForm.name} onChange={(e) => setConsultForm((c) => ({ ...c, name: e.target.value }))} required />
+                </label>
+                <label className="space-y-2 block">
+                  <span className="text-sm font-medium">Email Address *</span>
+                  <input type="email" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" value={consultForm.email} onChange={(e) => setConsultForm((c) => ({ ...c, email: e.target.value }))} required />
+                </label>
+                <label className="space-y-2 block">
+                  <span className="text-sm font-medium">Phone Number *</span>
+                  <input type="tel" placeholder="+27 XX XXX XXXX" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" value={consultForm.phone} onChange={(e) => setConsultForm((c) => ({ ...c, phone: e.target.value }))} required />
+                </label>
+                {consultError && <p className="text-sm text-destructive" role="alert">{consultError}</p>}
+                <button type="submit" disabled={consultSubmitting} className="inline-flex items-center justify-center h-11 w-full rounded-full bg-primary text-primary-foreground text-sm font-medium disabled:pointer-events-none disabled:opacity-50">
+                  {consultSubmitting ? 'Sending...' : 'Request Consultation'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       )}
