@@ -1,30 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/videos/hydra-facial.mp4",
-      "destination": "https://www.skinnourishers.online-web.co.za/videos/hydra-facial.mp4"
-    },
-    {
-      "source": "/videos/treatment-d2.mp4",
-      "destination": "https://www.skinnourishers.online-web.co.za/videos/treatment-d2.mp4"
-    },
-    {
-      "source": "/videos/treatment-d3.mp4",
-      "destination": "https://www.skinnourishers.online-web.co.za/videos/treatment-d3.mp4"
-    },
-    {
-      "source": "/videos/treatment-d4.mp4",
-      "destination": "https://www.skinnourishers.online-web.co.za/videos/treatment-d4.mp4"
-    },
-    {
-      "source": "/videos/treatment-d5.mp4",
-      "destination": "https://www.skinnourishers.online-web.co.za/videos/treatment-d5.mp4"
-    },
-    {
-      "source": "/videos/acne-treatment.mp4",
-      "destination": "https://www.skinnourishers.online-web.co.za/videos/acne-treatment.mp4"
-    },
-    {
       "source": "/assets/products/acne-serum.jpg",
       "destination": "https://skinnourishers.lovable.app/assets/acne-serum-29RpSZke.jpg"
     },

@@ -31,8 +31,23 @@ export default function Pricing() {
                 {group.services.map((service) => (
                   <article
                     key={`${group.category}-${service.name}`}
-                    className="group bg-card rounded-2xl border border-border p-6 hover:border-primary/30 hover:shadow-lg transition-all"
+                    className="group bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all"
                   >
+                    {service.video && (
+                      <div className="relative aspect-video overflow-hidden bg-secondary/30">
+                        <video
+                          src={service.video}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          controlsList="nodownload"
+                          disablePictureInPicture
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
                     <div className="flex items-start justify-between gap-4 mb-4">
                       <h3 className="font-heading text-xl font-semibold leading-snug group-hover:text-primary transition-colors">
                         {service.name}
@@ -52,6 +67,7 @@ export default function Pricing() {
                     >
                       Book Now <ArrowRight className="h-4 w-4 ml-2" />
                     </Link>
+                    </div>
                   </article>
                 ))}
               </div>

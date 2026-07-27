@@ -439,7 +439,8 @@
         "name": "Spider Veins Per Area",
         "price": "R1,200",
         "priceValue": 1200,
-        "duration": "30min"
+        "duration": "30min",
+        "video": "/videos/spider-vein-removal.mp4"
       },
       {
         "name": "Dark Area Treatment Per Area",
@@ -451,7 +452,8 @@
         "name": "Skin Tag Removal",
         "price": "R800",
         "priceValue": 800,
-        "duration": "30min"
+        "duration": "30min",
+        "video": "/videos/skin-tag-removal.mp4"
       },
       {
         "name": "Keloid",

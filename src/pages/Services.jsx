@@ -6,12 +6,6 @@ import PageHero from '../components/PageHero';
 import treatments from '../data/treatments.json';
 import { Card } from '../components/ui';
 
-const missingVideos = new Set([
-  '/videos/acne-treatment.mp4','/videos/hydra-facial.mp4','/videos/treatment-d2.mp4',
-  '/videos/treatment-d3.mp4','/videos/treatment-d4.mp4','/videos/treatment-d5.mp4'
-]);
-const videoSrc = (src) => missingVideos.has(src) ? `https://www.skinnourishers.online-web.co.za${src}` : src;
-
 function CategoryNav({ active, onChange }) {
   return <div className="relative"><div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" /><div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" /><div className="overflow-x-auto scrollbar-hide py-2 -mx-4 px-4"><div className="flex gap-2 min-w-max">{treatments.map((item) => { const selected = active === item.id; return <button key={item.id} onClick={() => onChange(item.id)} className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${selected ? 'text-primary-foreground bg-gradient-to-r from-primary to-accent shadow-glow' : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'}`}>{item.category}</button>; })}</div></div></div>;
 }
@@ -21,7 +15,7 @@ function TreatmentDetail({ treatment }) {
   return <motion.div id={treatment.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: .5 }} viewport={{ once: true }} className="scroll-mt-32">
     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
       <div className="relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl group">
-        {treatment.video ? <video src={videoSrc(treatment.video)} className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline poster={treatment.image} /> : <img src={treatment.image} alt={treatment.category} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />}
+        {treatment.video ? <video src={treatment.video} className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline controlsList="nodownload" disablePictureInPicture poster={treatment.image} /> : <img src={treatment.image} alt={treatment.category} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" /><div className="absolute inset-0 border-2 border-primary/20 rounded-3xl" />
         {treatment.video && <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1.5"><Play className="w-3 h-3 text-white fill-white" /><span className="text-xs text-white font-medium">Treatment Video</span></div>}
         <div className="absolute bottom-4 left-4 right-4 flex gap-3"><div className="bg-black/60 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2"><Clock3 className="w-4 h-4 text-primary" /><span className="text-sm text-white">{treatment.duration}</span></div><div className="bg-black/60 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2"><Target className="w-4 h-4 text-primary" /><span className="text-sm text-white">{treatment.sessionsRecommended}</span></div></div>

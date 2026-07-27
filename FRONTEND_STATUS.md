@@ -33,18 +33,13 @@
 - 6 blog cards
 - 34 local asset paths referenced by captured bundle
 
-## Known external dependency
+## Treatment videos (resolved)
 
-The HAR recorded these six original MP4 paths but did not embed their binary response bodies:
+All 8 treatment-page videos are now real local files supplied directly by the site owner (`public/videos/`), replacing the earlier source-site proxy rewrites — the dev-server proxy in `vite.config.js` and the matching `vercel.json` rewrites have been removed since they're no longer needed:
 
-- `/videos/hydra-facial.mp4`
-- `/videos/treatment-d2.mp4`
-- `/videos/treatment-d3.mp4`
-- `/videos/treatment-d4.mp4`
-- `/videos/treatment-d5.mp4`
-- `/videos/acne-treatment.mp4`
+- `plasma-treatment.mp4`, `hydra-facial.mp4`, `hair-regrowth-therapy.mp4`, `ultraformer-therapy.mp4`, `laser-hair-removal.mp4`, `anti-aging-treatment.mp4`, `acne-treatment.mp4`, `cellulite-treatment.mp4`
 
-The frontend resolves them to the exact old source-of-truth host. No substitute video content is used.
+Two more owner-supplied videos cover services that only existed as pricing line items (no dedicated Services-page treatment group): `skin-tag-removal.mp4` and `spider-vein-removal.mp4`, shown inline on the Pricing page directly on their "Body Treatments" cards (`Skin Tag Removal`, `Spider Veins Per Area` in `src/data/pricing.json`). `skin-tag-removal.mp4` was re-encoded (53.8MB → 21MB, same visual quality) since it was a ~4:46 clip; both skin-tag and spider-vein videos also had their orientation baked into the pixel data (they carried a 90° rotation tag) for reliable cross-browser playback. All video elements are `autoplay muted loop playsInline` with no native controls, so nothing is downloadable.
 
 ## PayFast payment function (added)
 
