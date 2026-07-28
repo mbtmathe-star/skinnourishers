@@ -47,12 +47,16 @@ Two more owner-supplied videos cover services that only existed as pricing line 
 - `/api/payfast/notify` handles the ITN webhook: signature verification, source-IP verification against PayFast's published hosts, amount verification (recomputed independently, no DB needed), and PayFast's server-side `/eng/query/validate` confirmation.
 - Requires `PAYFAST_MERCHANT_ID`, `PAYFAST_MERCHANT_KEY`, `PAYFAST_PASSPHRASE`, `PAYFAST_MODE` (`sandbox`|`live`, defaults to `sandbox`) as Vercel environment variables.
 
+## Order persistence and confirmation emails (added)
+
+- Neon Postgres, provisioned via Vercel Marketplace (`vercel integration add neon`), connected to Production + Preview. `DATABASE_URL` etc. are auto-managed by the integration — nothing to set manually. Schema in `schema.sql` (already applied to production).
+- On a validated PayFast ITN, `/api/payfast/notify` now inserts a row into the `orders` table (`api/_db.js`, using `@neondatabase/serverless`) and sends two emails via Resend (`api/_email.js`, shared with `/api/inquiry`): one to the business with payment details, one to the customer confirming their deposit or order (with a Booksy link for bookings).
+- Both persistence and email are non-fatal and isolated from each other and from the PayFast-facing response: if Neon or Resend is down, the payment is still correctly acknowledged to PayFast (no false rejections/retries), and the failure is just logged.
+
 ## Deferred backend work
 
-- Supabase product loading and realtime updates
-- Order persistence (there is still no database — a validated PayFast payment is currently only recorded as a structured log line in Vercel function logs, not stored anywhere durable or emailed to the merchant)
-- Admin authentication and dashboards
-- Transactional email / server functions
+- Supabase product loading and realtime updates (the `/products` catalog itself is still static JSON, unrelated to the Neon `orders` table above)
+- Admin authentication and dashboards (no UI yet for browsing the `orders` table — direct DB/SQL access only)
 
 The booking and shop frontend does not falsely report payment success when backend processing is unavailable; the `/payment-success` page describes the payment as being processed rather than definitively confirmed, since only the asynchronous ITN webhook is authoritative.
 
