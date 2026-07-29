@@ -123,57 +123,19 @@ export default function Products() {
             <p className="text-muted-foreground">
               {loading ? 'Loading...' : `Showing all ${products.length} results`}
             </p>
-            <div className="relative">
-              <button
-                type="button"
-                aria-label="Open cart"
-                onClick={() => setCartOpen((open) => !open)}
-                className="relative inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-accent"
-              >
-                <ShoppingBag className="h-5 w-5" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[11px] font-semibold text-primary-foreground">
-                    {cartCount}
-                  </span>
-                )}
-              </button>
-
-              {cartOpen && (
-                <div className="absolute right-0 mt-2 w-80 max-w-[90vw] rounded-2xl border bg-card shadow-elegant z-30 p-4">
-                  <h4 className="font-heading text-lg font-medium mb-3">Your Cart</h4>
-                  {cartLines.length === 0 ? (
-                    <p className="text-sm text-muted-foreground py-4 text-center">Your cart is empty.</p>
-                  ) : (
-                    <>
-                      <div className="space-y-3 max-h-64 overflow-y-auto pr-1">
-                        {cartLines.map((line) => (
-                          <div key={line.id} className="flex items-center justify-between gap-2 text-sm">
-                            <div>
-                              <p className="font-medium">{line.product.name}</p>
-                              <p className="text-muted-foreground">{line.qty} x {line.product.price}</p>
-                            </div>
-                            <button type="button" aria-label={`Remove ${line.product.name}`} onClick={() => removeFromCart(line.id)} className="text-muted-foreground hover:text-destructive">
-                              <X className="h-4 w-4" />
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="border-t mt-3 pt-3 flex justify-between font-semibold">
-                        <span>Total</span>
-                        <span>R{cartTotal}</span>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => { setCartOpen(false); setCheckoutOpen(true); }}
-                        className="mt-3 inline-flex items-center justify-center h-10 w-full rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
-                      >
-                        Checkout with PayFast
-                      </button>
-                    </>
-                  )}
-                </div>
+            <button
+              type="button"
+              aria-label="Open cart"
+              onClick={() => setCartOpen((open) => !open)}
+              className="relative inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-accent"
+            >
+              <ShoppingBag className="h-5 w-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[11px] font-semibold text-primary-foreground">
+                  {cartCount}
+                </span>
               )}
-            </div>
+            </button>
           </div>
 
           {loading ? (
@@ -239,6 +201,49 @@ export default function Products() {
           </div>
         </div>
       </section>
+
+      {cartOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setCartOpen(false)}>
+          <div className="w-full max-w-md rounded-2xl bg-card shadow-elegant p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-heading text-xl font-medium">Your Cart</h3>
+              <button type="button" aria-label="Close" onClick={() => setCartOpen(false)} className="text-muted-foreground hover:text-foreground">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            {cartLines.length === 0 ? (
+              <p className="text-sm text-muted-foreground py-8 text-center">Your cart is empty.</p>
+            ) : (
+              <>
+                <div className="space-y-3 max-h-80 overflow-y-auto pr-1">
+                  {cartLines.map((line) => (
+                    <div key={line.id} className="flex items-center justify-between gap-2 text-sm">
+                      <div>
+                        <p className="font-medium">{line.product.name}</p>
+                        <p className="text-muted-foreground">{line.qty} x {line.product.price}</p>
+                      </div>
+                      <button type="button" aria-label={`Remove ${line.product.name}`} onClick={() => removeFromCart(line.id)} className="text-muted-foreground hover:text-destructive">
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t mt-3 pt-3 flex justify-between font-semibold">
+                  <span>Total</span>
+                  <span>R{cartTotal}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => { setCartOpen(false); setCheckoutOpen(true); }}
+                  className="mt-4 inline-flex items-center justify-center h-11 w-full rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
+                >
+                  Checkout with PayFast
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       {checkoutOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setCheckoutOpen(false)}>
