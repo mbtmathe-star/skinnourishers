@@ -10,19 +10,20 @@ import { buildEmailHtml, getResendConfig, sendEmail } from '../_email.js';
 import { insertOrder } from '../_db.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const pricing = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/pricing.json'), 'utf8'));
+const catalog = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/services-catalog.json'), 'utf8'));
 const products = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/products.json'), 'utf8'));
 
-const BOOKSY_URL = 'https://booksy.com/en-za/182283_skin-nourishers_skin-care_10725_johannesburg';
+const BOOKSY_URL = 'https://booksy.com/en-za/33005_skin-nourishers_skin-care_54460_sandton';
 
 // Recomputes the amount we expect to have been charged from the custom_str1/2
 // reference we set at checkout time, so ITN can be verified without a database.
 function expectedAmount(customStr1, customStr2) {
   if (customStr1 === 'booking') {
     const [category, service] = String(customStr2 || '').split('|');
-    const group = pricing.find((p) => p.category === category);
-    const match = group && group.services.find((s) => s.name === service);
-    return match ? Math.round(match.priceValue * 0.5) : null;
+    const group = catalog.find((p) => p.category === category);
+    const match = (group && group.services.find((s) => s.name === service))
+      || catalog.flatMap((c) => c.services).find((s) => s.name === service);
+    return match ? Math.round(match.price * 0.5) : null;
   }
   if (customStr1 === 'shop') {
     let total = 0;

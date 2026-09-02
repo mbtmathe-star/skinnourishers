@@ -113,20 +113,33 @@ export default function Pricing() {
                   <h2 className="font-heading text-2xl md:text-3xl font-light">{group.category}</h2>
                   <span className="text-xs uppercase tracking-wide text-muted-foreground">{group.services.length} treatments</span>
                 </div>
-                <div>
-                  {group.services.map((service) => {
-                    const key = `${group.category}::${service.name}`;
-                    return (
-                      <ServiceRow
-                        key={key}
-                        service={service}
-                        category={group.category}
-                        open={openKey === key}
-                        onToggle={() => setOpenKey(openKey === key ? null : key)}
-                      />
-                    );
-                  })}
-                </div>
+                {(group.tiers || [null]).map((tier) => {
+                  const rows = tier
+                    ? group.services.filter((s) => s.tier === tier)
+                    : group.services;
+                  if (rows.length === 0) return null;
+                  return (
+                    <div key={tier || 'all'} className={tier ? 'mt-6 first:mt-3' : ''}>
+                      {tier && (
+                        <h3 className="font-body text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1 mt-4">
+                          {tier}
+                        </h3>
+                      )}
+                      {rows.map((service) => {
+                        const key = `${group.category}::${service.name}`;
+                        return (
+                          <ServiceRow
+                            key={key}
+                            service={service}
+                            category={group.category}
+                            open={openKey === key}
+                            onToggle={() => setOpenKey(openKey === key ? null : key)}
+                          />
+                        );
+                      })}
+                    </div>
+                  );
+                })}
               </section>
             ))}
           </div>

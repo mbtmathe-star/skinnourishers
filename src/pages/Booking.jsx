@@ -8,16 +8,16 @@ import {
 import Layout from '../components/Layout';
 import PageHero from '../components/PageHero';
 import { Card, CardContent, CardHeader } from '../components/ui';
-import pricing from '../data/pricing.json';
+import catalog from '../data/services-catalog.json';
 import { startPayfastCheckout } from '../lib/payfast';
 
 function findService(name, category) {
-  const group = pricing.find((item) => item.category === category);
+  const group = catalog.find((item) => item.category === category);
   if (group) {
     const service = group.services.find((item) => item.name === name);
     if (service) return { ...service, category: group.category };
   }
-  for (const item of pricing) {
+  for (const item of catalog) {
     const service = item.services.find((entry) => entry.name === name);
     if (service) return { ...service, category: item.category };
   }
@@ -43,20 +43,20 @@ export default function Booking() {
     name: '', email: '', phone: '',
     category: categoryName || recovered?.category || '',
     service: serviceName,
-    price: recovered?.priceValue || rawPrice || 0,
+    price: recovered?.price || rawPrice || 0,
     duration: recovered?.duration || params.get('duration') || '',
     notes: '',
   });
 
-  const services = useMemo(() => pricing.find((item) => item.category === form.category)?.services || [], [form.category]);
-  const categories = useMemo(() => pricing.map((item) => item.category), []);
+  const services = useMemo(() => catalog.find((item) => item.category === form.category)?.services || [], [form.category]);
+  const categories = useMemo(() => catalog.map((item) => item.category), []);
   const deposit = form.price > 0 ? Math.round(form.price * 0.5) : 0;
 
   const update = (key, value) => setForm((current) => ({ ...current, [key]: value }));
   const changeCategory = (category) => setForm((current) => ({ ...current, category, service: '', price: 0, duration: '' }));
   const changeService = (name) => {
     const service = services.find((item) => item.name === name);
-    if (service) setForm((current) => ({ ...current, service: name, price: service.priceValue, duration: service.duration }));
+    if (service) setForm((current) => ({ ...current, service: name, price: service.price, duration: service.duration }));
   };
 
   const submit = async (event) => {
@@ -179,7 +179,7 @@ export default function Booking() {
                   <CardContent className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <label className="space-y-2"><span className="text-sm font-medium">Category *</span><select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" value={form.category} onChange={(e) => changeCategory(e.target.value)}><option value="">Select category</option>{categories.map((category) => <option key={category} value={category}>{category}</option>)}</select></label>
-                      <label className="space-y-2"><span className="text-sm font-medium">Service *</span><select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" value={form.service} onChange={(e) => changeService(e.target.value)} disabled={!form.category}><option value="">Select service</option>{services.map((service) => <option key={service.name} value={service.name}>{service.name} - R{service.priceValue}</option>)}</select></label>
+                      <label className="space-y-2"><span className="text-sm font-medium">Service *</span><select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" value={form.service} onChange={(e) => changeService(e.target.value)} disabled={!form.category}><option value="">Select service</option>{services.map((service) => <option key={service.name} value={service.name}>{service.name} - R{service.price}</option>)}</select></label>
                     </div>
                     {form.service && <div className="p-4 bg-primary/5 rounded-lg border border-primary/20"><div className="flex justify-between items-center"><div><p className="font-medium">{form.service}</p><p className="text-sm text-muted-foreground flex items-center gap-1"><Clock className="h-3 w-3" /> {form.duration}</p></div><div className="text-right"><p className="text-lg font-bold text-primary">R{form.price}</p><p className="text-xs text-muted-foreground">50% deposit: R{deposit}</p></div></div></div>}
                     <label className="space-y-2 block"><span className="text-sm font-medium">Additional Notes (Optional)</span><textarea className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm" placeholder="Any skin concerns, allergies, or special requests..." value={form.notes} onChange={(e) => update('notes', e.target.value)} rows={3} /></label>

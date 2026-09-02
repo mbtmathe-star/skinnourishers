@@ -5,12 +5,20 @@ import path from 'path';
 import { getConfig, generateSignature, buildAbsoluteUrl } from '../_payfast.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const pricing = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/pricing.json'), 'utf8'));
+const catalog = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/services-catalog.json'), 'utf8'));
 const products = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/products.json'), 'utf8'));
 
 function findService(category, service) {
-  const group = pricing.find((item) => item.category === category);
-  return group ? group.services.find((item) => item.name === service) : null;
+  const group = catalog.find((item) => item.category === category);
+  if (group) {
+    const match = group.services.find((item) => item.name === service);
+    if (match) return match;
+  }
+  for (const item of catalog) {
+    const match = item.services.find((entry) => entry.name === service);
+    if (match) return match;
+  }
+  return null;
 }
 
 function splitName(fullName) {
@@ -24,7 +32,7 @@ function buildBookingOrder(body) {
   const { category, service } = body;
   const match = findService(category, service);
   if (!match) throw Object.assign(new Error('Unknown service or category'), { status: 400 });
-  const deposit = Math.round(match.priceValue * 0.5);
+  const deposit = Math.round(match.price * 0.5);
   return {
     amount: deposit,
     itemName: `Deposit - ${service}`.slice(0, 100),
