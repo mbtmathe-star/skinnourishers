@@ -43,10 +43,15 @@ function BookingModal({ seed, onClose }) {
     };
   }, [onClose]);
 
+  const usingOptions = Array.isArray(seed.options) && seed.options.length > 0;
+
   const categories = useMemo(() => catalog.map((c) => c.category), []);
-  const group = useMemo(() => catalog.find((c) => c.category === form.category) || null, [form.category]);
-  const services = group ? group.services : [];
-  const selected = services.find((s) => s.name === form.service) || null;
+  const group = useMemo(
+    () => (usingOptions ? null : catalog.find((c) => c.category === form.category) || null),
+    [form.category, usingOptions],
+  );
+  const options = usingOptions ? seed.options : (group ? group.services : []);
+  const selected = options.find((s) => s.name === form.service) || null;
 
   const price = selected ? selected.price : 0;
   const deposit = price > 0 ? Math.round(price * 0.5) : 0;
@@ -114,36 +119,38 @@ function BookingModal({ seed, onClose }) {
 
         <form onSubmit={submit} className="px-6 py-5 space-y-5">
           <div className="grid gap-3">
-            <label className="space-y-1.5">
-              <span className="text-sm font-medium">Category</span>
-              <select
-                className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
-                value={form.category}
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <option value="">Select a category</option>
-                {categories.map((c) => <option key={c} value={c}>{c}</option>)}
-              </select>
-            </label>
+            {!usingOptions && (
+              <label className="space-y-1.5">
+                <span className="text-sm font-medium">Category</span>
+                <select
+                  className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+                  value={form.category}
+                  onChange={(e) => setCategory(e.target.value)}
+                >
+                  <option value="">Select a category</option>
+                  {categories.map((c) => <option key={c} value={c}>{c}</option>)}
+                </select>
+              </label>
+            )}
 
             <label className="space-y-1.5">
-              <span className="text-sm font-medium">Treatment</span>
+              <span className="text-sm font-medium">{usingOptions ? 'Treatment area' : 'Treatment'}</span>
               <select
                 className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm disabled:opacity-50"
                 value={form.service}
                 onChange={(e) => set('service', e.target.value)}
-                disabled={!group}
+                disabled={!usingOptions && !group}
               >
-                <option value="">Select a treatment</option>
+                <option value="">Select {usingOptions ? 'an area' : 'a treatment'}</option>
                 {group && group.tiers
                   ? group.tiers.map((tier) => (
                       <optgroup key={tier} label={tier}>
-                        {services.filter((s) => s.tier === tier).map((s) => (
+                        {options.filter((s) => s.tier === tier).map((s) => (
                           <option key={s.name} value={s.name}>{s.name} — {rand(s.price)}</option>
                         ))}
                       </optgroup>
                     ))
-                  : services.map((s) => (
+                  : options.map((s) => (
                       <option key={s.name} value={s.name}>{s.name} — {rand(s.price)}</option>
                     ))}
               </select>

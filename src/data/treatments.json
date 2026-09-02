@@ -49,59 +49,73 @@
     "pricing": [
       {
         "area": "Hooded Eyes",
-        "singleSession": "R3,500"
+        "singleSession": "R1 750",
+        "price": 1750
       },
       {
         "area": "Brow Lift",
-        "singleSession": "R2,500"
+        "singleSession": "R1 250",
+        "price": 1250
       },
       {
         "area": "Crows Feet",
-        "singleSession": "R2,500"
+        "singleSession": "R1 250",
+        "price": 1250
       },
       {
         "area": "Forehead",
-        "singleSession": "R4,000"
+        "singleSession": "R2 000",
+        "price": 2000
       },
       {
         "area": "Frown Lines",
-        "singleSession": "R2,000"
+        "singleSession": "R1 000",
+        "price": 1000
       },
       {
         "area": "Jaw Line",
-        "singleSession": "R3,500"
+        "singleSession": "R1 750",
+        "price": 1750
       },
       {
         "area": "Turkey Neck",
-        "singleSession": "R3,500"
+        "singleSession": "R1 750",
+        "price": 1750
       },
       {
         "area": "Neck & Chin",
-        "singleSession": "R4,000"
+        "singleSession": "R2 000",
+        "price": 2000
       },
       {
         "area": "Above Lip & 2 Rows",
-        "singleSession": "R2,500"
+        "singleSession": "R1 250",
+        "price": 1250
       },
       {
         "area": "Smokers' Lines",
-        "singleSession": "R2,500"
+        "singleSession": "R1 250",
+        "price": 1250
       },
       {
         "area": "Under Eye Bag",
-        "singleSession": "R3,000"
+        "singleSession": "R1 500",
+        "price": 1500
       },
       {
         "area": "Nasal Labia",
-        "singleSession": "R1,500"
+        "singleSession": "R750",
+        "price": 750
       },
       {
         "area": "Ear Fold",
-        "singleSession": "R1,500"
+        "singleSession": "R750",
+        "price": 750
       },
       {
         "area": "Cherry Naevoma",
-        "singleSession": "R800"
+        "singleSession": "R400",
+        "price": 400
       }
     ],
     "duration": "45-90 min",
@@ -190,23 +204,28 @@
     "pricing": [
       {
         "area": "Oxygen Therapy Facial",
-        "singleSession": "R1,500"
+        "singleSession": "R750",
+        "price": 750
       },
       {
         "area": "Signature Facial",
-        "singleSession": "R850"
+        "singleSession": "R750",
+        "price": 750
       },
       {
         "area": "Basic Facial",
-        "singleSession": "R550"
+        "singleSession": "R425",
+        "price": 425
       },
       {
         "area": "Add-on: LED Therapy",
-        "singleSession": "R400"
+        "singleSession": "R200",
+        "price": 200
       },
       {
         "area": "Add-on: Lymphatic Drainage",
-        "singleSession": "R1,200"
+        "singleSession": "R1 250",
+        "price": 1250
       }
     ],
     "duration": "30-60 min",
@@ -304,7 +323,8 @@
     "pricing": [
       {
         "area": "Single Treatment",
-        "singleSession": "R3,500"
+        "singleSession": "R1 750",
+        "price": 1750
       }
     ],
     "duration": "45-60 min",
@@ -379,15 +399,18 @@
     "pricing": [
       {
         "area": "Full Face",
-        "singleSession": "R4,000"
+        "singleSession": "R2 000",
+        "price": 2000
       },
       {
         "area": "Neck Lift",
-        "singleSession": "R2,000"
+        "singleSession": "R1 000",
+        "price": 1000
       },
       {
         "area": "Double Chin",
-        "singleSession": "R1,500"
+        "singleSession": "R750",
+        "price": 750
       }
     ],
     "duration": "45-90 min",
@@ -466,51 +489,63 @@
     "pricing": [
       {
         "area": "Lip",
-        "singleSession": "R250"
+        "singleSession": "R240",
+        "price": 240
       },
       {
         "area": "Chin",
-        "singleSession": "R300"
+        "singleSession": "R240",
+        "price": 240
       },
       {
         "area": "Full Face",
-        "singleSession": "R1,000"
+        "singleSession": "R500",
+        "price": 500
       },
       {
         "area": "Underarms",
-        "singleSession": "R420"
+        "singleSession": "R210",
+        "price": 210
       },
       {
         "area": "Bikini Line",
-        "singleSession": "R550"
+        "singleSession": "R325",
+        "price": 325
       },
       {
         "area": "Brazilian",
-        "singleSession": "R850"
+        "singleSession": "R425",
+        "price": 425
       },
       {
         "area": "Hollywood",
-        "singleSession": "R950"
+        "singleSession": "R475",
+        "price": 475
       },
       {
         "area": "Half Arm",
-        "singleSession": "R800"
+        "singleSession": "R400",
+        "price": 400
       },
       {
         "area": "Full Arms",
-        "singleSession": "R1,200"
+        "singleSession": "R600",
+        "price": 600
       },
       {
         "area": "Half Leg",
-        "singleSession": "R900"
+        "singleSession": "R450",
+        "price": 450
       },
       {
         "area": "Full Legs",
-        "singleSession": "R1,350"
+        "singleSession": "R675",
+        "price": 675
       },
       {
         "area": "Full Back",
-        "singleSession": "R1,500"
+        "singleSession": "R750",
+        "price": 750
       }
     ],
     "duration": "15-90 min",
@@ -589,27 +624,33 @@
     "pricing": [
       {
         "area": "Rejuvenating Cell Renewal",
-        "singleSession": "R1,800"
+        "singleSession": "R900",
+        "price": 900
       },
       {
         "area": "Prevention and Restore",
-        "singleSession": "R1,800"
+        "singleSession": "R900",
+        "price": 900
       },
       {
         "area": "Advanced Repair and Restore",
-        "singleSession": "R2,200"
+        "singleSession": "R1 100",
+        "price": 1100
       },
       {
         "area": "RF Anti-Wrinkle",
-        "singleSession": "R1,350"
+        "singleSession": "R675",
+        "price": 675
       },
       {
         "area": "Plumping and Tightening",
-        "singleSession": "R3,500"
+        "singleSession": "R1 750",
+        "price": 1750
       },
       {
         "area": "Lifting Full Face + Neck",
-        "singleSession": "R3,500"
+        "singleSession": "R1 750",
+        "price": 1750
       }
     ],
     "duration": "60-90 min",
@@ -690,19 +731,23 @@
     "pricing": [
       {
         "area": "Acne Treatment",
-        "singleSession": "R1,600"
+        "singleSession": "R800",
+        "price": 800
       },
       {
         "area": "LED Red Light Therapy",
-        "singleSession": "R400"
+        "singleSession": "R200",
+        "price": 200
       },
       {
         "area": "Microneedling",
-        "singleSession": "R1,850"
+        "singleSession": "R925",
+        "price": 925
       },
       {
         "area": "Derma Peel - Microneedle",
-        "singleSession": "R2,500"
+        "singleSession": "R1 250",
+        "price": 1250
       }
     ],
     "duration": "45-60 min",
@@ -791,15 +836,18 @@
     "pricing": [
       {
         "area": "Cellulite Treatment",
-        "singleSession": "R1,000"
+        "singleSession": "R500",
+        "price": 500
       },
       {
         "area": "Body Skin Tightening Per Area",
-        "singleSession": "R2,100"
+        "singleSession": "R1 050",
+        "price": 1050
       },
       {
         "area": "Saggy Upper Arms",
-        "singleSession": "R1,800"
+        "singleSession": "R900",
+        "price": 900
       }
     ],
     "duration": "45-60 min",

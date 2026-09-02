@@ -6,6 +6,7 @@ import { getConfig, generateSignature, buildAbsoluteUrl } from '../_payfast.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const catalog = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/services-catalog.json'), 'utf8'));
+const treatments = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/treatments.json'), 'utf8'));
 const products = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/products.json'), 'utf8'));
 
 function findService(category, service) {
@@ -17,6 +18,12 @@ function findService(category, service) {
   for (const item of catalog) {
     const match = item.services.find((entry) => entry.name === service);
     if (match) return match;
+  }
+  // Detailed treatment pages book by treatment area (e.g. Plasma Treatment / Forehead).
+  const treatment = treatments.find((t) => t.category === category);
+  if (treatment) {
+    const area = (treatment.pricing || []).find((p) => p.area === service);
+    if (area && typeof area.price === 'number') return area;
   }
   return null;
 }

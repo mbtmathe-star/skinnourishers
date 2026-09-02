@@ -11,6 +11,7 @@ import { insertOrder } from '../_db.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const catalog = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/services-catalog.json'), 'utf8'));
+const treatments = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/treatments.json'), 'utf8'));
 const products = JSON.parse(readFileSync(path.join(__dirname, '../../src/data/products.json'), 'utf8'));
 
 const BOOKSY_URL = 'https://booksy.com/en-za/33005_skin-nourishers_skin-care_54460_sandton';
@@ -21,9 +22,11 @@ function expectedAmount(customStr1, customStr2) {
   if (customStr1 === 'booking') {
     const [category, service] = String(customStr2 || '').split('|');
     const group = catalog.find((p) => p.category === category);
+    const treatment = treatments.find((t) => t.category === category);
     const match = (group && group.services.find((s) => s.name === service))
-      || catalog.flatMap((c) => c.services).find((s) => s.name === service);
-    return match ? Math.round(match.price * 0.5) : null;
+      || catalog.flatMap((c) => c.services).find((s) => s.name === service)
+      || (treatment && (treatment.pricing || []).find((p) => p.area === service));
+    return match && typeof match.price === 'number' ? Math.round(match.price * 0.5) : null;
   }
   if (customStr1 === 'shop') {
     let total = 0;
