@@ -143,7 +143,7 @@ export default function Booking() {
                   <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
                   <div>
                     <h4 className="font-heading font-semibold text-lg mb-1">First-Time Customer?</h4>
-                    <p className="text-muted-foreground text-sm">Welcome! As a new client, you’ll enjoy <strong className="text-primary">20% off</strong> your first treatment. Simply select your service below, pay the deposit, and mention “First Visit” when booking on Booksy. We can’t wait to meet you!</p>
+                    <p className="text-muted-foreground text-sm">Welcome! As a new client, you’ll enjoy <strong className="text-primary">35% off</strong> your first treatment. Simply select your service below, pay the deposit, and mention “First Visit” when booking on Booksy. We can’t wait to meet you! <span className="block mt-1 text-xs">First visit only, first treatment only. Discount applies to a single treatment on your first appointment and cannot be combined with other offers.</span></p>
                   </div>
                 </div>
               </CardContent>

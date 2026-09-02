@@ -1,78 +1,135 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight, Clock, Search, ChevronDown } from 'lucide-react';
 import Layout from '../components/Layout';
 import PageHero from '../components/PageHero';
-import pricing from '../data/pricing.json';
+import catalog from '../data/services-catalog.json';
+
+const FIRST_VISIT_RATE = 0.65; // 35% off first treatment
+
+const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+const firstVisitPrice = (n) => Math.round((n * FIRST_VISIT_RATE) / 5) * 5;
+
+function ServiceRow({ service, category, open, onToggle }) {
+  const discounted = firstVisitPrice(service.price);
+  return (
+    <div className="border-b border-border/60 last:border-b-0">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="w-full flex items-center gap-4 py-4 text-left hover:bg-muted/40 transition-colors px-2 -mx-2 rounded-lg"
+        aria-expanded={open}
+      >
+        <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`} />
+        <span className="flex-1 font-body text-foreground">{service.name}</span>
+        <span className="flex items-baseline gap-2 whitespace-nowrap">
+          <span className="text-sm text-muted-foreground line-through">{rand(service.price)}</span>
+          <span className="font-semibold text-primary">{rand(discounted)}</span>
+          <span className="hidden sm:inline text-[10px] font-semibold uppercase tracking-wide bg-accent/15 text-accent-foreground/90 rounded-full px-2 py-0.5">−35%</span>
+        </span>
+      </button>
+      {open && (
+        <div className="px-8 pb-5 pt-1 space-y-3">
+          <p className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Clock className="h-4 w-4" /> {service.duration}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Standard price <span className="text-foreground">{rand(service.price)}</span>.
+            First-visit price <span className="text-foreground font-medium">{rand(discounted)}</span> —
+            35% off applies to your first treatment only (first visit, one treatment, not combined with other offers).
+          </p>
+          <Link
+            to={`/booking?service=${encodeURIComponent(service.name)}&price=${encodeURIComponent(service.price)}&category=${encodeURIComponent(category)}&duration=${encodeURIComponent(service.duration || '')}`}
+            className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            Book this treatment <ArrowRight className="h-4 w-4 ml-2" />
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Pricing() {
+  const [query, setQuery] = useState('');
+  const [openKey, setOpenKey] = useState(null);
+
+  const q = query.trim().toLowerCase();
+  const groups = useMemo(() => {
+    if (!q) return catalog;
+    return catalog
+      .map((group) => ({
+        ...group,
+        services: group.services.filter(
+          (s) => s.name.toLowerCase().includes(q) || group.category.toLowerCase().includes(q),
+        ),
+      }))
+      .filter((group) => group.services.length > 0);
+  }, [q]);
+
+  const total = catalog.reduce((n, g) => n + g.services.length, 0);
+
   return (
     <Layout>
       <PageHero
         tagline="Pricing"
-        title="Our Price"
-        titleHighlight="List"
-        subtitle="Transparent pricing for all our premium treatments"
-        secondaryButtonText="View Services"
+        title="Treatment"
+        titleHighlight="Menu"
+        subtitle={`Every treatment we offer — ${total} in total — with your first-visit price shown on each.`}
+        secondaryButtonText="Treatment Details"
         secondaryButtonLink="/services"
         imageIndex={4}
       />
 
-      <section className="py-16 lg:py-24">
-        <div className="container space-y-16">
-          {pricing.map((group) => (
-            <section key={group.category}>
-              <div className="text-center mb-8">
-                <h2 className="font-heading text-3xl md:text-4xl font-light">
-                  {group.category}
-                </h2>
-              </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {group.services.map((service) => (
-                  <article
-                    key={`${group.category}-${service.name}`}
-                    className="group bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all"
-                  >
-                    {service.video && (
-                      <div className="relative aspect-video overflow-hidden bg-secondary/30">
-                        <video
-                          src={service.video}
-                          className="absolute inset-0 w-full h-full object-cover"
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          controlsList="nodownload"
-                          disablePictureInPicture
-                        />
-                      </div>
-                    )}
-                    <div className="p-6">
-                    <div className="flex items-start justify-between gap-4 mb-4">
-                      <h3 className="font-heading text-xl font-semibold leading-snug group-hover:text-primary transition-colors">
-                        {service.name}
-                      </h3>
-                      <span className="text-primary font-bold text-xl whitespace-nowrap">
-                        {service.price}
-                      </span>
-                    </div>
-                    {service.duration && (
-                      <p className="flex items-center gap-2 text-sm text-muted-foreground mb-5">
-                        <Clock className="h-4 w-4" /> {service.duration}
-                      </p>
-                    )}
-                    <Link
-                      to={`/booking?service=${encodeURIComponent(service.name)}&price=${encodeURIComponent(service.priceValue ?? 0)}&category=${encodeURIComponent(group.category)}&duration=${encodeURIComponent(service.duration || '')}`}
-                      className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                    >
-                      Book Now <ArrowRight className="h-4 w-4 ml-2" />
-                    </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-          ))}
+      <section className="py-12 lg:py-16">
+        <div className="container max-w-4xl">
+          <div className="mb-8 rounded-2xl border border-accent/40 bg-accent/10 px-5 py-4">
+            <p className="font-body text-sm text-foreground">
+              <span className="font-semibold">New client?</span> Your first treatment is <span className="font-semibold">35% off</span>.
+              The price beside each treatment below is the first-visit price; the standard price is shown struck through.
+              First visit, first treatment only.
+            </p>
+          </div>
+
+          <div className="relative mb-10">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search treatments — e.g. brazilian, pigmentation, HIFU, laser"
+              className="w-full rounded-full border border-border bg-card pl-11 pr-4 py-3 text-sm font-body outline-none focus:border-primary/50"
+            />
+          </div>
+
+          {groups.length === 0 && (
+            <p className="text-center text-muted-foreground py-12">No treatments match “{query}”.</p>
+          )}
+
+          <div className="space-y-12">
+            {groups.map((group) => (
+              <section key={group.category}>
+                <div className="flex items-baseline justify-between mb-2 border-b-2 border-primary/20 pb-2">
+                  <h2 className="font-heading text-2xl md:text-3xl font-light">{group.category}</h2>
+                  <span className="text-xs uppercase tracking-wide text-muted-foreground">{group.services.length} treatments</span>
+                </div>
+                <div>
+                  {group.services.map((service) => {
+                    const key = `${group.category}::${service.name}`;
+                    return (
+                      <ServiceRow
+                        key={key}
+                        service={service}
+                        category={group.category}
+                        open={openKey === key}
+                        onToggle={() => setOpenKey(openKey === key ? null : key)}
+                      />
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -80,7 +137,7 @@ export default function Pricing() {
         <div className="container text-center">
           <div className="max-w-3xl mx-auto p-8 bg-secondary/30 rounded-2xl">
             <p className="text-muted-foreground mb-6">
-              All prices are subject to change. A consultation may be required before certain treatments.
+              Prices match our Booksy booking system and may change. A consultation is required before certain treatments.
             </p>
             <Link
               to="/booking"
