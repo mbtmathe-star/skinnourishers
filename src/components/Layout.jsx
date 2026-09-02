@@ -6,6 +6,7 @@ import {
   ShoppingBag, Volume2, VolumeX, X
 } from 'lucide-react';
 import { Button } from './ui';
+import { useBooking } from './BookingModal';
 
 const navigation = [
   { name: 'Home', path: '/' },
@@ -30,6 +31,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { openBooking } = useBooking();
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
@@ -64,9 +66,9 @@ export function Header() {
               <Phone className="w-4 h-4" /><span className="font-body">+27 78 821 0150</span>
             </a>
             <CartButton />
-            <Link to="/booking" className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full px-6 h-10 text-xs uppercase tracking-widest font-body font-semibold">
+            <button type="button" onClick={() => openBooking({})} className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full px-6 h-10 text-xs uppercase tracking-widest font-body font-semibold">
               Book Now
-            </Link>
+            </button>
           </div>
 
           <div className="xl:hidden flex items-center gap-3">
@@ -87,7 +89,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="mt-4 pt-4 border-t border-white/10">
-                <Link to="/booking" className="w-full h-10 inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full font-body font-semibold">Book Appointment</Link>
+                <button type="button" onClick={() => { setOpen(false); openBooking({}); }} className="w-full h-10 inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full font-body font-semibold">Book Appointment</button>
               </div>
             </nav>
           </motion.div>

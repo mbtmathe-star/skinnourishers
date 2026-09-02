@@ -4,6 +4,7 @@ import { ArrowRight, Clock, Search, ChevronDown } from 'lucide-react';
 import Layout from '../components/Layout';
 import PageHero from '../components/PageHero';
 import catalog from '../data/services-catalog.json';
+import { useBooking } from '../components/BookingModal';
 
 const FIRST_VISIT_RATE = 0.65; // 35% off first treatment
 
@@ -11,6 +12,7 @@ const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))
 const firstVisitPrice = (n) => Math.round((n * FIRST_VISIT_RATE) / 5) * 5;
 
 function ServiceRow({ service, category, open, onToggle }) {
+  const { openBooking } = useBooking();
   const discounted = firstVisitPrice(service.price);
   return (
     <div className="border-b border-border/60 last:border-b-0">
@@ -38,12 +40,13 @@ function ServiceRow({ service, category, open, onToggle }) {
             First-visit price <span className="text-foreground font-medium">{rand(discounted)}</span> —
             35% off applies to your first treatment only (first visit, one treatment, not combined with other offers).
           </p>
-          <Link
-            to={`/booking?service=${encodeURIComponent(service.name)}&price=${encodeURIComponent(service.price)}&category=${encodeURIComponent(category)}&duration=${encodeURIComponent(service.duration || '')}`}
+          <button
+            type="button"
+            onClick={() => openBooking({ category, service: service.name, title: service.name })}
             className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
           >
             Book this treatment <ArrowRight className="h-4 w-4 ml-2" />
-          </Link>
+          </button>
         </div>
       )}
     </div>
