@@ -32,6 +32,7 @@ function ServiceRow({ service, category, open, onToggle }) {
       </button>
       {open && (
         <div className="px-8 pb-5 pt-1 space-y-3">
+          {service.desc && <p className="text-sm text-foreground/90 leading-relaxed">{service.desc}</p>}
           <p className="flex items-center gap-2 text-sm text-muted-foreground">
             <Clock className="h-4 w-4" /> {service.duration}
           </p>
