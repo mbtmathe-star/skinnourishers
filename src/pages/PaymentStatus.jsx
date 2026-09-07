@@ -5,7 +5,7 @@ import { ArrowRight, CalendarDays, CheckCircle2, Mail, Phone, XCircle } from 'lu
 import Layout from '../components/Layout';
 import { Card, CardContent } from '../components/ui';
 
-const BOOKSY_URL = 'https://booksy.com/en-za/182283_skin-nourishers_skin-care_10725_johannesburg';
+const BOOKSY_URL = 'https://booksy.com/en-za/33005_skin-nourishers_skin-care_54460_sandton';
 
 export function PaymentSuccess() {
   const [params] = useSearchParams();

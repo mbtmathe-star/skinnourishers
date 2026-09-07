@@ -107,7 +107,7 @@ export default function Products() {
     <Layout>
       <section className="pt-32 pb-12 bg-gradient-to-b from-secondary/50 to-transparent">
         <div className="container text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">Shop</span>
+          <span className="inline-flex items-center gap-3 text-[11px] font-body uppercase tracking-[0.24em] text-primary mb-4"><span className="h-px w-8 bg-primary/40" />Shop</span>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-4">
             Our <span className="text-primary italic">Products</span>
           </h1>

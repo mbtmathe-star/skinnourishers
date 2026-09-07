@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Booking from './pages/Booking';
 import { PaymentCancelled, PaymentSuccess } from './pages/PaymentStatus';
 import NotFound from './pages/NotFound';
+import { BookingProvider } from './components/BookingModal';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <BookingProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -38,6 +40,7 @@ export default function App() {
         <Route path="/payment-cancelled" element={<PaymentCancelled />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </BookingProvider>
     </BrowserRouter>
   );
 }

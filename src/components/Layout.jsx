@@ -6,6 +6,7 @@ import {
   ShoppingBag, Volume2, VolumeX, X
 } from 'lucide-react';
 import { Button } from './ui';
+import { useBooking } from './BookingModal';
 
 const navigation = [
   { name: 'Home', path: '/' },
@@ -30,6 +31,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { openBooking } = useBooking();
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
@@ -60,13 +62,13 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-5">
-            <a href="tel:+27783003706" className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm">
-              <Phone className="w-4 h-4" /><span className="font-body">+27 78 300 3706</span>
+            <a href="tel:+27788210150" className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm">
+              <Phone className="w-4 h-4" /><span className="font-body">+27 78 821 0150</span>
             </a>
             <CartButton />
-            <Link to="/booking" className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full px-6 h-10 text-xs uppercase tracking-widest font-body font-semibold">
+            <button type="button" onClick={() => openBooking({})} className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full px-6 h-10 text-xs uppercase tracking-widest font-body font-semibold">
               Book Now
-            </Link>
+            </button>
           </div>
 
           <div className="xl:hidden flex items-center gap-3">
@@ -87,7 +89,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="mt-4 pt-4 border-t border-white/10">
-                <Link to="/booking" className="w-full h-10 inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full font-body font-semibold">Book Appointment</Link>
+                <button type="button" onClick={() => { setOpen(false); openBooking({}); }} className="w-full h-10 inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full font-body font-semibold">Book Appointment</button>
               </div>
             </nav>
           </motion.div>
@@ -127,7 +129,7 @@ export function Footer() {
             <h4 className="text-xs uppercase tracking-wide-elegant text-primary mb-6 font-body">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3"><MapPin className="h-4 w-4 text-primary flex-shrink-0 mt-1" /><span className="text-background/50 text-sm font-body">100 South Road, Morning View<br />Shopping Centre, Sandton, 2191</span></li>
-              <li><a href="tel:+27783003706" className="flex items-center gap-3 text-background/50 hover:text-primary transition-colors text-sm font-body"><Phone className="h-4 w-4 text-primary flex-shrink-0" />+27 78 300 3706</a></li>
+              <li><a href="tel:+27788210150" className="flex items-center gap-3 text-background/50 hover:text-primary transition-colors text-sm font-body"><Phone className="h-4 w-4 text-primary flex-shrink-0" />+27 78 821 0150</a></li>
               <li><a href="mailto:info@skinnourishers.co.za" className="flex items-center gap-3 text-background/50 hover:text-primary transition-colors text-sm font-body"><Mail className="h-4 w-4 text-primary flex-shrink-0" />info@skinnourishers.co.za</a></li>
             </ul>
           </div>
@@ -144,7 +146,7 @@ export function Footer() {
 }
 
 function FloatingWhatsApp() {
-  const href = `https://wa.me/27783003706?text=${encodeURIComponent("Hi! I'd like to book an appointment at Skin Nourishers.")}`;
+  const href = `https://wa.me/27788210150?text=${encodeURIComponent("Hi! I'd like to book an appointment at Skin Nourishers.")}`;
   return <motion.a href={href} target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow group" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 1, type: 'spring', stiffness: 200 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: .95 }}><MessageCircle className="h-6 w-6 fill-white" /><span className="font-medium hidden sm:inline">Chat with us</span><span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25" /></motion.a>;
 }
 
