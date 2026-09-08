@@ -4,13 +4,20 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CalendarDays, CheckCircle2, Mail, Phone, XCircle } from 'lucide-react';
 import Layout from '../components/Layout';
 import { Card, CardContent } from '../components/ui';
-
-const BOOKSY_URL = 'https://booksy.com/en-za/33005_skin-nourishers_skin-care_54460_sandton';
+import { booksyLinkFor } from '../lib/booksy';
 
 export function PaymentSuccess() {
   const [params] = useSearchParams();
   const booking = params.get('type') === 'booking' || !params.get('type');
   useEffect(() => { window.localStorage.removeItem('cart'); }, []);
+
+  let bookedService = params.get('service') || '';
+  if (!bookedService) {
+    try {
+      bookedService = JSON.parse(window.sessionStorage.getItem('skin-nourishers-booking-draft') || '{}').service || '';
+    } catch { bookedService = ''; }
+  }
+  const BOOKSY_URL = booksyLinkFor(bookedService);
 
   if (!booking) {
     return <Layout><section className="py-24 lg:py-32"><div className="container max-w-lg text-center"><div className="mb-8"><CheckCircle2 className="h-24 w-24 text-green-500 mx-auto" /></div><h1 className="font-heading text-3xl md:text-4xl font-semibold mb-4">Payment Successful!</h1><p className="text-muted-foreground mb-8">Thank you for your purchase. Your order has been received and is being processed. You will receive a confirmation email shortly.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link to="/products" className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground">Continue Shopping</Link><Link to="/" className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md border border-input bg-background">Back to Home</Link></div></div></section></Layout>;

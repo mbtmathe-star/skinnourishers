@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
-import Layout from '../components/Layout';
+import Layout, { useWhatsAppTopic } from '../components/Layout';
 import PageHero from '../components/PageHero';
 import treatments from '../data/treatments.json';
 import { Card } from '../components/ui';
 import { useBooking } from '../components/BookingModal';
+import { useInquiry } from '../components/InquiryModal';
 
 const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 const firstVisit = (n) => Math.round((n * 0.65) / 5) * 5;
@@ -24,11 +25,14 @@ function CategoryNav({ active, onChange }) {
 function TreatmentDetail({ treatment }) {
   const [openFaq, setOpenFaq] = useState(null);
   const { openBooking } = useBooking();
+  const { openInquiry } = useInquiry();
+  useWhatsAppTopic(treatment.category);
   const bookThis = () => openBooking({
     category: treatment.category,
     title: treatment.category,
     options: bookingOptions(treatment),
   });
+  const askThis = () => openInquiry({ treatment: treatment.category });
   const hasPackages = treatment.pricing.some((p) => p.package);
 
   return <motion.div id={treatment.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: .5 }} viewport={{ once: true }} className="scroll-mt-32">
@@ -38,7 +42,7 @@ function TreatmentDetail({ treatment }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" /><div className="absolute inset-0 border-2 border-primary/20 rounded-3xl" />
         <div className="absolute bottom-4 left-4 right-4 flex gap-3"><div className="bg-black/60 backdrop-blur-sm rounded-xl px-4 py-2"><span className="text-sm text-white">{treatment.duration}</span></div><div className="bg-black/60 backdrop-blur-sm rounded-xl px-4 py-2"><span className="text-sm text-white">{treatment.sessionsRecommended}</span></div></div>
       </div>
-      <div className="flex flex-col justify-center"><span className="inline-flex items-center gap-3 text-[11px] font-body uppercase tracking-[0.24em] text-primary mb-3"><span className="h-px w-8 bg-primary/40" />In detail</span><h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold mb-3"><span className="text-gradient">{treatment.category}</span></h2><p className="text-lg text-foreground font-medium mb-3">{treatment.tagline}</p><p className="text-muted-foreground text-base leading-relaxed mb-4">{treatment.description}</p><div className="space-y-2 mb-5"><p className="text-muted-foreground italic">{treatment.problem}</p><p className="text-foreground">{treatment.solution}</p></div><div><button type="button" onClick={bookThis} className="inline-flex items-center justify-center h-11 px-8 rounded-full shadow-lg bg-primary text-primary-foreground text-sm font-medium">Book Now <ArrowRight className="ml-2 h-5 w-5" /></button></div></div>
+      <div className="flex flex-col justify-center"><span className="inline-flex items-center gap-3 text-[11px] font-body uppercase tracking-[0.24em] text-primary mb-3"><span className="h-px w-8 bg-primary/40" />In detail</span><h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold mb-3"><span className="text-gradient">{treatment.category}</span></h2><p className="text-lg text-foreground font-medium mb-3">{treatment.tagline}</p><p className="text-muted-foreground text-base leading-relaxed mb-4">{treatment.description}</p><div className="space-y-2 mb-5"><p className="text-muted-foreground italic">{treatment.problem}</p><p className="text-foreground">{treatment.solution}</p></div><div className="flex flex-wrap gap-3"><button type="button" onClick={bookThis} className="inline-flex items-center justify-center h-11 px-8 rounded-full shadow-lg bg-primary text-primary-foreground text-sm font-medium">Book Now <ArrowRight className="ml-2 h-5 w-5" /></button><button type="button" onClick={askThis} className="inline-flex items-center justify-center h-11 px-6 rounded-full border border-primary/40 text-primary hover:bg-primary/5 text-sm font-medium">Ask Sonia about this treatment</button></div></div>
     </div>
 
     <div className="grid lg:grid-cols-2 gap-6 mb-8">
@@ -55,7 +59,7 @@ function TreatmentDetail({ treatment }) {
     <div className="grid lg:grid-cols-2 gap-6 mb-8">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <h3 className="font-heading text-2xl md:text-3xl font-semibold mb-4"><span className="text-gradient">Pricing</span></h3>
-        <Card className="rounded-3xl border-border/30 overflow-hidden"><div className="overflow-x-auto"><table className="w-full text-sm"><thead className="bg-muted/50"><tr><th className="text-left p-3 font-semibold text-foreground">Area</th><th className="text-right p-3 font-semibold text-foreground">Standard</th><th className="text-right p-3 font-semibold text-foreground">First visit</th>{hasPackages && <th className="text-right p-3 font-semibold text-foreground">Package</th>}</tr></thead><tbody className="divide-y divide-border/30">{treatment.pricing.map((price, index) => <tr key={`${price.area}-${index}`} className="hover:bg-muted/30 transition-colors"><td className="p-3 text-foreground">{price.area}</td><td className="p-3 text-right text-muted-foreground line-through">{typeof price.price === 'number' ? rand(price.price) : price.singleSession}</td><td className="p-3 text-right font-semibold text-primary whitespace-nowrap">{typeof price.price === 'number' ? <>{rand(firstVisit(price.price))} <span className="text-[10px] font-normal text-muted-foreground">−35%</span></> : price.singleSession}</td>{hasPackages && <td className="p-3 text-right">{price.package && <span className="font-semibold text-foreground">{price.package}</span>}</td>}</tr>)}</tbody></table></div></Card>
+        <Card className="rounded-3xl border-border/30 overflow-hidden"><div className="overflow-x-auto"><table className="w-full text-sm"><thead className="bg-muted/50"><tr><th className="text-left p-3 font-semibold text-foreground">Area</th><th className="text-right p-3 font-semibold text-foreground">Standard</th><th className="text-right p-3 font-semibold text-foreground">First visit</th>{hasPackages && <th className="text-right p-3 font-semibold text-foreground">Package</th>}</tr></thead><tbody className="divide-y divide-border/30">{treatment.pricing.map((price, index) => <tr key={`${price.area}-${index}`} className="hover:bg-muted/30 transition-colors"><td className="p-3 text-foreground">{price.area}</td><td className="p-3 text-right text-muted-foreground line-through">{typeof price.price === 'number' ? rand(price.price) : price.singleSession}</td><td className="p-3 text-right font-semibold text-primary whitespace-nowrap">{typeof price.price === 'number' ? <>{rand(firstVisit(price.price))} <span className="badge-offer text-[10px] font-semibold rounded-full px-1.5 py-0.5">−35%</span></> : price.singleSession}</td>{hasPackages && <td className="p-3 text-right">{price.package && <span className="font-semibold text-foreground">{price.package}</span>}</td>}</tr>)}</tbody></table></div></Card>
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <div className="rounded-3xl border border-primary/20 bg-primary/5 p-6 sm:p-8 h-full flex flex-col justify-center">

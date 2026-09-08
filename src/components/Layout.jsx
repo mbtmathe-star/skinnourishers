@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
@@ -7,6 +7,18 @@ import {
 } from 'lucide-react';
 import { Button } from './ui';
 import { useBooking } from './BookingModal';
+
+// Lets a treatment page tell the floating WhatsApp button which treatment the
+// visitor is reading about, so the opening message names it (Section 09).
+const WhatsAppTopicContext = createContext({ topic: '', setTopic: () => {} });
+export function useWhatsAppTopic(topic) {
+  const { setTopic } = useContext(WhatsAppTopicContext);
+  useEffect(() => {
+    if (!topic) return undefined;
+    setTopic(topic);
+    return () => setTopic('');
+  }, [topic, setTopic]);
+}
 
 const navigation = [
   { name: 'Home', path: '/' },
@@ -44,7 +56,9 @@ export function Header() {
       <div className="container">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/assets/logo-niCvp7E2.png" alt="Skin Nourishers" className="h-9 lg:h-11 w-auto" />
+            {/* Original mark is magenta; recoloured to the clinic blue-teal here (Section 03).
+                Replace with a properly recoloured asset when available. */}
+            <img src="/assets/logo-niCvp7E2.png" alt="Skin Nourishers" className="h-9 lg:h-11 w-auto" style={{ filter: 'hue-rotate(222deg) saturate(0.8)' }} />
             <div className="hidden sm:block">
               <div className="font-heading text-lg text-white leading-tight">Skin Nourishers</div>
               <div className="text-[10px] uppercase tracking-widest text-white/70 font-body flex items-center gap-1">
@@ -146,7 +160,11 @@ export function Footer() {
 }
 
 function FloatingWhatsApp() {
-  const href = `https://wa.me/27788210150?text=${encodeURIComponent("Hi! I'd like to book an appointment at Skin Nourishers.")}`;
+  const { topic } = useContext(WhatsAppTopicContext);
+  const message = topic
+    ? `Hi! I'd like to book ${topic} at Skin Nourishers.`
+    : "Hi! I'd like to book an appointment at Skin Nourishers.";
+  const href = `https://wa.me/27788210150?text=${encodeURIComponent(message)}`;
   return <motion.a href={href} target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow group" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 1, type: 'spring', stiffness: 200 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: .95 }}><MessageCircle className="h-6 w-6 fill-white" /><span className="font-medium hidden sm:inline">Chat with us</span><span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25" /></motion.a>;
 }
 
@@ -164,6 +182,35 @@ function AmbientSound() {
   return <div className="fixed bottom-24 right-4 z-50 lg:bottom-6"><audio ref={audioRef} src="/audio/ambient-spa.mp3" loop preload="auto" />{tip && <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-card/95 backdrop-blur-md border border-border rounded-xl px-4 py-3 shadow-xl whitespace-nowrap"><p className="text-sm text-foreground">Tap to enjoy ambient sound</p></div>}<Button onClick={toggle} size="icon" variant="outline" className={`rounded-full h-12 w-12 shadow-lg backdrop-blur-md transition-all ${playing ? 'bg-primary/20 border-primary text-primary hover:bg-primary/30' : 'bg-card/80 hover:bg-card'}`} aria-label={playing ? 'Mute ambient sound' : 'Play ambient sound'}>{playing ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}</Button></div>;
 }
 
+function FirstVisitSticker() {
+  const [hidden, setHidden] = useState(() => {
+    try { return sessionStorage.getItem('sn-offer-sticker-dismissed') === '1'; } catch { return false; }
+  });
+  if (hidden) return null;
+  return (
+    <aside className="offer-sticker" role="note">
+      <button
+        type="button"
+        aria-label="Dismiss offer"
+        onClick={() => {
+          setHidden(true);
+          try { sessionStorage.setItem('sn-offer-sticker-dismissed', '1'); } catch { /* ignore */ }
+        }}
+        className="absolute top-1 right-1.5 text-lg leading-none"
+      >
+        ×
+      </button>
+      <p className="text-[13px] font-semibold uppercase tracking-wide">35% off your first visit</p>
+      <p className="text-[11px] mt-0.5 opacity-90">First treatment only. Mention it when you book.</p>
+    </aside>
+  );
+}
+
 export default function Layout({ children }) {
-  return <div className="min-h-screen flex flex-col"><Header /><main className="flex-1">{children}</main><Footer /><FloatingWhatsApp /><AmbientSound /></div>;
+  const [topic, setTopic] = useState('');
+  return (
+    <WhatsAppTopicContext.Provider value={{ topic, setTopic }}>
+      <div className="min-h-screen flex flex-col"><Header /><main className="flex-1">{children}</main><Footer /><FloatingWhatsApp /><AmbientSound /><FirstVisitSticker /></div>
+    </WhatsAppTopicContext.Provider>
+  );
 }
