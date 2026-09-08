@@ -1,0 +1,3 @@
+{
+  "_comment": "Per-treatment Booksy deep links (Section 05). Key = exact treatment / area name as it appears in the catalogue; value = the treatment's own Booksy URL. Fill in the 15-20 most-booked treatments; every treatment not listed here automatically falls back to the main Booksy profile. Adding a link needs no code change."
+}

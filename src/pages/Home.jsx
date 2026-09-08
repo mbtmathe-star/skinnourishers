@@ -3,16 +3,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft, ArrowRight, CalendarDays, ChevronLeft, ChevronRight,
-  MapPin, Phone, Star, X
+  MapPin, Phone, Star
 } from 'lucide-react';
 import Layout from '../components/Layout';
 import { Button } from '../components/ui';
 import treatments from '../data/treatments.json';
 import reviews from '../data/reviews.json';
-import skinConcerns from '../data/skin-concerns.json';
-import treatmentOptions from '../data/treatment-options.json';
-import { sendInquiry } from '../lib/inquiry';
 import { useBooking } from '../components/BookingModal';
+import { useInquiry } from '../components/InquiryModal';
 
 const heroImages = [
   { image: '/assets/hero-spa-2-Dq40jLOj.jpg', position: 'center' },
@@ -53,65 +51,6 @@ function AssessmentTeaser({ onOpen }) {
   </div></div></section>;
 }
 
-function AssessmentModal({ open, onClose }) {
-  const initial = { fullName: '', email: '', phone: '', skinConcern: '', treatmentInterest: '', additionalInfo: '' };
-  const [form, setForm] = useState(initial);
-  const [sent, setSent] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState('');
-  const submitEmail = async () => {
-    setError('');
-    if (!form.fullName || !form.email || !form.phone || !form.skinConcern || !form.treatmentInterest) {
-      setError('Please fill in all required fields');
-      return;
-    }
-    setSubmitting(true);
-    try {
-      await sendInquiry({
-        formName: 'Online Skin Assessment',
-        name: form.fullName,
-        email: form.email,
-        phone: form.phone,
-        fields: {
-          'Primary Concern': form.skinConcern,
-          'Treatment Interest': form.treatmentInterest,
-          'Additional Details': form.additionalInfo,
-        },
-      });
-      setSent(true);
-    } catch (err) {
-      setError(err.message || 'Unable to send. Please try again.');
-    } finally {
-      setSubmitting(false);
-    }
-  };
-  const close = () => { onClose(); setSent(false); setForm(initial); setError(''); };
-  if (!open) return null;
-  return <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto" onClick={close}>
-    <motion.div initial={{ opacity: 0, scale: .95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-2xl my-8 bg-white rounded-3xl shadow-xl shadow-primary/5 border border-primary/10 p-8 md:p-10" onClick={(e) => e.stopPropagation()}>
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="font-heading text-2xl text-foreground">Online Skin Assessment</h3>
-        <button type="button" aria-label="Close" onClick={close} className="text-muted-foreground hover:text-foreground"><X className="h-5 w-5" /></button>
-      </div>
-      {sent ? (
-        <div className="text-center py-12">
-          <h4 className="font-heading text-2xl text-foreground mb-3">Thank You!</h4>
-          <p className="text-muted-foreground mb-6 max-w-md mx-auto">Your skin assessment request has been submitted. Our team will review your information and contact you within 24-48 hours.</p>
-          <Button variant="outline" onClick={close}>Close</Button>
-        </div>
-      ) : (
-        <div className="space-y-6">
-          <div className="pb-6 border-b border-primary/10"><h4 className="font-heading text-xl text-foreground mb-4">Client Information</h4><div className="grid md:grid-cols-2 gap-4"><Field label="Full Name *" value={form.fullName} onChange={(v) => setForm({ ...form, fullName: v })} placeholder="Your full name" /><Field label="Phone Number *" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} placeholder="e.g. 083 xxx xxxx" /></div><div className="mt-4"><Field label="Email Address *" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} placeholder="your@email.com" /></div></div>
-          <div className="space-y-4"><h4 className="font-heading text-xl text-foreground">Skin Assessment</h4><div className="grid md:grid-cols-2 gap-4"><SelectField label="Primary Skin Concern *" value={form.skinConcern} onChange={(v) => setForm({ ...form, skinConcern: v })} options={skinConcerns} placeholder="Select your concern" /><SelectField label="Treatment of Interest *" value={form.treatmentInterest} onChange={(v) => setForm({ ...form, treatmentInterest: v })} options={treatmentOptions} placeholder="Select a treatment" /></div><label className="space-y-2 block"><span className="text-sm font-medium">Additional Information (Optional)</span><textarea rows={4} value={form.additionalInfo} onChange={(e) => setForm({ ...form, additionalInfo: e.target.value })} placeholder="Tell us more about your skin history, current routine, or any specific concerns..." className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm" /></label></div>
-          <div className="pt-6 border-t border-primary/10">{error && <p className="text-sm text-destructive text-center mb-4" role="alert">{error}</p>}<Button onClick={submitEmail} disabled={submitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full py-6 disabled:pointer-events-none disabled:opacity-50">{submitting ? 'Sending...' : 'Send Assessment'}</Button></div>
-        </div>
-      )}
-    </motion.div>
-  </div>;
-}
-function Field({ label, value, onChange, placeholder, type = 'text' }) { return <label className="space-y-2 block"><span className="text-sm font-medium">{label}</span><input type={type} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" /></label>; }
-function SelectField({ label, value, onChange, options, placeholder }) { return <label className="space-y-2 block"><span className="text-sm font-medium">{label}</span><select value={value} onChange={(e) => onChange(e.target.value)} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"><option value="">{placeholder}</option>{options.map((option) => <option key={option} value={option}>{option}</option>)}</select></label>; }
-
 function FounderSection() {
   const features = [{ title: 'Passion for Results', description: "Every client's transformation is personal to us" }, { title: 'Client-Centered Care', description: 'Your unique skin journey guides everything we do' }, { title: 'Continuous Innovation', description: 'Always learning and bringing you the latest in skincare' }];
   return <section className="py-14 lg:py-20 bg-secondary/40"><div className="container"><div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"><motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative"><div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl"><img src="/assets/about-image-BmoL2o4f.png" alt="Sonia - Founder of Skin Nourishers" className="w-full h-full object-cover object-top" /><div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" /></div><div className="absolute -bottom-4 -left-4 lg:-left-8 bg-gradient-to-br from-primary to-rose px-6 py-4 rounded-2xl shadow-xl shadow-primary/30"><div className="text-center"><div className="font-heading text-3xl text-primary-foreground font-light">15+</div><div className="text-xs text-primary-foreground/80 uppercase tracking-elegant font-body">Years</div></div></div></motion.div><motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}><h2 className="font-heading text-4xl md:text-5xl font-light text-foreground mb-6 leading-tight">A Journey of<br /><span className="italic text-primary">Passion & Purpose</span></h2><div className="w-16 h-px bg-primary/50 mb-8" /><p className="text-muted-foreground font-body leading-relaxed mb-6">Skin Nourishers was born from a deeply personal journey. After struggling with my own skin concerns for years and experiencing the frustration of ineffective treatments, I made it my mission to create a space where real results meet genuine care.</p><p className="text-muted-foreground font-body leading-relaxed mb-6">What began as a passion for helping others achieve healthy, radiant skin has grown into a trusted destination for clients across Sandton and beyond. Every treatment we offer reflects the same dedication I would give to my own skin—because I understand what it means to want real change.</p><p className="text-muted-foreground font-body leading-relaxed mb-10">At Skin Nourishers, we don't just treat skin—we build confidence. Our philosophy is simple: listen deeply, treat thoughtfully, and celebrate every transformation together with our clients.</p><div className="grid gap-5 mb-10">{features.map((item) => <div key={item.title} className="border-l-2 border-primary/30 pl-4"><h3 className="font-heading text-lg text-foreground mb-1">{item.title}</h3><p className="text-muted-foreground text-sm font-body">{item.description}</p></div>)}</div><Link to="/about" className="inline-flex items-center gap-3 text-primary hover:text-primary/80 transition-colors duration-300 font-body text-sm uppercase tracking-wide-elegant group"><span>Read Our Full Story</span><ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" /></Link></motion.div></div></div></section>;
@@ -149,6 +88,6 @@ function MobileStickyCTA() {
 }
 
 export default function Home() {
-  const [assessmentOpen, setAssessmentOpen] = useState(false);
-  return <Layout><HomeHero onOpenAssessment={() => setAssessmentOpen(true)} /><TreatmentsCarousel /><AssessmentTeaser onOpen={() => setAssessmentOpen(true)} /><FounderSection /><BeforeAfter /><Reviews /><FinalCTA /><MobileStickyCTA /><AssessmentModal open={assessmentOpen} onClose={() => setAssessmentOpen(false)} /></Layout>;
+  const { openInquiry } = useInquiry();
+  return <Layout><HomeHero onOpenAssessment={() => openInquiry({})} /><TreatmentsCarousel /><AssessmentTeaser onOpen={() => openInquiry({})} /><FounderSection /><BeforeAfter /><Reviews /><FinalCTA /><MobileStickyCTA /></Layout>;
 }

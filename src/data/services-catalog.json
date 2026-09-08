@@ -488,134 +488,161 @@
         "name": "Laser - Full Face",
         "price": 500,
         "duration": "30min",
-        "desc": "Laser hair reduction for the full face. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the full face. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Forehead",
         "price": 150,
         "duration": "15min",
-        "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Cheeks",
         "price": 225,
         "duration": "15min",
-        "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Nose",
         "price": 125,
         "duration": "15min",
-        "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Chin",
         "price": 240,
         "duration": "15min",
-        "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Lip",
         "price": 240,
         "duration": "15min",
-        "desc": "Laser hair reduction for the lip. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the lip. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Side Burns",
         "price": 125,
         "duration": "15min",
-        "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Neck (Front & Back)",
         "price": 250,
         "duration": "15min",
-        "desc": "Laser hair reduction for the neck (front & back). A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the neck (front & back). A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Underarm",
         "price": 210,
         "duration": "15min",
-        "desc": "Laser hair reduction for the underarm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the underarm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Arm",
         "price": 400,
         "duration": "15min",
-        "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Arm",
         "price": 600,
         "duration": "30min",
-        "desc": "Laser hair reduction for the full arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the full arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Leg",
         "price": 450,
         "duration": "30min",
-        "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - 3/4 Leg",
         "price": 550,
         "duration": "30min",
-        "desc": "Laser hair reduction for the 3/4 leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the 3/4 leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Full Leg",
         "price": 675,
         "duration": "30min",
-        "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Bikini Line",
         "price": 325,
         "duration": "15min",
-        "desc": "Laser hair reduction for the bikini line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the bikini line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Brazilian",
         "price": 425,
         "duration": "15min",
-        "desc": "Laser hair reduction for the brazilian. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the brazilian. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Hollywood",
         "price": 475,
         "duration": "30min",
-        "desc": "Laser hair reduction for the hollywood. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the hollywood. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Buttocks",
         "price": 300,
         "duration": "15min",
-        "desc": "Laser hair reduction for the buttocks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the buttocks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Stomach",
         "price": 300,
         "duration": "30min",
-        "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Tummy Line",
         "price": 175,
         "duration": "15min",
-        "desc": "Laser hair reduction for the tummy line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the tummy line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Back & Shoulder",
         "price": 600,
         "duration": "45min",
-        "desc": "Laser hair reduction for the back & shoulder. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the back & shoulder. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Back",
         "price": 750,
         "duration": "30min",
-        "desc": "Laser hair reduction for the full back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit."
+        "desc": "Laser hair reduction for the full back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
+        "tier": "Arms, Underarms & Body"
       }
+    ],
+    "tiers": [
+      "Face & Neck",
+      "Arms, Underarms & Body",
+      "Legs & Intimate"
     ]
   },
   {
@@ -625,110 +652,133 @@
         "name": "Laser - Forehead",
         "price": 225,
         "duration": "15min",
-        "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Cheeks",
         "price": 400,
         "duration": "15min",
-        "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Nose",
         "price": 150,
         "duration": "15min",
-        "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Chin",
         "price": 250,
         "duration": "15min",
-        "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Jaw Line",
         "price": 175,
         "duration": "15min",
-        "desc": "Laser hair reduction for the jaw line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the jaw line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Side Burns",
         "price": 175,
         "duration": "15min",
-        "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Unibrow",
         "price": 150,
         "duration": "15min",
-        "desc": "Laser hair reduction for the unibrow. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the unibrow. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Underarm",
         "price": 300,
         "duration": "15min",
-        "desc": "Laser hair reduction for the underarm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the underarm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Arm",
         "price": 600,
         "duration": "30min",
-        "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - 3/4 Arm",
         "price": 550,
         "duration": "30min",
-        "desc": "Laser hair reduction for the 3/4 arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the 3/4 arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Arm",
         "price": 600,
         "duration": "30min",
-        "desc": "Laser hair reduction for the full arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the full arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Leg",
         "price": 700,
         "duration": "30min",
-        "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Full Leg",
         "price": 975,
         "duration": "30min",
-        "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Stomach",
         "price": 600,
         "duration": "30min",
-        "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Chest",
         "price": 900,
         "duration": "30min",
-        "desc": "Laser hair reduction for the chest. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the chest. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Lower Back",
         "price": 450,
         "duration": "30min",
-        "desc": "Laser hair reduction for the lower back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the lower back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Back & Shoulder",
         "price": 1100,
         "duration": "30min",
-        "desc": "Laser hair reduction for the back & shoulder. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the back & shoulder. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Back",
         "price": 1100,
         "duration": "30min",
-        "desc": "Laser hair reduction for the full back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density."
+        "desc": "Laser hair reduction for the full back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
+        "tier": "Arms, Underarms & Body"
       }
+    ],
+    "tiers": [
+      "Face & Neck",
+      "Arms, Underarms & Body",
+      "Legs & Intimate"
     ]
   },
   {
@@ -738,110 +788,133 @@
         "name": "Laser - Forehead",
         "price": 150,
         "duration": "15min",
-        "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Cheeks",
         "price": 125,
         "duration": "15min",
-        "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Nose",
         "price": 125,
         "duration": "15min",
-        "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Chin",
         "price": 175,
         "duration": "15min",
-        "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Side Burns",
         "price": 125,
         "duration": "15min",
-        "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Neck",
         "price": 225,
         "duration": "15min",
-        "desc": "Laser hair reduction for the neck. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the neck. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Underarms",
         "price": 150,
         "duration": "15min",
-        "desc": "Laser hair reduction for the underarms. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the underarms. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Arm",
         "price": 300,
         "duration": "30min",
-        "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Leg",
         "price": 550,
         "duration": "30min",
-        "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Full Leg",
         "price": 450,
         "duration": "45min",
-        "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Bikini Line",
         "price": 200,
         "duration": "15min",
-        "desc": "Laser hair reduction for the bikini line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the bikini line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Brazilian",
         "price": 300,
         "duration": "15min",
-        "desc": "Laser hair reduction for the brazilian. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the brazilian. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Hollywood",
         "price": 450,
         "duration": "30min",
-        "desc": "Laser hair reduction for the hollywood. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the hollywood. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Buttocks",
         "price": 250,
         "duration": "30min",
-        "desc": "Laser hair reduction for the buttocks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the buttocks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Stomach",
         "price": 300,
         "duration": "1h",
-        "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Tummy Line",
         "price": 175,
         "duration": "30min",
-        "desc": "Laser hair reduction for the tummy line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the tummy line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Beard & Neck",
         "price": 250,
         "duration": "30min",
-        "desc": "Laser hair reduction for the full beard & neck. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the full beard & neck. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Face & Neck"
       },
       {
         "name": "Laser - Back & Shoulders",
         "price": 500,
         "duration": "45min",
-        "desc": "Laser hair reduction for the back & shoulders. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent."
+        "desc": "Laser hair reduction for the back & shoulders. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
+        "tier": "Arms, Underarms & Body"
       }
+    ],
+    "tiers": [
+      "Face & Neck",
+      "Arms, Underarms & Body",
+      "Legs & Intimate"
     ]
   },
   {
@@ -851,146 +924,175 @@
         "name": "Ladies & Teen - Eyebrow",
         "price": 55,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the eyebrow, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the eyebrow, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Face"
       },
       {
         "name": "Ladies & Teen - Lip Wax",
         "price": 75,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the lip wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the lip wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Face"
       },
       {
         "name": "Ladies - Nose",
         "price": 75,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the nose, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the nose, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Face"
       },
       {
         "name": "Ladies & Teen - Chin",
         "price": 55,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the chin, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the chin, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Face"
       },
       {
         "name": "Ladies & Teen - Side Burns",
         "price": 75,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the side burns, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the side burns, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Face"
       },
       {
         "name": "Ladies & Teen - Full Face",
         "price": 110,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the full face, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the full face, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Face"
       },
       {
         "name": "Ladies & Teen - Half Arm",
         "price": 95,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the half arm, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the half arm, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Arms, Body & Back"
       },
       {
         "name": "Ladies & Teen - Full Arm",
         "price": 125,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the full arm, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the full arm, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Arms, Body & Back"
       },
       {
         "name": "Ladies & Teen - Half Leg Wax",
         "price": 175,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the half leg wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the half leg wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Ladies & Teen - Full Leg Wax",
         "price": 200,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the full leg wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the full leg wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Ladies & Teen - Bikini",
         "price": 90,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the bikini, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the bikini, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Ladies & Teen - Brazilian",
         "price": 140,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the brazilian, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the brazilian, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Ladies & Teen - Hollywood Wax",
         "price": 175,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the hollywood wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the hollywood wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Ladies & Teen - Butt Cheeks",
         "price": 100,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the butt cheeks, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the butt cheeks, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Ladies & Teen - Stomach",
         "price": 90,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the stomach, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the stomach, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Arms, Body & Back"
       },
       {
         "name": "Ladies & Teen - Tummy Line",
         "price": 75,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the tummy line, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the tummy line, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Arms, Body & Back"
       },
       {
         "name": "Ladies & Teen - Chest",
         "price": 125,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the chest, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the chest, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Arms, Body & Back"
       },
       {
         "name": "Ladies & Teen - Back & Shoulder",
         "price": 150,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the back & shoulder, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the back & shoulder, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Arms, Body & Back"
       },
       {
         "name": "Men - Ears",
         "price": 55,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the ears, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the ears, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Face"
       },
       {
         "name": "Men - Combo Ears & Nose",
         "price": 130,
         "duration": "15min",
-        "desc": "Warm-wax hair removal for the combo ears & nose, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the combo ears & nose, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Face"
       },
       {
         "name": "Men - Chest",
         "price": 125,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the chest, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the chest, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Arms, Body & Back"
       },
       {
         "name": "Men - Back",
         "price": 175,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the back, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the back, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Arms, Body & Back"
       },
       {
         "name": "Men - 3/4 Leg",
         "price": 150,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the 3/4 leg, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the 3/4 leg, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Legs & Intimate"
       },
       {
         "name": "Men - Full Leg Wax",
         "price": 200,
         "duration": "30min",
-        "desc": "Warm-wax hair removal for the full leg wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time."
+        "desc": "Warm-wax hair removal for the full leg wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
+        "tier": "Legs & Intimate"
       }
+    ],
+    "tiers": [
+      "Face",
+      "Arms, Body & Back",
+      "Legs & Intimate"
     ]
   },
   {
@@ -1000,32 +1102,41 @@
         "name": "Threading - Brows",
         "price": 75,
         "duration": "15min",
-        "desc": "Hair removal for the brows using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin."
+        "desc": "Hair removal for the brows using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
+        "tier": "Brows & Eyes"
       },
       {
         "name": "Threading - Lip",
         "price": 60,
         "duration": "15min",
-        "desc": "Hair removal for the lip using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin."
+        "desc": "Hair removal for the lip using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
+        "tier": "Face"
       },
       {
         "name": "Threading - Chin",
         "price": 75,
         "duration": "15min",
-        "desc": "Hair removal for the chin using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin."
+        "desc": "Hair removal for the chin using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
+        "tier": "Face"
       },
       {
         "name": "Threading - Side Burns",
         "price": 75,
         "duration": "15min",
-        "desc": "Hair removal for the side burns using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin."
+        "desc": "Hair removal for the side burns using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
+        "tier": "Face"
       },
       {
         "name": "Threading - Full Face",
         "price": 125,
         "duration": "30min",
-        "desc": "Hair removal for the full face using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin."
+        "desc": "Hair removal for the full face using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
+        "tier": "Face"
       }
+    ],
+    "tiers": [
+      "Brows & Eyes",
+      "Face"
     ]
   },
   {
@@ -1035,26 +1146,34 @@
         "name": "Brow Lamination",
         "price": 250,
         "duration": "30min",
-        "desc": "Sets the brow hairs in a fuller, brushed-up shape that holds for several weeks."
+        "desc": "Sets the brow hairs in a fuller, brushed-up shape that holds for several weeks.",
+        "tier": "Shaping"
       },
       {
         "name": "Eyebrow Tint",
         "price": 98,
         "duration": "15min",
-        "desc": "A semi-permanent tint to darken and define the brows. Fades gradually over a couple of weeks."
+        "desc": "A semi-permanent tint to darken and define the brows. Fades gradually over a couple of weeks.",
+        "tier": "Tinting"
       },
       {
         "name": "Eyelash Tint",
         "price": 150,
         "duration": "15min",
-        "desc": "A semi-permanent tint to darken the lashes so they look fuller without mascara."
+        "desc": "A semi-permanent tint to darken the lashes so they look fuller without mascara.",
+        "tier": "Tinting"
       },
       {
         "name": "Henna Tint & Shape",
         "price": 325,
         "duration": "30min",
-        "desc": "A henna-based brow tint with shaping. Henna stains the skin as well as the hair for a fuller-looking brow that fades gradually."
+        "desc": "A henna-based brow tint with shaping. Henna stains the skin as well as the hair for a fuller-looking brow that fades gradually.",
+        "tier": "Shaping"
       }
+    ],
+    "tiers": [
+      "Shaping",
+      "Tinting"
     ]
   },
   {
@@ -1064,38 +1183,48 @@
         "name": "Brow & Lash Tint",
         "price": 250,
         "duration": "30min",
-        "desc": "Brow tint and lash tint together in one appointment."
+        "desc": "Brow tint and lash tint together in one appointment.",
+        "tier": "Brow & Lash Combos"
       },
       {
         "name": "Brow Wax & Tint",
         "price": 250,
         "duration": "30min",
-        "desc": "Brow shaping with wax plus a tint to define the shape."
+        "desc": "Brow shaping with wax plus a tint to define the shape.",
+        "tier": "Brow & Lash Combos"
       },
       {
         "name": "Brow Wax, Tint & Lash Tint",
         "price": 250,
         "duration": "30min",
-        "desc": "Full brow tidy — wax, brow tint and lash tint in one appointment."
+        "desc": "Full brow tidy — wax, brow tint and lash tint in one appointment.",
+        "tier": "Brow & Lash Combos"
       },
       {
         "name": "Threading & Tint",
         "price": 195,
         "duration": "30min",
-        "desc": "Brow shaping by threading plus a tint, for sensitive skin that prefers no wax."
+        "desc": "Brow shaping by threading plus a tint, for sensitive skin that prefers no wax.",
+        "tier": "Brow & Lash Combos"
       },
       {
         "name": "Formulage Peel + Microneedling",
         "price": 1250,
         "duration": "1h",
-        "desc": "A Formulage peel followed by microneedling in one session, pairing resurfacing with collagen stimulation."
+        "desc": "A Formulage peel followed by microneedling in one session, pairing resurfacing with collagen stimulation.",
+        "tier": "Advanced Combos"
       },
       {
         "name": "Jet Plasma Ozone - Course of 3 Sessions",
         "price": 6250,
         "duration": "45min",
-        "desc": "A set course of Jet Plasma Ozone sessions at a package price."
+        "desc": "A set course of Jet Plasma Ozone sessions at a package price.",
+        "tier": "Advanced Combos"
       }
+    ],
+    "tiers": [
+      "Brow & Lash Combos",
+      "Advanced Combos"
     ]
   }
 ]

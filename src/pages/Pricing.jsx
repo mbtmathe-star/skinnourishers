@@ -27,7 +27,7 @@ function ServiceRow({ service, category, open, onToggle }) {
         <span className="flex items-baseline gap-2 whitespace-nowrap">
           <span className="text-sm text-muted-foreground line-through">{rand(service.price)}</span>
           <span className="font-semibold text-primary">{rand(discounted)}</span>
-          <span className="hidden sm:inline text-[10px] font-semibold uppercase tracking-wide bg-accent/15 text-accent-foreground/90 rounded-full px-2 py-0.5">−35%</span>
+          <span className="badge-offer hidden sm:inline text-[10px] font-semibold uppercase tracking-wide rounded-full px-2 py-0.5">−35%</span>
         </span>
       </button>
       {open && (
@@ -65,7 +65,11 @@ export default function Pricing() {
       .map((group) => ({
         ...group,
         services: group.services.filter(
-          (s) => s.name.toLowerCase().includes(q) || group.category.toLowerCase().includes(q),
+          (s) =>
+            s.name.toLowerCase().includes(q) ||
+            group.category.toLowerCase().includes(q) ||
+            (s.tier && s.tier.toLowerCase().includes(q)) ||
+            (s.desc && s.desc.toLowerCase().includes(q)),
         ),
       }))
       .filter((group) => group.services.length > 0);
