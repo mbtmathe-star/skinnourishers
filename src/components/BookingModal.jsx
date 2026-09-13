@@ -8,7 +8,12 @@ import { startPayfastCheckout } from '../lib/payfast';
 const BookingContext = createContext(null);
 export const useBooking = () => useContext(BookingContext);
 
-const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+const rand = (n) => {
+  const whole = Math.floor(n);
+  const cents = Math.round((n - whole) * 100);
+  const grouped = whole.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return "R" + grouped + (cents ? "," + String(cents).padStart(2, "0") : "");
+};
 
 export function BookingProvider({ children }) {
   const [seed, setSeed] = useState(null);

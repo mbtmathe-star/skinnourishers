@@ -6,7 +6,12 @@ import PageHero from '../components/PageHero';
 import catalog from '../data/services-catalog.json';
 import { useBooking } from '../components/BookingModal';
 
-const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+const rand = (n) => {
+  const whole = Math.floor(n);
+  const cents = Math.round((n - whole) * 100);
+  const grouped = whole.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return "R" + grouped + (cents ? "," + String(cents).padStart(2, "0") : "");
+};
 
 function ServiceRow({ service, category, open, onToggle }) {
   const { openBooking } = useBooking();
