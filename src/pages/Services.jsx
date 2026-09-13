@@ -9,7 +9,12 @@ import { Card } from '../components/ui';
 import { useBooking } from '../components/BookingModal';
 import { useInquiry } from '../components/InquiryModal';
 
-const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+const rand = (n) => {
+  const whole = Math.floor(n);
+  const cents = Math.round((n - whole) * 100);
+  const grouped = whole.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return "R" + grouped + (cents ? "," + String(cents).padStart(2, "0") : "");
+};
 
 function bookingOptions(treatment) {
   return (treatment.pricing || [])

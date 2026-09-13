@@ -209,8 +209,8 @@
       },
       {
         "area": "Basic Facial",
-        "singleSession": "R553",
-        "price": 553
+        "singleSession": "R552,50",
+        "price": 552.5
       },
       {
         "area": "Add-on: LED Therapy",
@@ -494,23 +494,23 @@
       },
       {
         "area": "Underarms",
-        "singleSession": "R293",
-        "price": 293
+        "singleSession": "R292,50",
+        "price": 292.5
       },
       {
         "area": "Bikini Line",
-        "singleSession": "R423",
-        "price": 423
+        "singleSession": "R422,50",
+        "price": 422.5
       },
       {
         "area": "Brazilian",
-        "singleSession": "R553",
-        "price": 553
+        "singleSession": "R552,50",
+        "price": 552.5
       },
       {
         "area": "Hollywood",
-        "singleSession": "R618",
-        "price": 618
+        "singleSession": "R617,50",
+        "price": 617.5
       },
       {
         "area": "Half Arm",
@@ -529,8 +529,8 @@
       },
       {
         "area": "Full Legs",
-        "singleSession": "R878",
-        "price": 878
+        "singleSession": "R877,50",
+        "price": 877.5
       },
       {
         "area": "Full Back",
@@ -629,8 +629,8 @@
       },
       {
         "area": "RF Anti-Wrinkle",
-        "singleSession": "R878",
-        "price": 878
+        "singleSession": "R877,50",
+        "price": 877.5
       },
       {
         "area": "Plumping and Tightening",
@@ -731,8 +731,8 @@
       },
       {
         "area": "Microneedling",
-        "singleSession": "R1 203",
-        "price": 1203
+        "singleSession": "R1 202,50",
+        "price": 1202.5
       },
       {
         "area": "Derma Peel - Microneedle",
