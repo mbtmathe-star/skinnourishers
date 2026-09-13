@@ -113,7 +113,7 @@ function BookingModal({ seed, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="shrink-0 rounded-full p-2 text-muted-foreground hover:bg-muted transition-colors"
+            className="shrink-0 rounded-sm p-2 text-muted-foreground hover:bg-muted transition-colors"
             aria-label="Close"
           >
             <X className="h-5 w-5" />
@@ -216,7 +216,7 @@ function BookingModal({ seed, onClose }) {
           <button
             type="submit"
             disabled={submitting || !selected || !form.name || !form.email || !form.phone}
-            className="inline-flex items-center justify-center h-11 w-full rounded-full bg-primary text-primary-foreground text-sm font-medium disabled:opacity-50 disabled:pointer-events-none"
+            className="inline-flex items-center justify-center h-11 w-full rounded-sm bg-primary text-primary-foreground text-sm font-medium disabled:opacity-50 disabled:pointer-events-none"
           >
             {submitting
               ? 'Starting secure payment…'
