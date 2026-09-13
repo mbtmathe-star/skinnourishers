@@ -9,7 +9,6 @@ const BookingContext = createContext(null);
 export const useBooking = () => useContext(BookingContext);
 
 const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-const firstVisitPrice = (n) => Math.round((n * 0.65) / 5) * 5;
 
 export function BookingProvider({ children }) {
   const [seed, setSeed] = useState(null);
@@ -55,7 +54,6 @@ function BookingModal({ seed, onClose }) {
 
   const price = selected ? selected.price : 0;
   const deposit = price > 0 ? Math.round(price * 0.5) : 0;
-  const discounted = price > 0 ? firstVisitPrice(price) : 0;
 
   const set = (key, value) => setForm((f) => ({ ...f, [key]: value }));
   const setCategory = (value) => setForm((f) => ({ ...f, category: value, service: '' }));
@@ -161,19 +159,14 @@ function BookingModal({ seed, onClose }) {
             <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 space-y-2">
               <div className="flex items-center justify-between text-sm">
                 <span className="flex items-center gap-2 text-muted-foreground"><Clock className="h-4 w-4" />{selected.duration}</span>
-                <span className="text-muted-foreground line-through">{rand(price)}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">First-visit price</span>
-                <span className="font-semibold text-primary">{rand(discounted)} <span className="text-xs font-normal text-muted-foreground">(−35%)</span></span>
+                <span className="font-semibold text-foreground">{rand(price)}</span>
               </div>
               <div className="flex items-center justify-between border-t border-primary/15 pt-2">
                 <span className="text-sm font-medium">Deposit to pay now (50%)</span>
                 <span className="font-semibold">{rand(deposit)}</span>
               </div>
               <p className="text-xs text-muted-foreground">
-                Balance is paid at your appointment. 35% off applies to your first treatment only
-                (first visit, one treatment) — mention “First Visit” on Booksy.
+                Balance is paid at your appointment.
               </p>
             </div>
           )}

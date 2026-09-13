@@ -10,7 +10,6 @@ import { useBooking } from '../components/BookingModal';
 import { useInquiry } from '../components/InquiryModal';
 
 const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-const firstVisit = (n) => Math.round((n * 0.65) / 5) * 5;
 
 function bookingOptions(treatment) {
   return (treatment.pricing || [])
@@ -59,12 +58,12 @@ function TreatmentDetail({ treatment }) {
     <div className="grid lg:grid-cols-2 gap-6 mb-8">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <h3 className="font-heading text-2xl md:text-3xl font-semibold mb-4"><span className="text-gradient">Pricing</span></h3>
-        <Card className="rounded-3xl border-border/30 overflow-hidden"><div className="overflow-x-auto"><table className="w-full text-sm"><thead className="bg-muted/50"><tr><th className="text-left p-3 font-semibold text-foreground">Area</th><th className="text-right p-3 font-semibold text-foreground">Standard</th><th className="text-right p-3 font-semibold text-foreground">First visit</th>{hasPackages && <th className="text-right p-3 font-semibold text-foreground">Package</th>}</tr></thead><tbody className="divide-y divide-border/30">{treatment.pricing.map((price, index) => <tr key={`${price.area}-${index}`} className="hover:bg-muted/30 transition-colors"><td className="p-3 text-foreground">{price.area}</td><td className="p-3 text-right text-muted-foreground line-through">{typeof price.price === 'number' ? rand(price.price) : price.singleSession}</td><td className="p-3 text-right font-semibold text-primary whitespace-nowrap">{typeof price.price === 'number' ? <>{rand(firstVisit(price.price))} <span className="badge-offer text-[10px] font-semibold rounded-full px-1.5 py-0.5">−35%</span></> : price.singleSession}</td>{hasPackages && <td className="p-3 text-right">{price.package && <span className="font-semibold text-foreground">{price.package}</span>}</td>}</tr>)}</tbody></table></div></Card>
+        <Card className="rounded-3xl border-border/30 overflow-hidden"><div className="overflow-x-auto"><table className="w-full text-sm"><thead className="bg-muted/50"><tr><th className="text-left p-3 font-semibold text-foreground">Area</th><th className="text-right p-3 font-semibold text-foreground">Price</th>{hasPackages && <th className="text-right p-3 font-semibold text-foreground">Package</th>}</tr></thead><tbody className="divide-y divide-border/30">{treatment.pricing.map((price, index) => <tr key={`${price.area}-${index}`} className="hover:bg-muted/30 transition-colors"><td className="p-3 text-foreground">{price.area}</td><td className="p-3 text-right font-semibold text-primary whitespace-nowrap">{typeof price.price === 'number' ? rand(price.price) : price.singleSession}</td>{hasPackages && <td className="p-3 text-right">{price.package && <span className="font-semibold text-foreground">{price.package}</span>}</td>}</tr>)}</tbody></table></div></Card>
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <div className="rounded-3xl border border-primary/20 bg-primary/5 p-6 sm:p-8 h-full flex flex-col justify-center">
           <h3 className="font-heading text-2xl md:text-3xl font-semibold mb-2">Book <span className="text-gradient">{treatment.category}</span></h3>
-          <p className="text-muted-foreground mb-5">Choose your area and pay the deposit here — no redirect. Your first treatment is <strong className="text-foreground">35% off</strong>.</p>
+          <p className="text-muted-foreground mb-5">Choose your area and pay the deposit here — no redirect.</p>
           <button type="button" onClick={bookThis} className="inline-flex items-center justify-center h-11 px-8 rounded-full bg-primary text-primary-foreground text-sm font-medium shadow-lg self-start">Book {treatment.category} <ArrowRight className="ml-2 h-4 w-4" /></button>
         </div>
       </motion.div>
