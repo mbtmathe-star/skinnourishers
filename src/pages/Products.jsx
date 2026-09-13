@@ -105,7 +105,7 @@ export default function Products() {
 
   return (
     <Layout>
-      <section className="pt-32 pb-12 bg-gradient-to-b from-secondary/50 to-transparent">
+      <section className="pt-32 pb-12 bg-muted">
         <div className="container text-center">
           <span className="inline-flex items-center gap-3 text-[11px] font-body uppercase tracking-[0.24em] text-primary mb-4"><span className="h-px w-8 bg-primary/40" />Shop</span>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light mb-4">
@@ -235,7 +235,7 @@ export default function Products() {
                 <button
                   type="button"
                   onClick={() => { setCartOpen(false); setCheckoutOpen(true); }}
-                  className="mt-4 inline-flex items-center justify-center h-11 w-full rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
+                  className="mt-4 inline-flex items-center justify-center h-11 w-full rounded-sm bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
                 >
                   Checkout with PayFast
                 </button>
@@ -272,7 +272,7 @@ export default function Products() {
                 <span className="text-primary">R{cartTotal}</span>
               </div>
               {checkoutError && <p className="text-sm text-destructive" role="alert">{checkoutError}</p>}
-              <button type="submit" disabled={checkingOut} className="inline-flex items-center justify-center h-11 w-full rounded-full bg-primary text-primary-foreground text-sm font-medium disabled:pointer-events-none disabled:opacity-50">
+              <button type="submit" disabled={checkingOut} className="inline-flex items-center justify-center h-11 w-full rounded-sm bg-primary text-primary-foreground text-sm font-medium disabled:pointer-events-none disabled:opacity-50">
                 {checkingOut ? 'Redirecting to PayFast...' : `Pay R${cartTotal} with PayFast`}
               </button>
             </form>
@@ -309,7 +309,7 @@ export default function Products() {
                   <input type="tel" placeholder="+27 XX XXX XXXX" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" value={consultForm.phone} onChange={(e) => setConsultForm((c) => ({ ...c, phone: e.target.value }))} required />
                 </label>
                 {consultError && <p className="text-sm text-destructive" role="alert">{consultError}</p>}
-                <button type="submit" disabled={consultSubmitting} className="inline-flex items-center justify-center h-11 w-full rounded-full bg-primary text-primary-foreground text-sm font-medium disabled:pointer-events-none disabled:opacity-50">
+                <button type="submit" disabled={consultSubmitting} className="inline-flex items-center justify-center h-11 w-full rounded-sm bg-primary text-primary-foreground text-sm font-medium disabled:pointer-events-none disabled:opacity-50">
                   {consultSubmitting ? 'Sending...' : 'Request Consultation'}
                 </button>
               </form>

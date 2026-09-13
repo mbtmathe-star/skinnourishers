@@ -90,7 +90,7 @@ export default function Pricing() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search treatments — e.g. brazilian, pigmentation, HIFU, laser"
-              className="w-full rounded-full border border-border bg-card pl-11 pr-4 py-3 text-sm font-body outline-none focus:border-primary/50"
+              className="w-full rounded-sm border border-border bg-card pl-11 pr-4 py-3 text-sm font-body outline-none focus:border-primary/50"
             />
           </div>
 
@@ -146,7 +146,7 @@ export default function Pricing() {
             </p>
             <Link
               to="/booking"
-              className="inline-flex items-center justify-center h-11 px-8 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center h-11 px-8 rounded-sm bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               Book Your Treatment <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

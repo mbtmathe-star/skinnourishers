@@ -210,7 +210,7 @@ export default function Booking() {
                         <p className="text-xs text-muted-foreground mt-1">Remaining R{form.price - deposit} due at appointment</p>
                       </div>
                       {error && <p className="text-sm text-destructive" role="alert">{error}</p>}
-                      <button type="button" onClick={submit} disabled={submitting || !form.service || !form.name || !form.email || !form.phone} className="inline-flex items-center justify-center h-11 px-8 w-full rounded-full bg-primary text-primary-foreground text-sm font-medium disabled:pointer-events-none disabled:opacity-50">
+                      <button type="button" onClick={submit} disabled={submitting || !form.service || !form.name || !form.email || !form.phone} className="inline-flex items-center justify-center h-11 px-8 w-full rounded-sm bg-primary text-primary-foreground text-sm font-medium disabled:pointer-events-none disabled:opacity-50">
                         {submitting ? 'Processing...' : <>Pay Deposit R{deposit}<ArrowRight className="ml-2 h-4 w-4" /></>}
                       </button>
                       <p className="text-xs text-center text-muted-foreground">You’ll choose your appointment time on Booksy after payment</p>

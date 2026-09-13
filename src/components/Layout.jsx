@@ -80,7 +80,7 @@ export function Header() {
               <Phone className="w-4 h-4" /><span className="font-body">+27 78 821 0150</span>
             </a>
             <CartButton />
-            <button type="button" onClick={() => openBooking({})} className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full px-6 h-10 text-xs uppercase tracking-widest font-body font-semibold">
+            <button type="button" onClick={() => openBooking({})} className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-sm px-6 h-10 text-xs uppercase tracking-widest font-body font-semibold">
               Book Now
             </button>
           </div>
@@ -103,7 +103,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="mt-4 pt-4 border-t border-white/10">
-                <button type="button" onClick={() => { setOpen(false); openBooking({}); }} className="w-full h-10 inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-full font-body font-semibold">Book Appointment</button>
+                <button type="button" onClick={() => { setOpen(false); openBooking({}); }} className="w-full h-10 inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-sm font-body font-semibold">Book Appointment</button>
               </div>
             </nav>
           </motion.div>
@@ -165,7 +165,7 @@ function FloatingWhatsApp() {
     ? `Hi! I'd like to book ${topic} at Skin Nourishers.`
     : "Hi! I'd like to book an appointment at Skin Nourishers.";
   const href = `https://wa.me/27788210150?text=${encodeURIComponent(message)}`;
-  return <motion.a href={href} target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow group" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 1, type: 'spring', stiffness: 200 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: .95 }}><MessageCircle className="h-6 w-6 fill-white" /><span className="font-medium hidden sm:inline">Chat with us</span><span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25" /></motion.a>;
+  return <motion.a href={href} target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-sm shadow-lg hover:shadow-xl transition-shadow group" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 1, type: 'spring', stiffness: 200 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: .95 }}><MessageCircle className="h-6 w-6 fill-white" /><span className="font-medium hidden sm:inline">Chat with us</span><span className="absolute inset-0 rounded-sm bg-[#25D366] animate-ping opacity-25" /></motion.a>;
 }
 
 function AmbientSound() {

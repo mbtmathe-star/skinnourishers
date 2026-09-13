@@ -140,7 +140,7 @@ function InquiryModal({ seed, onClose }) {
             </div>
             <div className="pt-6 border-t border-primary/10">
               {error && <p className="text-sm text-destructive text-center mb-4" role="alert">{error}</p>}
-              <Button onClick={submit} disabled={submitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full py-6 disabled:pointer-events-none disabled:opacity-50">{submitting ? 'Sending...' : 'Send Assessment'}</Button>
+              <Button onClick={submit} disabled={submitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-sm py-6 disabled:pointer-events-none disabled:opacity-50">{submitting ? 'Sending...' : 'Send Assessment'}</Button>
             </div>
           </div>
         )}
