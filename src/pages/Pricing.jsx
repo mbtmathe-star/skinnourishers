@@ -6,14 +6,10 @@ import PageHero from '../components/PageHero';
 import catalog from '../data/services-catalog.json';
 import { useBooking } from '../components/BookingModal';
 
-const FIRST_VISIT_RATE = 0.65; // 35% off first treatment
-
 const rand = (n) => 'R' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-const firstVisitPrice = (n) => Math.round((n * FIRST_VISIT_RATE) / 5) * 5;
 
 function ServiceRow({ service, category, open, onToggle }) {
   const { openBooking } = useBooking();
-  const discounted = firstVisitPrice(service.price);
   return (
     <div className="border-b border-border/60 last:border-b-0">
       <button
@@ -24,22 +20,13 @@ function ServiceRow({ service, category, open, onToggle }) {
       >
         <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`} />
         <span className="flex-1 font-body text-foreground">{service.name}</span>
-        <span className="flex items-baseline gap-2 whitespace-nowrap">
-          <span className="text-sm text-muted-foreground line-through">{rand(service.price)}</span>
-          <span className="font-semibold text-primary">{rand(discounted)}</span>
-          <span className="badge-offer hidden sm:inline text-[10px] font-semibold uppercase tracking-wide rounded-full px-2 py-0.5">−35%</span>
-        </span>
+        <span className="font-semibold text-primary whitespace-nowrap">{rand(service.price)}</span>
       </button>
       {open && (
         <div className="px-8 pb-5 pt-1 space-y-3">
           {service.desc && <p className="text-sm text-foreground/90 leading-relaxed">{service.desc}</p>}
           <p className="flex items-center gap-2 text-sm text-muted-foreground">
             <Clock className="h-4 w-4" /> {service.duration}
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Standard price <span className="text-foreground">{rand(service.price)}</span>.
-            First-visit price <span className="text-foreground font-medium">{rand(discounted)}</span> —
-            35% off applies to your first treatment only (first visit, one treatment, not combined with other offers).
           </p>
           <button
             type="button"
@@ -83,7 +70,7 @@ export default function Pricing() {
         tagline="Pricing"
         title="Treatment"
         titleHighlight="Menu"
-        subtitle={`Every treatment we offer — ${total} in total — with your first-visit price shown on each.`}
+        subtitle={`Every treatment we offer — ${total} in total — at the same price you pay on Booksy.`}
         secondaryButtonText="Treatment Details"
         secondaryButtonLink="/services"
         imageIndex={4}
@@ -91,14 +78,6 @@ export default function Pricing() {
 
       <section className="py-12 lg:py-16">
         <div className="container max-w-4xl">
-          <div className="mb-8 rounded-2xl border border-accent/40 bg-accent/10 px-5 py-4">
-            <p className="font-body text-sm text-foreground">
-              <span className="font-semibold">New client?</span> Your first treatment is <span className="font-semibold">35% off</span>.
-              The price beside each treatment below is the first-visit price; the standard price is shown struck through.
-              First visit, first treatment only.
-            </p>
-          </div>
-
           <div className="relative mb-10">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input

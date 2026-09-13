@@ -182,35 +182,11 @@ function AmbientSound() {
   return <div className="fixed bottom-24 right-4 z-50 lg:bottom-6"><audio ref={audioRef} src="/audio/ambient-spa.mp3" loop preload="auto" />{tip && <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-card/95 backdrop-blur-md border border-border rounded-xl px-4 py-3 shadow-xl whitespace-nowrap"><p className="text-sm text-foreground">Tap to enjoy ambient sound</p></div>}<Button onClick={toggle} size="icon" variant="outline" className={`rounded-full h-12 w-12 shadow-lg backdrop-blur-md transition-all ${playing ? 'bg-primary/20 border-primary text-primary hover:bg-primary/30' : 'bg-card/80 hover:bg-card'}`} aria-label={playing ? 'Mute ambient sound' : 'Play ambient sound'}>{playing ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}</Button></div>;
 }
 
-function FirstVisitSticker() {
-  const [hidden, setHidden] = useState(() => {
-    try { return sessionStorage.getItem('sn-offer-sticker-dismissed') === '1'; } catch { return false; }
-  });
-  if (hidden) return null;
-  return (
-    <aside className="offer-sticker" role="note">
-      <button
-        type="button"
-        aria-label="Dismiss offer"
-        onClick={() => {
-          setHidden(true);
-          try { sessionStorage.setItem('sn-offer-sticker-dismissed', '1'); } catch { /* ignore */ }
-        }}
-        className="absolute top-1 right-1.5 text-lg leading-none"
-      >
-        ×
-      </button>
-      <p className="text-[13px] font-semibold uppercase tracking-wide">35% off your first visit</p>
-      <p className="text-[11px] mt-0.5 opacity-90">First treatment only. Mention it when you book.</p>
-    </aside>
-  );
-}
-
 export default function Layout({ children }) {
   const [topic, setTopic] = useState('');
   return (
     <WhatsAppTopicContext.Provider value={{ topic, setTopic }}>
-      <div className="min-h-screen flex flex-col"><Header /><main className="flex-1">{children}</main><Footer /><FloatingWhatsApp /><AmbientSound /><FirstVisitSticker /></div>
+      <div className="min-h-screen flex flex-col"><Header /><main className="flex-1">{children}</main><Footer /><FloatingWhatsApp /><AmbientSound /></div>
     </WhatsAppTopicContext.Provider>
   );
 }
