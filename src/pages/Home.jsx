@@ -235,8 +235,8 @@ function LaserDoors() {
           than one adapted for everybody.
         </p>
         <div className="doors">
-          {doors.map(([name, count, blurb]) => (
-            <Link className="door" to="/pricing" key={name}>
+          {doors.map(([name, count, blurb], index) => (
+            <Link className="door" to="/pricing" key={name} style={{ background: index % 2 === 0 ? 'hsl(var(--primary))' : 'hsl(var(--foreground))' }}>
               <span className="ct">{count} treatments</span>
               <h3>{name}</h3>
               <p>{blurb}</p>
