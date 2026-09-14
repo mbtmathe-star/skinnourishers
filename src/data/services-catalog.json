@@ -9,385 +9,385 @@
     "services": [
       {
         "name": "Basic Facial",
-        "price": 552.5,
+        "price": 850,
         "duration": "45min",
         "tier": "Facials & Skin Health",
         "desc": "A thorough cleanse, exfoliation, extractions where needed, mask and moisturise. A good reset for dull or congested skin and a solid first appointment if you are new to facials."
       },
       {
         "name": "Oxygen Facial",
-        "price": 975,
+        "price": 1500,
         "duration": "1h",
         "tier": "Facials & Skin Health",
         "desc": "A hydrating facial that delivers a serum into the skin with pressurised oxygen, leaving it fresh and plumped straight after."
       },
       {
         "name": "Oxygen Therapy Facial",
-        "price": 975,
+        "price": 1500,
         "duration": "1h",
         "tier": "Facials & Skin Health",
         "desc": "A longer oxygen-based facial with added treatment steps for skin that needs more hydration and brightening."
       },
       {
         "name": "XFC Facial",
-        "price": 1430,
+        "price": 2200,
         "duration": "45min",
         "tier": "Facials & Skin Health",
         "desc": "A results-focused facial using concentrated actives to target dullness, texture and early ageing."
       },
       {
         "name": "Acne Treatment",
-        "price": 1040,
+        "price": 1600,
         "duration": "1h",
         "tier": "Facials & Skin Health",
         "desc": "A targeted session for active breakouts — deep cleansing, extractions and calming actives. Works best as part of a series alongside a home routine your therapist will recommend."
       },
       {
         "name": "High Frequency Facial",
-        "price": 325,
+        "price": 500,
         "duration": "30min",
         "tier": "Facials & Skin Health",
         "desc": "A finishing step that passes a low-level current over the skin, often added after extractions on blemish-prone skin."
       },
       {
         "name": "LED Red Light",
-        "price": 260,
+        "price": 400,
         "duration": "10min",
         "tier": "Facials & Skin Health",
         "desc": "A short session under red light, usually added onto another treatment to calm and support the skin."
       },
       {
         "name": "Dr Shrammek fresher",
-        "price": 845,
+        "price": 1300,
         "duration": "45min",
         "tier": "Facials & Skin Health",
         "desc": "The gentlest of the Dr Schrammek peels — a light resurfacing treatment for a brighter, smoother finish with minimal disruption."
       },
       {
         "name": "Consultation",
-        "price": 227.5,
+        "price": 350,
         "duration": "30min",
         "tier": "Facials & Skin Health",
         "desc": "A one-on-one skin assessment with your therapist to agree the right plan for your concerns. Redeemable against your first treatment."
       },
       {
         "name": "Pigmentation",
-        "price": 1495,
+        "price": 2300,
         "duration": "1h",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A treatment aimed at lightening sun spots and uneven tone. Suitability depends on your skin type and is assessed first; a course is usually advised."
       },
       {
         "name": "Microneedling",
-        "price": 1202.5,
+        "price": 1850,
         "duration": "1h",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "Fine needles create controlled micro-channels to prompt the skin’s own collagen response, used for texture, scarring and fine lines. Course length and downtime are discussed at consultation."
       },
       {
         "name": "Derma Peel",
-        "price": 1625,
+        "price": 2500,
         "duration": "1h",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A professional exfoliating peel to resurface dull, congested or uneven skin. Strength is tailored to you; a few days of light flaking can be normal."
       },
       {
         "name": "Derma Peel + Microneedle",
-        "price": 1625,
+        "price": 2500,
         "duration": "1h 30min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A peel followed by microneedling in one appointment, combining surface resurfacing with deeper collagen stimulation."
       },
       {
         "name": "Green Sea Spicules (Peel)",
-        "price": 1625,
+        "price": 2500,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A resurfacing treatment using natural marine spicules to exfoliate and renew the skin over the following days."
       },
       {
         "name": "Dr Schrammek Energy",
-        "price": 1040,
+        "price": 1600,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A mid-strength Dr Schrammek peel for skin that needs more correction than the Fresher but a shorter recovery than the Classic."
       },
       {
         "name": "Dr shrammek classic (Green Peel)",
-        "price": 1430,
+        "price": 2200,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "The original herbal Green Peel — an intensive resurfacing treatment with visible peeling over several days and a smoother, fresher result."
       },
       {
         "name": "Advanced repair and restore",
-        "price": 1430,
+        "price": 2200,
         "duration": "30min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A full-face treatment focused on repairing and strengthening tired, stressed skin."
       },
       {
         "name": "Prevention & Restore",
-        "price": 1170,
+        "price": 1800,
         "duration": "30min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A treatment aimed at slowing early signs of ageing while restoring hydration and radiance."
       },
       {
         "name": "Rejuvenating Cell Renewal",
-        "price": 1170,
+        "price": 1800,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A renewal treatment designed to kick-start cell turnover for brighter, more even skin."
       },
       {
         "name": "RF Anti-Wrinkle",
-        "price": 877.5,
+        "price": 1350,
         "duration": "1h",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "Radiofrequency warmth applied to the skin to firm and soften the look of fine lines. Results build gradually over a course."
       },
       {
         "name": "Hollywood Laser Face Treatment",
-        "price": 1365,
+        "price": 2100,
         "duration": "1h",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A gentle laser facial that works over the whole face for an immediate glow and refined texture, with no real downtime."
       },
       {
         "name": "Lip Contour",
-        "price": 637,
+        "price": 980,
         "duration": "30min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A non-surgical treatment to define and subtly enhance the lip border and shape."
       },
       {
         "name": "Double chin",
-        "price": 585,
+        "price": 900,
         "duration": "30min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "An injectable treatment to address fullness under the chin. Requires a consultation to confirm suitability."
       },
       {
         "name": "Jet Plasma Ozone",
-        "price": 1202.5,
+        "price": 1850,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A no-needle plasma treatment used to tighten skin and help active ingredients absorb. Often done as a course."
       },
       {
         "name": "Jet Plasma ozone - a cycle of 3",
-        "price": 3575,
+        "price": 5500,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A course of three Jet Plasma Ozone sessions at a set price, for a more cumulative result."
       },
       {
         "name": "Jet Plasma Ozone - Cycle of 6",
-        "price": 5525,
+        "price": 8500,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "A course of six Jet Plasma Ozone sessions at a set price, for the fullest result."
       },
       {
         "name": "Plumping and tightening",
-        "price": 2275,
+        "price": 3500,
         "duration": "45min",
         "tier": "Lifting & Structural",
         "desc": "A treatment aimed at restoring volume and firmness to a hollow or sagging face. Assessed at consultation."
       },
       {
         "name": "Ultraformer Non-Surgical Face Lift",
-        "price": 2600,
+        "price": 4000,
         "duration": "45min",
         "tier": "Lifting & Structural",
         "desc": "Focused ultrasound that reaches deeper layers of the skin to lift and tighten the full face without surgery. Results build over weeks; suitability is assessed first."
       },
       {
         "name": "Ultraformer Neck Lift",
-        "price": 1300,
+        "price": 2000,
         "duration": "30min",
         "tier": "Lifting & Structural",
         "desc": "The Ultraformer ultrasound treatment focused on the neck to firm loose or crepey skin."
       },
       {
         "name": "Ultraformer Double Chin",
-        "price": 975,
+        "price": 1500,
         "duration": "30min",
         "tier": "Lifting & Structural",
         "desc": "The Ultraformer ultrasound treatment focused under the chin and jawline."
       },
       {
         "name": "Fibroblast Plasma - Forehead",
-        "price": 2600,
+        "price": 4000,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the forehead. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Frown Lines",
-        "price": 1300,
+        "price": 2000,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the frown lines. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Brow Lift",
-        "price": 1625,
+        "price": 2500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the brow lift. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Crows Feet",
-        "price": 1625,
+        "price": 2500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the crows feet. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Bev Hooded Eyes",
-        "price": 2275,
+        "price": 3500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the bev hooded eyes. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Under Eye Bag",
-        "price": 1950,
+        "price": 3000,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the under eye bag. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Ear Fold",
-        "price": 975,
+        "price": 1500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the ear fold. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Nasal Labial",
-        "price": 975,
+        "price": 1500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the nasal labial. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Above Lip & 2 Rows",
-        "price": 1625,
+        "price": 2500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the above lip & 2 rows. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Smokers' Lines",
-        "price": 1625,
+        "price": 2500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the smokers' lines. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Jaw Line",
-        "price": 2275,
+        "price": 3500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the jaw line. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Turkey Neck",
-        "price": 2275,
+        "price": 3500,
         "duration": "1h",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the turkey neck. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Fibroblast Plasma - Neck & Chin",
-        "price": 2600,
+        "price": 4000,
         "duration": "1h 30min",
         "tier": "Lifting & Structural",
         "desc": "A plasma-pen treatment that places tiny controlled points on the skin to tighten and firm the neck & chin. A consultation and patch test are required, and healing takes about a week."
       },
       {
         "name": "Dermaplaning",
-        "price": 325,
+        "price": 500,
         "duration": "30min",
         "desc": "A sterile blade is used to lift away dead surface cells and fine vellus hair, leaving a smoother finish and better product absorption.",
         "tier": "Facials & Skin Health"
       },
       {
         "name": "Microdermabrasion",
-        "price": 325,
+        "price": 500,
         "duration": "30min",
         "desc": "Mechanical exfoliation that resurfaces the very top layer of skin to soften texture and dullness. Often done as a short course.",
         "tier": "Facials & Skin Health"
       },
       {
         "name": "Shaving Time",
-        "price": 162.5,
+        "price": 250,
         "duration": "20min",
         "desc": "A short add-on appointment for facial shaving and tidying. Book alongside another treatment where possible.",
         "tier": "Facials & Skin Health"
       },
       {
         "name": "Spicules",
-        "price": 1625,
+        "price": 2500,
         "duration": "45min",
         "desc": "A resurfacing treatment using natural marine spicules to exfoliate and renew the skin over the following days.",
         "tier": "Resurfacing & Rejuvenation"
       },
       {
         "name": "Peel (ANESI)",
-        "price": 1625,
+        "price": 2500,
         "duration": "45min",
         "desc": "A professional ANESI peel, with strength tailored to your skin. Some light flaking over the following days is normal.",
         "tier": "Resurfacing & Rejuvenation"
       },
       {
         "name": "Melaclear",
-        "price": 1625,
+        "price": 2500,
         "duration": "45min",
         "desc": "A treatment aimed at uneven tone and dark marks. Suitability depends on your skin type and is assessed first.",
         "tier": "Resurfacing & Rejuvenation"
       },
       {
         "name": "X-FC",
-        "price": 1170,
+        "price": 1800,
         "duration": "45min",
         "desc": "A concentrated corrective facial treatment. Your therapist will confirm at consultation whether it suits your skin.",
         "tier": "Resurfacing & Rejuvenation"
       },
       {
         "name": "Lifting:tightening full face + neck",
-        "price": 2275,
+        "price": 3500,
         "duration": "30min",
         "desc": "A firming treatment covering the full face and neck together, for skin that has started to lose its hold. Assessed at consultation.",
         "tier": "Lifting & Structural"
       },
       {
         "name": "Plasma Single Treatment",
-        "price": 1625,
+        "price": 2500,
         "duration": "40min",
         "desc": "A single plasma session rather than a course. A consultation and patch test are required beforehand.",
         "tier": "Lifting & Structural"
       },
       {
         "name": "HIFU Lifting Facial",
-        "price": 1625,
+        "price": 2500,
         "duration": "30min",
         "desc": "Focused ultrasound delivered as a facial, working deeper than a surface treatment. Results build gradually over weeks.",
         "tier": "Lifting & Structural"
       },
       {
         "name": "Under Eye Bags / Lifting Lines",
-        "price": 780,
+        "price": 1200,
         "duration": "30min",
         "desc": "A targeted treatment for puffiness and fine lines under the eye. Suitability is assessed first.",
         "tier": "Lifting & Structural"
       },
       {
         "name": "Keloid",
-        "price": 520,
+        "price": 800,
         "duration": "30min",
         "desc": "Treatment of raised keloid scarring. A consultation is required to confirm the area is suitable to treat.",
         "tier": "Lifting & Structural"
@@ -404,168 +404,168 @@
     "services": [
       {
         "name": "Reflexology",
-        "price": 325,
+        "price": 500,
         "duration": "30min",
         "tier": "Massage & Body Care",
         "desc": "A focused foot massage working pressure points, used for deep relaxation and to relieve tension."
       },
       {
         "name": "Body Polish",
-        "price": 780,
+        "price": 1200,
         "duration": "1h",
         "tier": "Massage & Body Care",
         "desc": "A full-body exfoliating scrub followed by hydration, leaving skin soft, smooth and glowing."
       },
       {
         "name": "Body Vajacial",
-        "price": 552.5,
+        "price": 850,
         "duration": "30min",
         "tier": "Massage & Body Care",
         "desc": "A hygiene and skincare treatment for the bikini area — cleansing, gentle exfoliation and soothing to reduce ingrowns and irritation."
       },
       {
         "name": "Cellulite Treatment",
-        "price": 650,
+        "price": 1000,
         "duration": "30min",
         "tier": "Contouring & Firming",
         "desc": "A body treatment targeting the appearance of cellulite. Best results come from a course rather than a one-off."
       },
       {
         "name": "Heat Lipolysis Contour Therapy",
-        "price": 650,
+        "price": 1000,
         "duration": "1h",
         "tier": "Contouring & Firming",
         "desc": "A warmth-based contouring treatment for stubborn areas, usually done as a course."
       },
       {
         "name": "Body Skin Tightening (per area)",
-        "price": 1365,
+        "price": 2100,
         "duration": "30min",
         "tier": "Contouring & Firming",
         "desc": "A firming treatment for loose skin on a chosen area of the body, priced per area and usually done as a course."
       },
       {
         "name": "Saggy Upper Arms",
-        "price": 1170,
+        "price": 1800,
         "duration": "30min",
         "tier": "Contouring & Firming",
         "desc": "A skin-tightening treatment focused on loose skin on the upper arms."
       },
       {
         "name": "Dark Area Treatment (per area)",
-        "price": 552.5,
+        "price": 850,
         "duration": "30min",
         "tier": "Contouring & Firming",
         "desc": "A treatment to lighten darker areas such as underarms, inner thighs, elbows or knuckles. A course is usually needed."
       },
       {
         "name": "Skin Tag Removal",
-        "price": 877.5,
+        "price": 1350,
         "duration": "30min",
         "tier": "Contouring & Firming",
         "desc": "Quick removal of small skin tags. A consultation confirms the lesions are suitable to treat."
       },
       {
         "name": "Fibroblast plasma cherry negoma",
-        "price": 520,
+        "price": 800,
         "duration": "30min",
         "tier": "Contouring & Firming",
         "desc": "Plasma-pen treatment of small red vascular spots (cherry angiomas) on the body. Patch test and consultation required."
       },
       {
         "name": "Stretch Marks - Tummy",
-        "price": 1820,
+        "price": 2800,
         "duration": "45min",
         "tier": "Advanced & Restorative",
         "desc": "A treatment to soften the colour and texture of stretch marks on the tummy. Improvement is gradual over a series of sessions."
       },
       {
         "name": "Stretch mark treatment - Both thighs",
-        "price": 1820,
+        "price": 2800,
         "duration": "1h",
         "tier": "Advanced & Restorative",
         "desc": "A treatment to soften the look of stretch marks across both thighs, done as a series."
       },
       {
         "name": "Stretch Marks - Upper Arms",
-        "price": 877.5,
+        "price": 1350,
         "duration": "30min",
         "tier": "Advanced & Restorative",
         "desc": "A treatment to soften the look of stretch marks on the upper arms, done as a series."
       },
       {
         "name": "Stretch Marks - Buttocks",
-        "price": 975,
+        "price": 1500,
         "duration": "1h",
         "tier": "Advanced & Restorative",
         "desc": "A treatment to soften the look of stretch marks on the buttocks, done as a series."
       },
       {
         "name": "Hair Re-Growth Treatment (Injectables)",
-        "price": 2275,
+        "price": 3500,
         "duration": "1h",
         "tier": "Advanced & Restorative",
         "desc": "A scalp treatment using injectable actives to support thinning hair. Delivered as a course; suitability assessed first."
       },
       {
         "name": "Hair Re-Growth Treatment (Bioneedles)",
-        "price": 1625,
+        "price": 2500,
         "duration": "1h",
         "tier": "Advanced & Restorative",
         "desc": "A scalp treatment that delivers actives into the skin using dissolvable bioneedles to support thinning hair. Delivered as a course."
       },
       {
         "name": "V-Shot - Vagina Rejuvenation & Tightening",
-        "price": 1625,
+        "price": 2500,
         "duration": "30min",
         "tier": "Advanced & Restorative",
         "desc": "An intimate wellness treatment. Please book a consultation to discuss whether it is right for you and what is involved."
       },
       {
         "name": "Ginkgo V-Shot",
-        "price": 2275,
+        "price": 3500,
         "duration": "45min",
         "tier": "Advanced & Restorative",
         "desc": "An intimate wellness treatment. Please book a consultation to discuss suitability and what is involved."
       },
       {
         "name": "Ginkgo O-Shot",
-        "price": 2275,
+        "price": 3500,
         "duration": "45min",
         "tier": "Advanced & Restorative",
         "desc": "An intimate wellness treatment. Please book a consultation to discuss suitability and what is involved."
       },
       {
         "name": "HIFU - Urinary Stress Incontinence",
-        "price": 1625,
+        "price": 2500,
         "duration": "30min",
         "tier": "Advanced & Restorative",
         "desc": "A focused-ultrasound treatment used for pelvic-floor support. A consultation is required to assess suitability."
       },
       {
         "name": "HIFU - Abdomen",
-        "price": 1820,
+        "price": 2800,
         "duration": "30min",
         "tier": "Advanced & Restorative",
         "desc": "Focused ultrasound applied to the abdomen to firm and tighten loose skin. Results build over weeks."
       },
       {
         "name": "Tummy - Men",
-        "price": 390,
+        "price": 600,
         "duration": "30min",
         "desc": "A firming and contouring treatment for the abdomen, priced for men’s treatment area.",
         "tier": "Contouring & Firming"
       },
       {
         "name": "Jet Med (Spider Veins)",
-        "price": 1625,
+        "price": 2500,
         "duration": "40min",
         "desc": "A treatment for visible surface veins. A consultation is required to confirm suitability before booking.",
         "tier": "Advanced & Restorative"
       },
       {
         "name": "Pico (Spider Vein, per session)",
-        "price": 1625,
+        "price": 2500,
         "duration": "40min",
         "desc": "Pico treatment of spider veins, priced per session. A course is usually needed and is discussed at consultation.",
         "tier": "Advanced & Restorative"
@@ -577,168 +577,168 @@
     "services": [
       {
         "name": "Laser - Full Face",
-        "price": 650,
+        "price": 1000,
         "duration": "30min",
         "desc": "Laser hair reduction for the full face. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Forehead",
-        "price": 195,
+        "price": 300,
         "duration": "15min",
         "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Cheeks",
-        "price": 292.5,
+        "price": 450,
         "duration": "15min",
         "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Nose",
-        "price": 162.5,
+        "price": 250,
         "duration": "15min",
         "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Chin",
-        "price": 312,
+        "price": 480,
         "duration": "15min",
         "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Lip",
-        "price": 312,
+        "price": 480,
         "duration": "15min",
         "desc": "Laser hair reduction for the lip. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Side Burns",
-        "price": 162.5,
+        "price": 250,
         "duration": "15min",
         "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Neck (Front & Back)",
-        "price": 325,
+        "price": 500,
         "duration": "15min",
         "desc": "Laser hair reduction for the neck (front & back). A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Underarm",
-        "price": 292.5,
+        "price": 450,
         "duration": "15min",
         "desc": "Laser hair reduction for the underarm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Arm",
-        "price": 520,
+        "price": 800,
         "duration": "15min",
         "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Arm",
-        "price": 780,
+        "price": 1200,
         "duration": "30min",
         "desc": "Laser hair reduction for the full arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Leg",
-        "price": 585,
+        "price": 900,
         "duration": "30min",
         "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - 3/4 Leg",
-        "price": 715,
+        "price": 1100,
         "duration": "30min",
         "desc": "Laser hair reduction for the 3/4 leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Full Leg",
-        "price": 877.5,
+        "price": 1350,
         "duration": "30min",
         "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Bikini Line",
-        "price": 422.5,
+        "price": 650,
         "duration": "15min",
         "desc": "Laser hair reduction for the bikini line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Brazilian",
-        "price": 552.5,
+        "price": 850,
         "duration": "15min",
         "desc": "Laser hair reduction for the brazilian. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Hollywood",
-        "price": 617.5,
+        "price": 950,
         "duration": "30min",
         "desc": "Laser hair reduction for the hollywood. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Buttocks",
-        "price": 390,
+        "price": 600,
         "duration": "15min",
         "desc": "Laser hair reduction for the buttocks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Stomach",
-        "price": 390,
+        "price": 600,
         "duration": "30min",
         "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Tummy Line",
-        "price": 227.5,
+        "price": 350,
         "duration": "15min",
         "desc": "Laser hair reduction for the tummy line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Back & Shoulder",
-        "price": 780,
+        "price": 1200,
         "duration": "45min",
         "desc": "Laser hair reduction for the back & shoulder. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Back",
-        "price": 975,
+        "price": 1500,
         "duration": "30min",
         "desc": "Laser hair reduction for the full back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Full Arms -Laser - Ladies",
-        "price": 780,
+        "price": 1200,
         "duration": "30min",
         "desc": "Laser hair reduction across the full arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "laser - ladies Uni Brow",
-        "price": 195,
+        "price": 300,
         "duration": "15min",
         "desc": "Laser hair reduction for the area between the brows. A course of sessions is normally needed for a lasting result.",
         "tier": "Face & Neck"
@@ -755,126 +755,126 @@
     "services": [
       {
         "name": "Laser - Forehead",
-        "price": 292.5,
+        "price": 450,
         "duration": "15min",
         "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Cheeks",
-        "price": 520,
+        "price": 800,
         "duration": "15min",
         "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Nose",
-        "price": 195,
+        "price": 300,
         "duration": "15min",
         "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Chin",
-        "price": 325,
+        "price": 500,
         "duration": "15min",
         "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Jaw Line",
-        "price": 227.5,
+        "price": 350,
         "duration": "15min",
         "desc": "Laser hair reduction for the jaw line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Side Burns",
-        "price": 227.5,
+        "price": 350,
         "duration": "15min",
         "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Unibrow",
-        "price": 195,
+        "price": 300,
         "duration": "15min",
         "desc": "Laser hair reduction for the unibrow. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Underarm",
-        "price": 390,
+        "price": 600,
         "duration": "15min",
         "desc": "Laser hair reduction for the underarm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Arm",
-        "price": 780,
+        "price": 1200,
         "duration": "30min",
         "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - 3/4 Arm",
-        "price": 715,
+        "price": 1100,
         "duration": "30min",
         "desc": "Laser hair reduction for the 3/4 arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Arm",
-        "price": 780,
+        "price": 1200,
         "duration": "30min",
         "desc": "Laser hair reduction for the full arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Leg",
-        "price": 910,
+        "price": 1400,
         "duration": "30min",
         "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Full Leg",
-        "price": 1267.5,
+        "price": 1950,
         "duration": "30min",
         "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Stomach",
-        "price": 780,
+        "price": 1200,
         "duration": "30min",
         "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser Chest - Men",
-        "price": 1170,
+        "price": 1800,
         "duration": "30min",
         "desc": "Laser hair reduction for the chest. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Lower Back",
-        "price": 585,
+        "price": 900,
         "duration": "30min",
         "desc": "Laser hair reduction for the lower back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Back & Shoulder",
-        "price": 1430,
+        "price": 2200,
         "duration": "30min",
         "desc": "Laser hair reduction for the back & shoulder. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Back",
-        "price": 1430,
+        "price": 2200,
         "duration": "30min",
         "desc": "Laser hair reduction for the full back. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
         "tier": "Arms, Underarms & Body"
@@ -891,126 +891,126 @@
     "services": [
       {
         "name": "Laser - Forehead",
-        "price": 195,
+        "price": 300,
         "duration": "15min",
         "desc": "Laser hair reduction for the forehead. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Cheeks",
-        "price": 162.5,
+        "price": 250,
         "duration": "15min",
         "desc": "Laser hair reduction for the cheeks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Nose",
-        "price": 162.5,
+        "price": 250,
         "duration": "15min",
         "desc": "Laser hair reduction for the nose. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Chin",
-        "price": 227.5,
+        "price": 350,
         "duration": "15min",
         "desc": "Laser hair reduction for the chin. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Side Burns",
-        "price": 162.5,
+        "price": 250,
         "duration": "15min",
         "desc": "Laser hair reduction for the side burns. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Neck",
-        "price": 292.5,
+        "price": 450,
         "duration": "15min",
         "desc": "Laser hair reduction for the neck. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Underarms",
-        "price": 195,
+        "price": 300,
         "duration": "15min",
         "desc": "Laser hair reduction for the underarms. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Arm",
-        "price": 390,
+        "price": 600,
         "duration": "30min",
         "desc": "Laser hair reduction for the half arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Half Leg",
-        "price": 715,
+        "price": 1100,
         "duration": "30min",
         "desc": "Laser hair reduction for the half leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Full Leg",
-        "price": 585,
+        "price": 900,
         "duration": "45min",
         "desc": "Laser hair reduction for the full leg. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Bikini Line",
-        "price": 260,
+        "price": 400,
         "duration": "15min",
         "desc": "Laser hair reduction for the bikini line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Brazilian",
-        "price": 390,
+        "price": 600,
         "duration": "15min",
         "desc": "Laser hair reduction for the brazilian. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Hollywood",
-        "price": 585,
+        "price": 900,
         "duration": "30min",
         "desc": "Laser hair reduction for the hollywood. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Buttocks",
-        "price": 325,
+        "price": 500,
         "duration": "30min",
         "desc": "Laser hair reduction for the buttocks. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Legs & Intimate"
       },
       {
         "name": "Laser - Stomach",
-        "price": 390,
+        "price": 600,
         "duration": "1h",
         "desc": "Laser hair reduction for the stomach. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Tummy Line",
-        "price": 227.5,
+        "price": 350,
         "duration": "30min",
         "desc": "Laser hair reduction for the tummy line. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Arms, Underarms & Body"
       },
       {
         "name": "Laser - Full Beard & Neck",
-        "price": 325,
+        "price": 500,
         "duration": "30min",
         "desc": "Laser hair reduction for the full beard & neck. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Face & Neck"
       },
       {
         "name": "Laser - Back & Shoulders",
-        "price": 650,
+        "price": 1000,
         "duration": "45min",
         "desc": "Laser hair reduction for the back & shoulders. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. For teen clients; a parent or guardian must consent.",
         "tier": "Arms, Underarms & Body"
@@ -1212,35 +1212,35 @@
     "services": [
       {
         "name": "Threading - Brows",
-        "price": 97.5,
+        "price": 150,
         "duration": "15min",
         "desc": "Hair removal for the brows using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Brows & Eyes"
       },
       {
         "name": "Lip",
-        "price": 78,
+        "price": 120,
         "duration": "15min",
         "desc": "Hair removal for the lip using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Face"
       },
       {
         "name": "Chin",
-        "price": 97.5,
+        "price": 150,
         "duration": "15min",
         "desc": "Hair removal for the chin using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Face"
       },
       {
         "name": "Side Burns",
-        "price": 97.5,
+        "price": 150,
         "duration": "15min",
         "desc": "Hair removal for the side burns using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Face"
       },
       {
         "name": "Full Face",
-        "price": 162.5,
+        "price": 250,
         "duration": "30min",
         "desc": "Hair removal for the full face using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Face"
@@ -1256,14 +1256,14 @@
     "services": [
       {
         "name": "Brow Lamination",
-        "price": 325,
+        "price": 500,
         "duration": "30min",
         "desc": "Sets the brow hairs in a fuller, brushed-up shape that holds for several weeks.",
         "tier": "Shaping"
       },
       {
         "name": "Eyebrow Tint",
-        "price": 97.5,
+        "price": 150,
         "duration": "15min",
         "desc": "A semi-permanent tint to darken and define the brows. Fades gradually over a couple of weeks.",
         "tier": "Tinting"
@@ -1277,7 +1277,7 @@
       },
       {
         "name": "Hena tint & shape",
-        "price": 325,
+        "price": 500,
         "duration": "30min",
         "desc": "A henna-based brow tint with shaping. Henna stains the skin as well as the hair for a fuller-looking brow that fades gradually.",
         "tier": "Shaping"
@@ -1314,21 +1314,21 @@
       },
       {
         "name": "Threading & Tint",
-        "price": 195,
+        "price": 300,
         "duration": "30min",
         "desc": "Brow shaping by threading plus a tint, for sensitive skin that prefers no wax.",
         "tier": "Brow & Lash Combos"
       },
       {
         "name": "Formulage Peel + Microneedling",
-        "price": 1625,
+        "price": 2500,
         "duration": "1h",
         "desc": "A Formulage peel followed by microneedling in one session, pairing resurfacing with collagen stimulation.",
         "tier": "Advanced Combos"
       },
       {
         "name": "Jet Plasma Ozone - Course of 3 Sessions",
-        "price": 8125,
+        "price": 12500,
         "duration": "45min",
         "desc": "A set course of Jet Plasma Ozone sessions at a package price.",
         "tier": "Advanced Combos"
