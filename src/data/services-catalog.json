@@ -57,7 +57,7 @@
         "desc": "A short session under red light, usually added onto another treatment to calm and support the skin."
       },
       {
-        "name": "Dr Schrammek Fresher Peel",
+        "name": "Dr Shrammek fresher",
         "price": 845,
         "duration": "45min",
         "tier": "Facials & Skin Health",
@@ -113,14 +113,14 @@
         "desc": "A mid-strength Dr Schrammek peel for skin that needs more correction than the Fresher but a shorter recovery than the Classic."
       },
       {
-        "name": "Dr Schrammek Classic (Green Peel)",
+        "name": "Dr shrammek classic (Green Peel)",
         "price": 1430,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
         "desc": "The original herbal Green Peel — an intensive resurfacing treatment with visible peeling over several days and a smoother, fresher result."
       },
       {
-        "name": "Advanced Repair & Restore (Full Face)",
+        "name": "Advanced repair and restore",
         "price": 1430,
         "duration": "30min",
         "tier": "Resurfacing & Rejuvenation",
@@ -162,7 +162,7 @@
         "desc": "A non-surgical treatment to define and subtly enhance the lip border and shape."
       },
       {
-        "name": "Double Chin (Injectable)",
+        "name": "Double chin",
         "price": 585,
         "duration": "30min",
         "tier": "Resurfacing & Rejuvenation",
@@ -176,7 +176,7 @@
         "desc": "A no-needle plasma treatment used to tighten skin and help active ingredients absorb. Often done as a course."
       },
       {
-        "name": "Jet Plasma Ozone - Cycle of 3",
+        "name": "Jet Plasma ozone - a cycle of 3",
         "price": 3575,
         "duration": "45min",
         "tier": "Resurfacing & Rejuvenation",
@@ -190,7 +190,7 @@
         "desc": "A course of six Jet Plasma Ozone sessions at a set price, for the fullest result."
       },
       {
-        "name": "Plumping & Tightening (Hollow / Saggy Face)",
+        "name": "Plumping and tightening",
         "price": 2275,
         "duration": "45min",
         "tier": "Lifting & Structural",
@@ -324,7 +324,7 @@
       },
       {
         "name": "Shaving Time",
-        "price": 163,
+        "price": 162.5,
         "duration": "20min",
         "desc": "A short add-on appointment for facial shaving and tidying. Book alongside another treatment where possible.",
         "tier": "Facials & Skin Health"
@@ -358,7 +358,7 @@
         "tier": "Resurfacing & Rejuvenation"
       },
       {
-        "name": "Lifting / Tightening — Full Face & Neck",
+        "name": "Lifting:tightening full face + neck",
         "price": 2275,
         "duration": "30min",
         "desc": "A firming treatment covering the full face and neck together, for skin that has started to lose its hold. Assessed at consultation.",
@@ -466,7 +466,7 @@
         "desc": "Quick removal of small skin tags. A consultation confirms the lesions are suitable to treat."
       },
       {
-        "name": "Fibroblast Plasma - Cherry Angioma",
+        "name": "Fibroblast plasma cherry negoma",
         "price": 520,
         "duration": "30min",
         "tier": "Contouring & Firming",
@@ -480,7 +480,7 @@
         "desc": "A treatment to soften the colour and texture of stretch marks on the tummy. Improvement is gradual over a series of sessions."
       },
       {
-        "name": "Stretch Marks - Both Thighs",
+        "name": "Stretch mark treatment - Both thighs",
         "price": 1820,
         "duration": "1h",
         "tier": "Advanced & Restorative",
@@ -730,14 +730,14 @@
         "tier": "Arms, Underarms & Body"
       },
       {
-        "name": "Laser - Full Arms",
+        "name": "Full Arms -Laser - Ladies",
         "price": 780,
         "duration": "30min",
         "desc": "Laser hair reduction across the full arm. A course of sessions spaced a few weeks apart is normally needed for a lasting result.",
         "tier": "Arms, Underarms & Body"
       },
       {
-        "name": "Laser - Unibrow",
+        "name": "laser - ladies Uni Brow",
         "price": 195,
         "duration": "15min",
         "desc": "Laser hair reduction for the area between the brows. A course of sessions is normally needed for a lasting result.",
@@ -852,7 +852,7 @@
         "tier": "Arms, Underarms & Body"
       },
       {
-        "name": "Laser - Chest",
+        "name": "Laser Chest - Men",
         "price": 1170,
         "duration": "30min",
         "desc": "Laser hair reduction for the chest. A course of sessions spaced a few weeks apart is normally needed for a lasting result — your therapist will advise on numbers at your first visit. Priced for men’s treatment areas and hair density.",
@@ -1145,7 +1145,7 @@
         "tier": "Arms, Body & Back"
       },
       {
-        "name": "Ladies & Teen - Back & Shoulder",
+        "name": "Ladies and Teen- Back Shoulder",
         "price": 300,
         "duration": "30min",
         "desc": "Warm-wax hair removal for the back & shoulder, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
@@ -1166,7 +1166,7 @@
         "tier": "Face"
       },
       {
-        "name": "Men - Chest",
+        "name": "Chest Men",
         "price": 250,
         "duration": "30min",
         "desc": "Warm-wax hair removal for the chest, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
@@ -1180,14 +1180,14 @@
         "tier": "Arms, Body & Back"
       },
       {
-        "name": "Men - 3/4 Leg",
+        "name": "3/4 Leg Men",
         "price": 300,
         "duration": "30min",
         "desc": "Warm-wax hair removal for the 3/4 leg, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
         "tier": "Legs & Intimate"
       },
       {
-        "name": "Men - Full Leg Wax",
+        "name": "Full leg wax Men",
         "price": 400,
         "duration": "30min",
         "desc": "Warm-wax hair removal for the full leg wax, leaving skin smooth until regrowth. A quick appointment; regular waxing tends to make regrowth finer over time.",
@@ -1218,29 +1218,29 @@
         "tier": "Brows & Eyes"
       },
       {
-        "name": "Threading - Lip",
+        "name": "Lip",
         "price": 78,
         "duration": "15min",
         "desc": "Hair removal for the lip using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Face"
       },
       {
-        "name": "Threading - Chin",
-        "price": 98,
+        "name": "Chin",
+        "price": 97.5,
         "duration": "15min",
         "desc": "Hair removal for the chin using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Face"
       },
       {
-        "name": "Threading - Side Burns",
-        "price": 98,
+        "name": "Side Burns",
+        "price": 97.5,
         "duration": "15min",
         "desc": "Hair removal for the side burns using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Face"
       },
       {
-        "name": "Threading - Full Face",
-        "price": 163,
+        "name": "Full Face",
+        "price": 162.5,
         "duration": "30min",
         "desc": "Hair removal for the full face using twisted cotton thread — no wax and no chemicals, which suits sensitive or reactive skin.",
         "tier": "Face"
@@ -1276,7 +1276,7 @@
         "tier": "Tinting"
       },
       {
-        "name": "Henna Tint & Shape",
+        "name": "Hena tint & shape",
         "price": 325,
         "duration": "30min",
         "desc": "A henna-based brow tint with shaping. Henna stains the skin as well as the hair for a fuller-looking brow that fades gradually.",
