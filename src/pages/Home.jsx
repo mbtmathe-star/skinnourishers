@@ -1,13 +1,9 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-  ArrowLeft, ArrowRight, CalendarDays, ChevronLeft, ChevronRight,
-  MapPin, Phone, Star
-} from 'lucide-react';
+import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import Layout from '../components/Layout';
-import { Button } from '../components/ui';
-import treatments from '../data/treatments.json';
+import catalog from '../data/services-catalog.json';
 import reviews from '../data/reviews.json';
 import { useBooking } from '../components/BookingModal';
 import { useInquiry } from '../components/InquiryModal';
@@ -21,6 +17,83 @@ const heroImages = [
   { image: '/assets/hero-spa-7-24dnnZ-x.jpg', position: 'center' },
 ];
 
+const rand = (n) => {
+  const whole = Math.floor(n);
+  const cents = Math.round((n - whole) * 100);
+  const grouped = whole.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return 'R' + grouped + (cents ? ',' + String(cents).padStart(2, '0') : '');
+};
+
+const totalServices = catalog.reduce((n, g) => n + g.services.length, 0);
+const countIn = (category) => (catalog.find((g) => g.category === category)?.services.length ?? 0);
+
+// Our own tier vocabulary, mapped to the reference's three depth bands so the
+// card accents and the explainer agree with how /pricing already groups things.
+const DEPTH = {
+  'Facials & Skin Health': 'surface',
+  'Face': 'surface',
+  'Brows & Eyes': 'surface',
+  'Shaping': 'surface',
+  'Tinting': 'surface',
+  'Massage & Body Care': 'surface',
+  'Brow & Lash Combos': 'surface',
+  'Resurfacing & Rejuvenation': 'dermal',
+  'Contouring & Firming': 'dermal',
+  'Arms, Underarms & Body': 'dermal',
+  'Legs & Intimate': 'dermal',
+  'Face & Neck': 'dermal',
+  'Arms, Body & Back': 'dermal',
+  'Lifting & Structural': 'structural',
+  'Advanced & Restorative': 'structural',
+  'Advanced Combos': 'structural',
+};
+
+const MOST_BOOKED = [
+  'Ladies & Teen - Hollywood Wax', 'Laser - Full Leg', 'Laser - Underarm', 'Dermaplaning',
+  'Jet Plasma Ozone', 'Oxygen Therapy Facial', 'Pigmentation', 'Skin Tag Removal',
+  'Basic Facial', 'Microneedling', 'Ultraformer Non-Surgical Face Lift', 'Laser - Brazilian',
+  'Ladies & Teen - Brazilian', 'Derma Peel', 'Acne Treatment', 'Brow Lamination',
+  'Laser - Full Back', 'Cellulite Treatment', 'HIFU - Abdomen', 'Consultation',
+];
+
+function resolveMostBooked() {
+  const out = [];
+  MOST_BOOKED.forEach((name) => {
+    for (const group of catalog) {
+      const svc = group.services.find((s) => s.name === name);
+      if (svc) { out.push({ ...svc, category: group.category }); return; }
+    }
+  });
+  return out;
+}
+
+const CONCERNS = [
+  'Acne & breakouts',
+  'Pigmentation & dark marks',
+  'Fine lines & sagging',
+  'Unwanted hair',
+  'Stretch marks & scarring',
+  'Hair loss & thinning',
+];
+
+const DEPTH_BANDS = [
+  {
+    tier: 'Facials & Skin Health',
+    title: 'Skin you can see today',
+    body: 'Facials, dermaplaning, microdermabrasion, waxing, threading, brows and lashes. Immediate, visible, and easy to fit into a lunch hour.',
+  },
+  {
+    tier: 'Resurfacing & Rejuvenation',
+    title: 'Skin that rebuilds itself',
+    body: 'Peels, microneedling, pigmentation and acne programmes, laser hair removal. These work below the surface and build over a course of sessions.',
+  },
+  {
+    tier: 'Lifting & Structural',
+    title: 'The layer that holds everything up',
+    body: 'HIFU, Ultraformer, Fibroblast plasma, RF and Jet Plasma. Focused energy at the depth a surgeon would tighten, without surgery or downtime.',
+  },
+];
+
 function HomeHero({ onOpenAssessment }) {
   const [active, setActive] = useState(0);
   const next = useCallback(() => setActive((v) => (v + 1) % heroImages.length), []);
@@ -28,51 +101,240 @@ function HomeHero({ onOpenAssessment }) {
   return <section className="relative h-screen w-full overflow-hidden">
     {heroImages.map((image, index) => <motion.div key={image.image} initial={{ opacity: 0 }} animate={{ opacity: index === active ? 1 : 0 }} transition={{ duration: 1.5, ease: 'easeInOut' }} className="absolute inset-0" style={{ zIndex: index === active ? 1 : 0 }}><div className="absolute inset-0 bg-cover" style={{ backgroundImage: `url(${image.image})`, backgroundPosition: image.position }} /></motion.div>)}
     <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent z-10" />
-    <div className="container relative z-20 h-full flex items-center"><div className="max-w-xl"><motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .2 }}><h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-[1.15]">Experience<br /><span className="italic">Premium Skincare</span></h1><p className="font-body text-lg text-white/80 mb-10 max-w-md leading-relaxed">Personalized treatments for radiant, healthy skin. Begin with a complimentary consultation.</p></motion.div><motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .5 }}><button type="button" onClick={onOpenAssessment} className="group inline-flex items-center bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-7 text-sm uppercase tracking-widest font-body font-medium rounded-sm shadow-2xl shadow-primary/40">Free Skin Assessment <ArrowRight className="ml-3 h-4 w-4 transition-transform group-hover:translate-x-1" /></button></motion.div></div></div>
+    <div className="container relative z-20 h-full flex items-center"><div className="max-w-xl"><motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .2 }}><h1 className="d1 text-white mb-6">Experience<br /><span className="italic">Premium Skincare</span></h1><p className="font-body text-lg text-white/80 mb-10 max-w-md leading-relaxed">Personalized treatments for radiant, healthy skin. Begin with a complimentary consultation.</p></motion.div><motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .5 }}><button type="button" onClick={onOpenAssessment} className="btn-ref">Free Skin Assessment <ArrowRight className="h-4 w-4" /></button></motion.div></div></div>
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">{heroImages.map((_, index) => <button key={index} onClick={() => setActive(index)} className={`h-1 rounded-full transition-all duration-500 ${index === active ? 'w-8 bg-white' : 'w-2 bg-white/40'}`} aria-label={`Go to slide ${index + 1}`} />)}</div>
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2, duration: .8 }} className="absolute bottom-8 right-8 z-20 hidden md:block"><motion.div animate={{ y: [0,8,0] }} transition={{ duration: 2, repeat: Infinity }} className="flex flex-col items-center gap-2"><span className="text-xs text-white/50 uppercase tracking-widest font-body">Scroll</span><div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" /></motion.div></motion.div>
   </section>;
 }
 
-function TreatmentsCarousel() {
+function StatsStrip() {
+  const stats = [
+    ['15+', 'Years treating skin'],
+    [String(totalServices), 'Treatments offered'],
+    ['4.7', 'Average rating on Booksy'],
+    ['Free', '30-minute consultation'],
+  ];
+  return (
+    <section className="sec-ash strip">
+      <div className="container">
+        <div className="creds">
+          {stats.map(([n, t]) => (
+            <div className="cred" key={t}>
+              <span className="n">{n}</span>
+              <span className="t">{t}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ConcernsGrid() {
+  return (
+    <section className="sec-mist sec-pad" id="concerns">
+      <div className="container">
+        <span className="eyebrow">Start here</span>
+        <h2 className="d2 sec-h">What would you like to treat?</h2>
+        <p className="lede sec-p">
+          Most people know the problem, not the treatment that fixes it. Start with what is bothering
+          you and we will show you what actually works for it.
+        </p>
+        <div className="concerns">
+          {CONCERNS.map((c) => (
+            <Link className="concern" to="/pricing" key={c}>
+              <span className="nm">{c}</span>
+              <span className="ar">&rarr;</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DepthExplainer() {
+  return (
+    <section className="sec-ink sec-pad">
+      <div className="container">
+        <span className="eyebrow">How we think about treatment</span>
+        <h2 className="d2 sec-h">Every treatment works at a different depth</h2>
+        <p className="lede sec-p">
+          A facial and a non-surgical lift are not competing options. They work on completely
+          different layers. Knowing which layer your concern lives in is most of the answer.
+        </p>
+        <div className="grid gap-8 md:grid-cols-3">
+          {DEPTH_BANDS.map((band) => (
+            <div key={band.tier}>
+              <span className="eyebrow">{band.tier}</span>
+              <h3 className="d3 mt-3 mb-3">{band.title}</h3>
+              <p className="lede">{band.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MostBooked() {
   const { openBooking } = useBooking();
-  const [active, setActive] = useState(0);
-  const [auto, setAuto] = useState(true);
-  useEffect(() => { if (!auto) return; const timer = setInterval(() => setActive((v) => (v + 1) % treatments.length), 6000); return () => clearInterval(timer); }, [auto]);
-  const previous = () => { setAuto(false); setActive((v) => (v - 1 + treatments.length) % treatments.length); };
-  const next = () => { setAuto(false); setActive((v) => (v + 1) % treatments.length); };
-  return <section className="py-14 lg:py-20 bg-background"><div className="container"><motion.div className="text-center mb-10 flex flex-col items-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground">Expert Skin Care <span className="text-primary italic">Services</span></h2></motion.div><div className="relative"><div className="overflow-hidden rounded-2xl"><motion.div className="flex" animate={{ x: `-${active * 100}%` }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>{treatments.map((treatment) => <div key={treatment.id} className="min-w-full"><motion.div className="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500" whileHover={{ scale: 1.01 }}><div className="relative h-72 md:h-[450px] overflow-hidden bg-muted group">{treatment.video ? <video src={treatment.video} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" muted loop playsInline poster={treatment.image} /> : <img src={treatment.image} alt={treatment.category} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />}<div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-transparent to-transparent" /></div><div className="bg-card p-8 md:p-12 flex flex-col justify-center relative overflow-hidden"><div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full" /><span className="inline-flex items-center gap-2 text-primary text-sm font-medium uppercase tracking-wider mb-3"><span className="w-8 h-px bg-primary/50" />{treatment.duration} • {treatment.sessionsRecommended}</span><h3 className="font-heading text-2xl md:text-3xl font-light text-foreground mb-6 relative">{treatment.category}</h3><p className="text-muted-foreground italic mb-4 border-l-2 border-primary/30 pl-4">{treatment.problem}</p><p className="text-foreground mb-8 line-clamp-3 leading-relaxed">{treatment.solution}</p><div className="flex flex-wrap gap-3"><Link to={`/services#${treatment.id}`} className="inline-flex items-center rounded-sm bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 text-primary-foreground px-5 py-2.5 text-sm font-medium">View Treatment <ArrowRight className="ml-2 h-4 w-4" /></Link><button type="button" onClick={() => openBooking({ category: treatment.category, title: treatment.category, options: (treatment.pricing || []).filter((p) => typeof p.price === 'number').map((p) => ({ name: p.area, price: p.price, duration: treatment.duration })) })} className="inline-flex items-center rounded-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-5 py-2 text-sm font-medium">Book Now</button></div></div></motion.div></div>)}</motion.div></div><button onClick={previous} className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-foreground transition-all z-10"><ChevronLeft className="h-5 w-5" /></button><button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-foreground transition-all z-10"><ChevronRight className="h-5 w-5" /></button><div className="flex justify-center gap-2 mt-6">{treatments.map((_, index) => <button key={index} onClick={() => { setAuto(false); setActive(index); }} className={`w-2 h-2 rounded-full transition-all ${index === active ? 'bg-primary w-6' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'}`} />)}</div></div></div></section>;
+  const picks = resolveMostBooked();
+  return (
+    <section className="sec-porcelain sec-pad">
+      <div className="container">
+        <span className="eyebrow">Most booked</span>
+        <h2 className="d2 sec-h">Straight to the ones people come for.</h2>
+        <p className="lede sec-p">
+          Twenty treatments that make up most of what happens in the clinic. Pick one and the booking
+          card opens with it already selected.
+        </p>
+        <div className="cards">
+          {picks.map((svc) => (
+            <article className="card-ref" data-tier={DEPTH[svc.tier] || 'dermal'} key={svc.category + svc.name}>
+              <span className="card-tab" aria-hidden="true" />
+              <span className="card-punch" aria-hidden="true" />
+              <span className="card-tier">{svc.tier || svc.category}</span>
+              <h3 className="card-name">{svc.name}</h3>
+              <span className="card-rule" aria-hidden="true" />
+              {svc.desc && <p className="card-blurb">{svc.desc}</p>}
+              <div className="card-foot">
+                <span className="card-price">
+                  <span className="now">{rand(svc.price)}</span>
+                  <span className="card-meta">{svc.duration}</span>
+                </span>
+                <button
+                  type="button"
+                  className="card-book"
+                  onClick={() => openBooking({ category: svc.category, service: svc.name, title: svc.name })}
+                >
+                  Book
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
-function AssessmentTeaser({ onOpen }) {
-  return <section id="consultation" className="py-14 lg:py-20 bg-muted/40"><div className="container"><div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-    <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}><h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground mb-4">Online Skin <span className="italic text-primary">Assessment</span></h2><p className="text-muted-foreground font-body mb-8 leading-relaxed max-w-md">Tell us what's bothering you about your skin. Sonia reads every submission herself and replies with the treatments she'd genuinely recommend — no charge, no pressure to book.</p><Button onClick={onOpen} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-sm px-10 py-6">Start your assessment <ArrowRight className="w-4 h-4 ml-2" /></Button></motion.div>
-    <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-first lg:order-last"><div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"><img src="/assets/skin-assessment.jpg" alt="A skin consultation at Skin Nourishers" className="w-full h-full object-cover" /></div></motion.div>
-  </div></div></section>;
-}
-
-function FounderSection() {
-  const features = [{ title: 'Passion for Results', description: "Every client's transformation is personal to us" }, { title: 'Client-Centered Care', description: 'Your unique skin journey guides everything we do' }, { title: 'Continuous Innovation', description: 'Always learning and bringing you the latest in skincare' }];
-  return <section className="py-14 lg:py-20 bg-secondary/40"><div className="container"><div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"><motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative"><div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl"><img src="/assets/about-image-BmoL2o4f.png" alt="Sonia - Founder of Skin Nourishers" className="w-full h-full object-cover object-top" /><div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" /></div><div className="absolute -bottom-4 -left-4 lg:-left-8 bg-primary px-6 py-4 rounded-2xl shadow-xl shadow-primary/30"><div className="text-center"><div className="font-heading text-3xl text-primary-foreground font-light">15+</div><div className="text-xs text-primary-foreground/80 uppercase tracking-elegant font-body">Years</div></div></div></motion.div><motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}><h2 className="font-heading text-4xl md:text-5xl font-light text-foreground mb-6 leading-tight">A Journey of<br /><span className="italic text-primary">Passion & Purpose</span></h2><div className="w-16 h-px bg-primary/50 mb-8" /><p className="text-muted-foreground font-body leading-relaxed mb-6">Skin Nourishers was born from a deeply personal journey. After struggling with my own skin concerns for years and experiencing the frustration of ineffective treatments, I made it my mission to create a space where real results meet genuine care.</p><p className="text-muted-foreground font-body leading-relaxed mb-6">What began as a passion for helping others achieve healthy, radiant skin has grown into a trusted destination for clients across Sandton and beyond. Every treatment we offer reflects the same dedication I would give to my own skin—because I understand what it means to want real change.</p><p className="text-muted-foreground font-body leading-relaxed mb-10">At Skin Nourishers, we don't just treat skin—we build confidence. Our philosophy is simple: listen deeply, treat thoughtfully, and celebrate every transformation together with our clients.</p><div className="grid gap-5 mb-10">{features.map((item) => <div key={item.title} className="border-l-2 border-primary/30 pl-4"><h3 className="font-heading text-lg text-foreground mb-1">{item.title}</h3><p className="text-muted-foreground text-sm font-body">{item.description}</p></div>)}</div><Link to="/about" className="inline-flex items-center gap-3 text-primary hover:text-primary/80 transition-colors duration-300 font-body text-sm uppercase tracking-wide-elegant group"><span>Read Our Full Story</span><ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" /></Link></motion.div></div></div></section>;
-}
-
-const comparisons = [{ treatment: 'Acne Treatment', duration: '8 Weeks', before: '/assets/acne-result-1-eKDwtebj.png', after: '/assets/acne-result-2-BKi4lopZ.png', description: 'Complete clearance of active acne with reduced scarring visibility.' }, { treatment: 'Pigmentation', duration: '12 Weeks', before: '/assets/pigmentation-result-1-C-Ovj2xV.png', after: '/assets/pigmentation-result-2-DUWasAE8.png', description: 'Significant reduction in hyperpigmentation for even skin tone.' }];
-function BeforeAfter() {
-  const [active, setActive] = useState(0); const [position, setPosition] = useState(50); const current = comparisons[active]; const ref = useRef(null);
-  const move = (clientX) => { const rect = ref.current?.getBoundingClientRect(); if (!rect) return; setPosition(Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100))); };
-  return <section className="py-14 lg:py-20 bg-background"><div className="container"><div className="text-center mb-10 flex flex-col items-center"><h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-6">Before & <span className="italic text-primary">After</span></h2><div className="w-16 h-px bg-primary/50 mx-auto" /></div><div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"><div className="relative order-2 lg:order-1"><div ref={ref} className="relative aspect-[4/5] overflow-hidden cursor-ew-resize select-none rounded-lg shadow-elegant" onMouseMove={(e) => e.buttons === 1 && move(e.clientX)} onClick={(e) => move(e.clientX)} onTouchMove={(e) => move(e.touches[0].clientX)}><img src={current.before} alt="Before treatment" className="absolute inset-0 w-full h-full object-cover" /><div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}><img src={current.after} alt="After treatment" className="absolute inset-0 w-full h-full object-cover" /></div><div className="absolute top-0 bottom-0 w-px bg-white z-10" style={{ left: `${position}%`, transform: 'translateX(-50%)' }}><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 border-2 border-white bg-primary/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg"><div className="flex gap-0.5"><ArrowLeft className="w-3 h-3 text-white" /><ArrowRight className="w-3 h-3 text-white" /></div></div></div><div className="absolute bottom-6 left-6 px-3 py-1.5 bg-foreground/80 text-background text-xs font-body uppercase tracking-elegant backdrop-blur-sm rounded">Before</div><div className="absolute bottom-6 right-6 px-3 py-1.5 bg-primary text-primary-foreground text-xs font-body uppercase tracking-elegant rounded">After</div></div><p className="text-center text-xs text-muted-foreground mt-4 font-body uppercase tracking-elegant">Drag to compare</p></div><div className="order-1 lg:order-2"><div className="mb-10"><div className="flex items-center gap-4 mb-6"><span className="text-xs font-body uppercase tracking-elegant text-primary">{current.treatment}</span><span className="w-8 h-px bg-primary/30" /><span className="text-xs font-body text-muted-foreground">{current.duration}</span></div><p className="font-heading text-2xl lg:text-3xl text-foreground font-light leading-relaxed mb-6">“{current.description}”</p></div><div className="flex items-center gap-4"><button onClick={() => { setActive((v) => (v - 1 + comparisons.length) % comparisons.length); setPosition(50); }} className="w-12 h-12 border border-primary/30 rounded-full flex items-center justify-center hover:border-primary hover:bg-primary/5 hover:text-primary transition-colors text-foreground"><ArrowLeft className="h-4 w-4" /></button><div className="flex gap-3">{comparisons.map((_, index) => <button key={index} onClick={() => { setActive(index); setPosition(50); }} className={`w-2 h-2 rounded-full transition-all ${index === active ? 'bg-primary w-8' : 'bg-primary/30 hover:bg-primary/50'}`} />)}</div><button onClick={() => { setActive((v) => (v + 1) % comparisons.length); setPosition(50); }} className="w-12 h-12 border border-primary/30 rounded-full flex items-center justify-center hover:border-primary hover:bg-primary/5 hover:text-primary transition-colors text-foreground"><ArrowRight className="h-4 w-4" /></button></div></div></div></div></section>;
+function LaserDoors() {
+  const doors = [
+    ['Ladies', countIn('Laser Hair Removal - Ladies'), 'Full body laser hair removal, from underarm and bikini through to full leg and face.'],
+    ['Men', countIn('Laser Hair Removal - Men'), 'Back, chest, shoulders, beard line and full body. A menu built for men, not adapted for them.'],
+    ['Teens', countIn('Laser Hair Removal - Teens'), 'Gentler settings and guardian consent, for teenagers who have had enough of shaving.'],
+  ];
+  return (
+    <section className="sec-mist sec-pad">
+      <div className="container">
+        <span className="eyebrow">Laser hair removal</span>
+        <h2 className="d2 sec-h">Treated properly, for everyone.</h2>
+        <p className="lede sec-p">
+          Skin, hair and expectations genuinely differ, so we run three separate laser menus rather
+          than one adapted for everybody.
+        </p>
+        <div className="doors">
+          {doors.map(([name, count, blurb]) => (
+            <Link className="door" to="/pricing" key={name}>
+              <span className="ct">{count} treatments</span>
+              <h3>{name}</h3>
+              <p>{blurb}</p>
+              <span className="ct">Explore &rarr;</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function Reviews() {
-  const [active, setActive] = useState(0); const [paused, setPaused] = useState(false);
-  useEffect(() => { if (paused) return; const timer = setInterval(() => setActive((v) => (v + 1) % reviews.length), 5000); return () => clearInterval(timer); }, [paused]);
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (paused) return undefined;
+    const timer = setInterval(() => setActive((v) => (v + 1) % reviews.length), 5000);
+    return () => clearInterval(timer);
+  }, [paused]);
   const review = reviews[active];
-  return <section className="py-14 lg:py-20 bg-muted/40" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}><div className="container"><div className="text-center mb-10 flex flex-col items-center"><h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-6">What Our Clients <span className="italic text-primary">Say</span></h2></div><div className="max-w-4xl mx-auto"><div className="relative min-h-[320px]"><AnimatePresence mode="wait"><motion.div key={active} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }} transition={{ duration: .5 }} className="absolute inset-0 flex flex-col items-center text-center"><p className="font-heading text-xl md:text-2xl lg:text-3xl text-foreground font-light italic leading-relaxed mb-8 px-4">“{review.quote}”</p><div className="flex gap-1 mb-4">{Array.from({ length: review.rating }).map((_, i) => <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />)}</div><div className="text-foreground font-body font-medium text-lg flex items-center justify-center gap-2">{review.name}{review.badge && <span className="text-xs text-muted-foreground font-normal">· {review.badge}</span>}</div></motion.div></AnimatePresence></div><div className="flex items-center justify-center gap-4 mt-8"><button onClick={() => setActive((v) => (v - 1 + reviews.length) % reviews.length)} className="p-2 rounded-sm bg-white/80 hover:bg-white shadow-md hover:shadow-lg transition-all duration-300 text-primary"><ChevronLeft className="w-5 h-5" /></button><div className="flex gap-2 overflow-hidden max-w-[200px]">{reviews.map((_, index) => <button key={index} onClick={() => setActive(index)} className={`w-2 h-2 rounded-full transition-all duration-300 ${active === index ? 'bg-primary w-6' : 'bg-primary/30 hover:bg-primary/50'}`} />)}</div><button onClick={() => setActive((v) => (v + 1) % reviews.length)} className="p-2 rounded-sm bg-white/80 hover:bg-white shadow-md hover:shadow-lg transition-all duration-300 text-primary"><ChevronRight className="w-5 h-5" /></button></div><div className="text-center mt-6 text-muted-foreground text-sm font-body">{active + 1} of {reviews.length} reviews</div></div></div></section>;
+  return (
+    <section className="sec-ink sec-pad" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+      <div className="container">
+        <span className="eyebrow">From our clients</span>
+        <h2 className="d2 sec-h">4.7 out of 5, and counting.</h2>
+        <div className="max-w-3xl">
+          <div className="relative min-h-[260px]">
+            <AnimatePresence mode="wait">
+              <motion.div key={active} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: .4 }} className="absolute inset-0">
+                <p className="d3 mb-6">&ldquo;{review.quote}&rdquo;</p>
+                <div className="flex gap-1 mb-3">
+                  {Array.from({ length: review.rating }).map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                </div>
+                <span className="eyebrow">
+                  From {review.name}{review.badge ? ' · ' + review.badge : ''}
+                </span>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+          <div className="flex items-center gap-4 mt-6">
+            <button onClick={() => setActive((v) => (v - 1 + reviews.length) % reviews.length)} className="card-book" aria-label="Previous review"><ChevronLeft className="w-4 h-4" /></button>
+            <span className="eyebrow">{active + 1} / {reviews.length}</span>
+            <button onClick={() => setActive((v) => (v + 1) % reviews.length)} className="card-book" aria-label="Next review"><ChevronRight className="w-4 h-4" /></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-function FinalCTA() {
+function FinalCTA({ onOpenAssessment }) {
   const { openBooking } = useBooking();
-  return <section className="relative py-14 lg:py-20 overflow-hidden"><div className="absolute inset-0"><img src="/assets/cta-bg-CSbw12-N.jpg" alt="Luxury spa environment" className="w-full h-full object-cover" /><div className="absolute inset-0 bg-background/95" /><div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-transparent" /></div><div className="container relative z-10"><div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"><div><h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-6 leading-tight">Ready to Transform<br /><span className="italic text-primary">Your Skin?</span></h2><div className="w-20 h-1 bg-primary mb-8 rounded-full" /><p className="text-muted-foreground font-body leading-relaxed mb-10 max-w-lg text-lg">Book your consultation today and discover how our personalized treatments can help you achieve the radiant, healthy skin you deserve.</p><div className="flex flex-col sm:flex-row gap-4"><button type="button" onClick={() => openBooking({})} className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-7 text-sm uppercase tracking-wide-elegant font-body font-semibold rounded-sm shadow-xl shadow-primary/30">Book Now <ArrowRight className="ml-2 h-4 w-4" /></button><Link to="/pricing" className="inline-flex items-center justify-center border-2 border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-8 py-7 text-sm uppercase tracking-wide-elegant font-body font-semibold rounded-sm bg-white/50 backdrop-blur-sm">View Pricing</Link></div></div><div className="lg:pl-12"><div className="border border-primary/20 p-8 lg:p-10 bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl shadow-primary/10"><h3 className="font-heading text-2xl text-foreground mb-8 flex items-center gap-3"><span className="w-8 h-px bg-primary/50" />Get in Touch</h3><div className="space-y-6"><a href="tel:+27788210150" className="flex items-start gap-4 group"><div className="w-12 h-12 border border-primary/30 rounded-full flex items-center justify-center flex-shrink-0"><Phone className="w-5 h-5 text-primary" /></div><div><div className="text-xs text-muted-foreground uppercase tracking-elegant font-body mb-1">Call Us</div><div className="text-foreground font-body group-hover:text-primary transition-colors">+27 78 821 0150</div></div></a><div className="flex items-start gap-4"><div className="w-12 h-12 border border-primary/30 rounded-full flex items-center justify-center flex-shrink-0"><MapPin className="w-5 h-5 text-primary" /></div><div><div className="text-xs text-muted-foreground uppercase tracking-elegant font-body mb-1">Visit Us</div><div className="text-foreground font-body">100 South Road, Morning View Shopping Centre, Sandton, 2191</div></div></div><div className="pt-6 border-t border-primary/10"><div className="text-xs text-muted-foreground uppercase tracking-elegant font-body mb-3">Opening Hours</div><div className="grid grid-cols-2 gap-2 text-sm font-body"><span className="text-muted-foreground">Tue - Fri</span><span className="text-foreground">09:00 - 18:00</span><span className="text-muted-foreground">Saturday</span><span className="text-foreground">09:00 - 16:00</span><span className="text-muted-foreground">Sun & Mon</span><span className="text-foreground">Closed</span></div></div></div></div></div></div></div></section>;
+  return (
+    <section className="sec-ash sec-pad" id="consultation">
+      <div className="container">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div>
+            <span className="eyebrow">No cost, no obligation</span>
+            <h2 className="d2 sec-h">Start with a free consultation.</h2>
+            <p className="lede mb-8">
+              Thirty minutes, a proper look at your skin, and a plan with real prices attached. If
+              nothing is worth doing yet, Sonia will tell you that too.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button type="button" onClick={onOpenAssessment} className="btn-ref">Book your free 30 minutes</button>
+              <button type="button" onClick={() => openBooking({})} className="card-book">Book a treatment</button>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <span className="eyebrow">Visit</span>
+              <p className="lede mt-3">100 South Road<br />Morning View Shopping Centre<br />Sandton, 2191</p>
+            </div>
+            <div>
+              <span className="eyebrow">Hours</span>
+              <p className="lede mt-3">Tue &ndash; Fri &nbsp;09:00 &ndash; 18:00<br />Saturday &nbsp;09:00 &ndash; 16:00<br />Sunday &amp; Monday &nbsp;Closed</p>
+            </div>
+            <div>
+              <span className="eyebrow">Contact</span>
+              <p className="lede mt-3">
+                <a href="tel:+27788210150" className="hover:text-primary transition-colors">+27 78 821 0150</a><br />
+                <a href="mailto:info@skinnourishers.co.za" className="hover:text-primary transition-colors">info@skinnourishers.co.za</a>
+              </p>
+            </div>
+            <div>
+              <span className="eyebrow">Explore</span>
+              <p className="lede mt-3">
+                <Link to="/pricing" className="hover:text-primary transition-colors">All treatments</Link><br />
+                <Link to="/results" className="hover:text-primary transition-colors">Client results</Link><br />
+                <Link to="/about" className="hover:text-primary transition-colors">About Sonia</Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function MobileStickyCTA() {
@@ -84,10 +346,23 @@ function MobileStickyCTA() {
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  return <AnimatePresence>{visible && <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 100, opacity: 0 }} transition={{ duration: .3 }} className="fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-t border-border py-3 px-4 lg:hidden shadow-lg"><div className="flex gap-3"><button type="button" onClick={() => openBooking({})} className="flex-1 inline-flex items-center justify-center h-10 px-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-sm text-sm font-body"><CalendarDays className="h-4 w-4 mr-2" />Book Now</button></div></motion.div>}</AnimatePresence>;
+  return <AnimatePresence>{visible && <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 100, opacity: 0 }} transition={{ duration: .3 }} className="fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-t border-border py-3 px-4 lg:hidden"><div className="flex gap-3"><button type="button" onClick={() => openBooking({})} className="flex-1 inline-flex items-center justify-center h-10 px-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-sm text-sm font-body"><CalendarDays className="h-4 w-4 mr-2" />Book Now</button></div></motion.div>}</AnimatePresence>;
 }
 
 export default function Home() {
   const { openInquiry } = useInquiry();
-  return <Layout><HomeHero onOpenAssessment={() => openInquiry({})} /><TreatmentsCarousel /><AssessmentTeaser onOpen={() => openInquiry({})} /><FounderSection /><BeforeAfter /><Reviews /><FinalCTA /><MobileStickyCTA /></Layout>;
+  const openAssessment = () => openInquiry({});
+  return (
+    <Layout>
+      <HomeHero onOpenAssessment={openAssessment} />
+      <StatsStrip />
+      <ConcernsGrid />
+      <DepthExplainer />
+      <MostBooked />
+      <LaserDoors />
+      <Reviews />
+      <FinalCTA onOpenAssessment={openAssessment} />
+      <MobileStickyCTA />
+    </Layout>
+  );
 }

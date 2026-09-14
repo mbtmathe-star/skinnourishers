@@ -8,17 +8,56 @@ button, a { -webkit-tap-highlight-color: transparent; }
 input, select, textarea { color: hsl(var(--foreground)); }
 select { appearance: auto; }
 
-/* ---------------------------------------------------------------------------
-   Sharp-edged treatment, matching the clinic reference design.
-   The compiled bundle derives rounded-lg/md/sm from --radius and 2xl/xl from
-   calc(--radius +- n), so re-pointing the token does most of the work. The
-   remaining sizes are pinned explicitly because 2xl/xl/3xl would otherwise
-   still land at 6-24px. rounded-full is deliberately NOT overridden here:
-   dots, icon wells and pulse halos must stay circular, so those are handled
-   element by element in the JSX.
-   --------------------------------------------------------------------------- */
-:root { --radius: 2px; }
+/* ===========================================================================
+   Clinic reference design system.
+   The compiled Tailwind bundle cannot generate new utilities, so everything
+   here is an override of classes that already exist in it.
+   =========================================================================== */
 
+/* --- Type -----------------------------------------------------------------
+   Newsreader for display, Switzer for body, Martian Mono for the small
+   uppercase labels. The bundle hard-codes .font-heading/.font-body to
+   Playfair/Inter, so those are re-pointed here rather than via the tokens. */
+:root {
+  --radius: 2px;
+  --font-heading: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Switzer", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, "SF Mono", monospace;
+}
+
+body { font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  letter-spacing: -0.016em;
+}
+.font-body { font-family: var(--font-body); }
+
+/* The reference sets display type light and tight. Our headings arrive with
+   font-light / font-semibold from the bundle, so normalise the heavy ones. */
+h1.font-heading, h2.font-heading { font-weight: 250; line-height: 1.08; }
+h3.font-heading, h4.font-heading { font-weight: 300; line-height: 1.18; }
+.font-heading.font-semibold, .font-heading.font-bold { font-weight: 300; }
+
+/* --- Flatness -------------------------------------------------------------
+   The reference carries structure on 1px borders and a single soft lift,
+   never the stacked drop shadows the bundle ships. */
+.shadow-sm,
+.shadow-md,
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl,
+.shadow-elegant {
+  box-shadow: 0 1px 2px rgba(16, 25, 30, .05), 0 10px 24px rgba(16, 25, 30, .06);
+}
+.shadow-glow { box-shadow: none; }
+
+/* --- Corners --------------------------------------------------------------
+   rounded-lg/md/sm derive from --radius and 2xl/xl from calc(--radius +- n),
+   so the token does most of it; the rest are pinned because they would
+   otherwise still land at 6-24px. rounded-full is handled per element in the
+   JSX so dots, icon wells and pulse halos stay circular. */
 .rounded-sm,
 .rounded-md,
 .rounded-lg,
@@ -29,6 +68,17 @@ select { appearance: auto; }
 .rounded-t-3xl { border-radius: 2px 2px 0 0; }
 .rounded-tl-sm { border-top-left-radius: 2px; }
 
-/* The reference holds content to a fixed measure rather than letting it run
+/* --- Measure --------------------------------------------------------------
+   The reference holds content to a fixed measure rather than letting it run
    the full viewport width. */
 .container { max-width: 1140px; }
+
+/* --- Small caps label -----------------------------------------------------
+   The reference's section eyebrow: mono, 10px, wide tracking. Applied to the
+   existing uppercase label spans. */
+.tracking-elegant,
+.tracking-wide-elegant {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}

@@ -98,56 +98,53 @@ export default function Booking() {
         imageIndex={5}
       />
 
-      <section className="py-6 bg-primary/10 border-y border-primary/20">
+      <section className="sec-mist" style={{ padding: 'var(--s6) 0', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}>
         <div className="container">
           <div className="flex items-start gap-4 max-w-4xl mx-auto">
-            <Info className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+            <Info className="h-6 w-6 flex-shrink-0 mt-0.5" style={{ color: 'hsl(var(--primary))' }} />
             <div>
-              <h3 className="font-heading text-lg font-semibold text-foreground mb-1">How Our Booking Process Works</h3>
-              <p className="text-muted-foreground">
-                To secure your appointment, we require a <strong className="text-primary">50% deposit payment</strong> upfront. After your payment is confirmed, you’ll receive a link to our <strong>Booksy scheduling system</strong> where you can choose your preferred date and time. This ensures we can dedicate our full attention to your treatment.
+              <h3 className="font-heading font-medium text-lg text-foreground mb-1">How Our Booking Process Works</h3>
+              <p className="lede">
+                To secure your appointment, we require a <strong style={{ color: 'hsl(var(--primary))' }}>50% deposit payment</strong> upfront. After your payment is confirmed, you’ll receive a link to our <strong>Booksy scheduling system</strong> where you can choose your preferred date and time. This ensures we can dedicate our full attention to your treatment.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-secondary/30">
+      <section className="sec-ash sec-pad">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-light mb-4">Simple <span className="text-primary italic">3-Step</span> Process</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">We’ve made booking easy and secure. Here’s what to expect:</p>
+            <span className="eyebrow mb-2" style={{ display: 'inline-block' }}>How it works</span>
+            <h2 className="d2 mb-4">Simple 3-step process</h2>
+            <p className="lede" style={{ marginInline: 'auto', maxWidth: '42ch' }}>We’ve made booking easy and secure. Here’s what to expect:</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {steps.map((step, index) => (
               <motion.div key={step.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="relative">
-                <Card className="text-center h-full hover:shadow-lg transition-shadow">
-                  <CardContent className="pt-8 pb-6">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 relative">
-                      <step.icon className="h-7 w-7 text-primary" />
-                      <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">{step.step}</div>
-                    </div>
-                    <h3 className="font-heading text-xl font-medium mb-3">{step.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
-                  </CardContent>
-                </Card>
-                {index < 2 && <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10"><ArrowRight className="h-6 w-6 text-primary/40" /></div>}
+                <div className="text-center h-full" style={{ background: 'hsl(var(--card))', border: '1px solid var(--line)', borderRadius: '2px', padding: 'var(--s6) var(--s5)' }}>
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 relative" style={{ background: 'hsl(var(--muted))' }}>
+                    <step.icon className="h-6 w-6" style={{ color: 'hsl(var(--primary))' }} />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono" style={{ background: 'hsl(var(--primary))', color: 'hsl(var(--primary-foreground))' }}>{step.step}</div>
+                  </div>
+                  <h3 className="font-heading font-medium text-xl mb-3">{step.title}</h3>
+                  <p className="lede text-sm">{step.desc}</p>
+                </div>
+                {index < 2 && <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10"><ArrowRight className="h-6 w-6" style={{ color: 'var(--fg-muted)' }} /></div>}
               </motion.div>
             ))}
           </div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12 max-w-3xl mx-auto">
-            <Card className="bg-primary/5 border-primary/20">
-              <CardContent className="py-6">
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
-                  <div>
-                    <h4 className="font-heading font-semibold text-lg mb-1">First-Time Customer?</h4>
-                    <p className="text-muted-foreground text-sm">Welcome! Simply select your service below, pay the deposit, and choose your time on Booksy. We can’t wait to meet you!</p>
-                  </div>
+            <div style={{ background: 'hsl(var(--card))', border: '1px solid var(--line)', borderRadius: '2px', padding: 'var(--s5)' }}>
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0" style={{ color: 'hsl(var(--primary))' }} />
+                <div>
+                  <h4 className="font-heading font-medium text-lg mb-1">First-Time Customer?</h4>
+                  <p className="lede text-sm">Welcome! Simply select your service below, pay the deposit, and choose your time on Booksy. We can’t wait to meet you!</p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -210,7 +207,7 @@ export default function Booking() {
                         <p className="text-xs text-muted-foreground mt-1">Remaining R{form.price - deposit} due at appointment</p>
                       </div>
                       {error && <p className="text-sm text-destructive" role="alert">{error}</p>}
-                      <button type="button" onClick={submit} disabled={submitting || !form.service || !form.name || !form.email || !form.phone} className="inline-flex items-center justify-center h-11 px-8 w-full rounded-sm bg-primary text-primary-foreground text-sm font-medium disabled:pointer-events-none disabled:opacity-50">
+                      <button type="button" onClick={submit} disabled={submitting || !form.service || !form.name || !form.email || !form.phone} className="btn-ref w-full disabled:pointer-events-none disabled:opacity-50">
                         {submitting ? 'Processing...' : <>Pay Deposit R{deposit}<ArrowRight className="ml-2 h-4 w-4" /></>}
                       </button>
                       <p className="text-xs text-center text-muted-foreground">You’ll choose your appointment time on Booksy after payment</p>
