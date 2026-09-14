@@ -160,7 +160,7 @@ function DepthGraphic({ activeTier }) {
   const h = heights[activeTier];
   return (
     <div className="hidden lg:block" style={{ position: 'sticky', top: 140, width: 240 }}>
-      <div style={{ position: 'relative', width: 240, height: 400, borderRadius: '2px', overflow: 'hidden', border: '1px solid hsl(var(--background) / .15)', background: 'hsl(var(--background) / .06)' }}>
+      <div style={{ position: 'relative', width: 240, height: 400, borderRadius: 'calc(var(--radius) + 8px)', overflow: 'hidden', border: '1px solid hsl(var(--background) / .15)', boxShadow: 'var(--shadow-md)', background: 'hsl(var(--background) / .06)' }}>
         <div
           style={{
             position: 'absolute', left: 0, right: 0, bottom: 0, height: h,

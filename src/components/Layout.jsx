@@ -40,35 +40,38 @@ export function Header() {
   useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b" style={{ borderColor: 'var(--line)' }}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-primary shadow-lg' : 'bg-primary'}`}>
       <div className="container">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-3">
-            <span className="text-lg lg:text-xl leading-none">
-              <span className="font-heading font-light text-foreground">SKIN</span>{' '}
-              <span className="font-heading font-semibold text-foreground">Nourishers</span>
-            </span>
+            <img src="/assets/logo-niCvp7E2.png" alt="Skin Nourishers" className="h-9 lg:h-11 w-auto" style={{ filter: 'hue-rotate(222deg) saturate(0.8)' }} />
+            <div className="hidden sm:block">
+              <div className="font-heading text-lg text-white leading-tight">Skin Nourishers</div>
+              <div className="text-[10px] uppercase tracking-widest text-white/70 font-body flex items-center gap-1">
+                Aesthetic Clinic <span className="w-4 h-px bg-white/50" />
+              </div>
+            </div>
           </Link>
 
-          <nav className="hidden xl:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-6">
             {navigation.map((item) => (
-              <Link key={item.path} to={item.path} className="text-sm font-body transition-colors" style={{ color: location.pathname === item.path ? 'hsl(var(--foreground))' : 'var(--fg-muted)', fontWeight: location.pathname === item.path ? 500 : 400 }}>
+              <Link key={item.path} to={item.path} className={`text-sm font-body uppercase tracking-wide transition-colors ${location.pathname === item.path ? 'text-white font-medium' : 'text-white/80 hover:text-white'}`}>
                 {item.name}
               </Link>
             ))}
           </nav>
 
           <div className="hidden lg:flex items-center gap-5">
-            <a href="tel:+27788210150" className="flex items-center gap-2 transition-colors text-sm" style={{ color: 'var(--fg-muted)' }}>
+            <a href="tel:+27788210150" className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm">
               <Phone className="w-4 h-4" /><span className="font-body">+27 78 821 0150</span>
             </a>
-            <button type="button" onClick={() => openBooking({})} className="inline-flex items-center justify-center font-mono uppercase px-6 h-10 text-[11px]" style={{ border: '1px solid var(--line-strong)', borderRadius: '2px', letterSpacing: '.08em', color: 'hsl(var(--foreground))' }}>
-              Free Consultation
+            <button type="button" onClick={() => openBooking({})} className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-sm px-6 h-10 text-xs uppercase tracking-widest font-body font-semibold">
+              Book Now
             </button>
           </div>
 
           <div className="xl:hidden flex items-center gap-3">
-            <button className="p-2 text-foreground" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
+            <button className="p-2 text-white" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -76,15 +79,15 @@ export function Header() {
       </div>
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="xl:hidden bg-background border-t" style={{ borderColor: 'var(--line)' }}>
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="xl:hidden bg-primary border-t border-white/10">
             <nav className="container py-4 flex flex-col gap-1">
               {navigation.map((item) => (
-                <Link key={item.path} to={item.path} className="py-3 px-4 font-body text-sm transition-colors" style={{ borderRadius: '2px', color: location.pathname === item.path ? 'hsl(var(--foreground))' : 'var(--fg-muted)', background: location.pathname === item.path ? 'hsl(var(--muted))' : 'transparent' }}>
+                <Link key={item.path} to={item.path} className={`py-3 px-4 rounded-lg font-body text-sm transition-colors ${location.pathname === item.path ? 'text-white bg-white/10' : 'text-white/80 hover:text-white hover:bg-white/5'}`}>
                   {item.name}
                 </Link>
               ))}
-              <div className="mt-4 pt-4 border-t" style={{ borderColor: 'var(--line)' }}>
-                <button type="button" onClick={() => { setOpen(false); openBooking({}); }} className="w-full h-10 inline-flex items-center justify-center font-mono uppercase text-[11px]" style={{ border: '1px solid var(--line-strong)', borderRadius: '2px', letterSpacing: '.08em' }}>Free Consultation</button>
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <button type="button" onClick={() => { setOpen(false); openBooking({}); }} className="w-full h-10 inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-sm font-body font-semibold">Book Appointment</button>
               </div>
             </nav>
           </motion.div>

@@ -25,7 +25,7 @@ function ServiceRow({ service, category, open, onToggle }) {
       >
         <ChevronDown className={`h-4 w-4 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} style={{ color: 'var(--fg-muted)' }} />
         <span className="flex-1 font-body text-foreground">{service.name}</span>
-        <span className="font-mono text-sm whitespace-nowrap">{rand(service.price)}</span>
+        <span className="font-semibold text-sm whitespace-nowrap" style={{ color: 'hsl(var(--primary))' }}>{rand(service.price)}</span>
       </button>
       {open && (
         <div className="pl-8 pb-5 pt-1 space-y-3">
@@ -95,7 +95,7 @@ export default function Pricing() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search treatments — e.g. brazilian, pigmentation, HIFU, laser"
               className="w-full border bg-card pl-11 pr-4 py-3 text-sm font-body outline-none"
-              style={{ borderColor: 'var(--line)', borderRadius: '2px' }}
+              style={{ borderColor: 'var(--line)', borderRadius: 'var(--radius)' }}
             />
           </div>
 

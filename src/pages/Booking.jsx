@@ -122,10 +122,10 @@ export default function Booking() {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {steps.map((step, index) => (
               <motion.div key={step.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="relative">
-                <div className="text-center h-full" style={{ background: 'hsl(var(--card))', border: '1px solid var(--line)', borderRadius: '2px', padding: 'var(--s6) var(--s5)' }}>
+                <div className="text-center h-full" style={{ background: 'hsl(var(--card))', border: '1px solid var(--line)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)', padding: 'var(--s6) var(--s5)' }}>
                   <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 relative" style={{ background: 'hsl(var(--muted))' }}>
                     <step.icon className="h-6 w-6" style={{ color: 'hsl(var(--primary))' }} />
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono" style={{ background: 'hsl(var(--primary))', color: 'hsl(var(--primary-foreground))' }}>{step.step}</div>
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-semibold" style={{ background: 'hsl(var(--primary))', color: 'hsl(var(--primary-foreground))' }}>{step.step}</div>
                   </div>
                   <h3 className="font-heading font-medium text-xl mb-3">{step.title}</h3>
                   <p className="lede text-sm">{step.desc}</p>
@@ -136,7 +136,7 @@ export default function Booking() {
           </div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12 max-w-3xl mx-auto">
-            <div style={{ background: 'hsl(var(--card))', border: '1px solid var(--line)', borderRadius: '2px', padding: 'var(--s5)' }}>
+            <div style={{ background: 'hsl(var(--card))', border: '1px solid var(--line)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)', padding: 'var(--s5)' }}>
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="h-6 w-6 flex-shrink-0" style={{ color: 'hsl(var(--primary))' }} />
                 <div>
