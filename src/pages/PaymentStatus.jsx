@@ -20,7 +20,7 @@ export function PaymentSuccess() {
   const BOOKSY_URL = booksyLinkFor(bookedService);
 
   if (!booking) {
-    return <Layout><section className="py-24 lg:py-32"><div className="container max-w-lg text-center"><div className="mb-8"><CheckCircle2 className="h-24 w-24 text-green-500 mx-auto" /></div><h1 className="font-heading text-3xl md:text-4xl font-semibold mb-4">Payment Successful!</h1><p className="text-muted-foreground mb-8">Thank you for your purchase. Your order has been received and is being processed. You will receive a confirmation email shortly.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link to="/products" className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground">Continue Shopping</Link><Link to="/" className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md border border-input bg-background">Back to Home</Link></div></div></section></Layout>;
+    return <Layout><section className="py-24 lg:py-32"><div className="container max-w-lg text-center"><div className="mb-8"><CheckCircle2 className="h-24 w-24 text-green-500 mx-auto" /></div><h1 className="font-heading text-3xl md:text-4xl font-semibold mb-4">Payment Successful!</h1><p className="text-muted-foreground mb-8">Thank you for your purchase. Your order has been received and is being processed. You will receive a confirmation email shortly.</p><div className="flex justify-center"><Link to="/" className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground">Back to Home</Link></div></div></section></Layout>;
   }
 
   return (
@@ -60,7 +60,7 @@ export function PaymentCancelled() {
           <div className="mb-8"><XCircle className="h-24 w-24 text-destructive mx-auto" /></div>
           <h1 className="font-heading text-3xl md:text-4xl font-semibold mb-4">Payment Cancelled</h1>
           <p className="text-muted-foreground mb-8">Your payment was cancelled. Don’t worry - your cart items are still saved. You can try again whenever you’re ready.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center"><Link to="/products" className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground">Return to Products</Link><Link to="/" className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md border border-input bg-background">Back to Home</Link></div>
+          <div className="flex justify-center"><Link to="/" className="inline-flex items-center justify-center h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground">Back to Home</Link></div>
         </div>
       </section>
     </Layout>

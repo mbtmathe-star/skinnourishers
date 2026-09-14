@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   Facebook, Instagram, Mail, MapPin, Menu, MessageCircle, Phone,
-  ShoppingBag, Volume2, VolumeX, X
+  Volume2, VolumeX, X
 } from 'lucide-react';
 import { Button } from './ui';
 import { useBooking } from './BookingModal';
@@ -27,17 +27,8 @@ const navigation = [
   { name: 'Results', path: '/results' },
   { name: 'Pricing', path: '/pricing' },
   { name: 'Blog', path: '/blog' },
-  { name: 'Products', path: '/products' },
   { name: 'Contact', path: '/contact' },
 ];
-
-function CartButton() {
-  return (
-    <Button variant="ghost" size="icon" className="relative text-white hover:bg-white/10" aria-label="Open cart">
-      <ShoppingBag className="h-5 w-5" />
-    </Button>
-  );
-}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -79,14 +70,12 @@ export function Header() {
             <a href="tel:+27788210150" className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm">
               <Phone className="w-4 h-4" /><span className="font-body">+27 78 821 0150</span>
             </a>
-            <CartButton />
             <button type="button" onClick={() => openBooking({})} className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary rounded-sm px-6 h-10 text-xs uppercase tracking-widest font-body font-semibold">
               Book Now
             </button>
           </div>
 
           <div className="xl:hidden flex items-center gap-3">
-            <CartButton />
             <button className="p-2 text-white" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -137,7 +126,7 @@ export function Footer() {
           </div>
           <div>
             <h4 className="text-xs uppercase tracking-wide-elegant text-primary mb-6 font-body">Treatments</h4>
-            <ul className="space-y-3">{['Facial Treatments','Laser Hair Removal','Anti-Aging Solutions','Body Contouring','Plasma Treatments'].map((name) => <li key={name} className="text-background/50 text-sm font-body">{name}</li>)}</ul>
+            <ul className="space-y-3">{['Face Treatments','Laser Hair Removal - Ladies','Fibroblast Plasma','Waxing','Threading'].map((name) => <li key={name} className="text-background/50 text-sm font-body">{name}</li>)}</ul>
           </div>
           <div>
             <h4 className="text-xs uppercase tracking-wide-elegant text-primary mb-6 font-body">Contact</h4>

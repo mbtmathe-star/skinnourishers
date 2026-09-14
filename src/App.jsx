@@ -6,7 +6,6 @@ import Services from './pages/Services';
 import Results from './pages/Results';
 import Pricing from './pages/Pricing';
 import Blog from './pages/Blog';
-import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Booking from './pages/Booking';
 import { PaymentCancelled, PaymentSuccess } from './pages/PaymentStatus';
@@ -35,7 +34,6 @@ export default function App() {
         <Route path="/results" element={<Results />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/payment-success" element={<PaymentSuccess />} />
