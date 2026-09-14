@@ -39,7 +39,7 @@ function TreatmentDetail({ treatment }) {
   const hasPackages = treatment.pricing.some((p) => p.package);
 
   return <motion.div id={treatment.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: .5 }} viewport={{ once: true }} className="scroll-mt-32">
-    <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 mb-16">
+    <div className="grid lg:grid-cols-2 gap-8 mb-16">
       <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden group" style={{ borderRadius: 'calc(var(--radius) + 16px)', boxShadow: 'var(--shadow-lg)' }}>
         {treatment.video ? <video src={treatment.video} className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline controlsList="nodownload" disablePictureInPicture poster={treatment.image} /> : <img src={treatment.image} alt={treatment.category} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

@@ -172,7 +172,7 @@ function DepthGraphic({ activeTier }) {
   const heights = ['18%', '58%', '100%'];
   const h = heights[activeTier];
   return (
-    <div className="hidden md:block" style={{ position: 'sticky', top: 140, width: 240 }}>
+    <div className="depth-graphic" style={{ position: 'sticky', top: 140, width: 240 }}>
       <div style={{ position: 'relative', width: 240, height: 400, borderRadius: 'calc(var(--radius) + 8px)', overflow: 'hidden', border: '1px solid hsl(var(--background) / .15)', boxShadow: 'var(--shadow-md)', background: 'hsl(var(--background) / .06)' }}>
         <div
           style={{
@@ -224,8 +224,8 @@ function DepthExplainer() {
           A facial and a non-surgical lift are not competing options. They work on completely
           different layers. Knowing which layer your concern lives in is most of the answer.
         </p>
-        <div className="grid md:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-start">
-          <div className="space-y-16">
+        <div className="depth-wrap">
+          <div className="space-y-16" style={{ flex: '1 1 auto', minWidth: 0 }}>
             {DEPTH_BANDS.map((band, i) => (
               <motion.div key={band.tier} onViewportEnter={() => setActiveTier(i)} viewport={{ amount: 0.6, margin: '-30% 0px -30% 0px' }}>
                 <span className="eyebrow">Tier 0{i + 1} &mdash; {TIER_LABELS[i]}</span>
@@ -328,7 +328,7 @@ function Reviews() {
         <span className="eyebrow">From our clients</span>
         <h2 className="d2 sec-h">4.7 out of 5, and counting.</h2>
         <div className="max-w-3xl">
-          <div className="relative min-h-[260px]">
+          <div className="relative" style={{ minHeight: 260 }}>
             <AnimatePresence mode="wait">
               <motion.div key={active} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: .4 }} className="absolute inset-0">
                 <p className="d3 mb-6">&ldquo;{review.quote}&rdquo;</p>
