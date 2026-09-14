@@ -1,7 +1,7 @@
 [
   {
     "id": "plasma-treatment",
-    "category": "Plasma Treatment",
+    "category": "Fibroblast Plasma",
     "tagline": "Non-surgical skin lifting and tightening",
     "description": "Plasma Fibroblast is a revolutionary non-surgical treatment that uses plasma energy to tighten, lift, and rejuvenate the skin. It's the closest thing to a facelift without going under the knife.",
     "image": "/assets/facial-treatment-BqmdQUGZ.jpg",
@@ -155,14 +155,14 @@
     ]
   },
   {
-    "id": "hydra-facial",
-    "category": "Hydra Facial",
-    "tagline": "Deep cleansing and hydration for radiant skin",
-    "description": "The Hydra Facial is a multi-step treatment that cleanses, exfoliates, extracts, and hydrates the skin using advanced vortex technology. It's the red-carpet favorite for instant glow.",
+    "id": "face-treatments",
+    "category": "Face Treatments",
+    "tagline": "Facials, rejuvenation and anti-aging for the face",
+    "description": "The Hydra Facial is a multi-step treatment that cleanses, exfoliates, extracts, and hydrates the skin using advanced vortex technology. It's the red-carpet favorite for instant glow. Experience the gold standard in non-surgical face lifting with Ultraformer HIFU technology. This advanced treatment delivers focused ultrasound energy deep into the skin to lift, tighten, and rejuvenate—without surgery or downtime.",
     "image": "/assets/service-skincare-DI-uuH_t.jpg",
     "video": "/videos/hydra-facial.mp4",
-    "problem": "Dull, congested skin with clogged pores, uneven texture, and signs of dehydration? Traditional facials not delivering visible results?",
-    "solution": "Hydra Facial combines cleansing, exfoliation, extraction, hydration, and antioxidant protection in one treatment, delivering immediate and noticeable results without downtime.",
+    "problem": "Dull, congested skin with clogged pores, uneven texture, and signs of dehydration? Traditional facials not delivering visible results? Fine lines, wrinkles, sagging skin, and loss of facial volume making you look tired and older? Creams and serums not delivering the results you want?",
+    "solution": "Hydra Facial combines cleansing, exfoliation, extraction, hydration, and antioxidant protection in one treatment, delivering immediate and noticeable results without downtime. Ultraformer HIFU targets aging at every level—from stimulating collagen in deep tissues to smoothing surface texture—for comprehensive, natural-looking rejuvenation that lasts.",
     "howItWorks": [
       {
         "step": 1,
@@ -199,7 +199,16 @@
       "No downtime",
       "Suitable for all skin types",
       "Hydrated, plump skin",
-      "Long-lasting glow"
+      "Long-lasting glow",
+      "Reduced fine lines and wrinkles",
+      "Improved skin firmness",
+      "Restored facial volume",
+      "Even skin tone and texture",
+      "Natural collagen stimulation",
+      "Lifted, contoured appearance",
+      "Hydrated, glowing skin",
+      "Non-surgical approach",
+      "Customized to your needs"
     ],
     "pricing": [
       {
@@ -216,10 +225,40 @@
         "area": "LED Red Light",
         "singleSession": "R400",
         "price": 400
+      },
+      {
+        "area": "Rejuvenating Cell Renewal",
+        "singleSession": "R1 800",
+        "price": 1800
+      },
+      {
+        "area": "Prevention & Restore",
+        "singleSession": "R1 800",
+        "price": 1800
+      },
+      {
+        "area": "Advanced repair and restore",
+        "singleSession": "R2 200",
+        "price": 2200
+      },
+      {
+        "area": "RF Anti-Wrinkle",
+        "singleSession": "R1 350",
+        "price": 1350
+      },
+      {
+        "area": "Plumping and tightening",
+        "singleSession": "R3 500",
+        "price": 3500
+      },
+      {
+        "area": "Lifting:tightening full face + neck",
+        "singleSession": "R3 500",
+        "price": 3500
       }
     ],
-    "duration": "30-60 min",
-    "sessionsRecommended": "Monthly maintenance",
+    "duration": "30-90 min",
+    "sessionsRecommended": "Monthly maintenance; 6+ sessions for lifting and tightening",
     "faqs": [
       {
         "question": "How often should I get a Hydra Facial?",
@@ -236,18 +275,34 @@
       {
         "question": "What results can I expect?",
         "answer": "You'll see immediate improvements in hydration, radiance, and skin clarity. Fine lines appear reduced and pores look smaller."
+      },
+      {
+        "question": "At what age should I start anti-aging treatments?",
+        "answer": "Prevention is easier than correction! We recommend starting in your late 20s to early 30s. However, it's never too late to see improvements."
+      },
+      {
+        "question": "How long before I see results?",
+        "answer": "Some treatments offer immediate glow. Collagen-stimulating treatments show progressive improvement over 2-6 months as new collagen forms."
+      },
+      {
+        "question": "Are these treatments safe for all skin types?",
+        "answer": "Yes, we customize treatments for all skin types and tones. During your consultation, we'll select the safest and most effective approach for you."
+      },
+      {
+        "question": "How do I maintain results at home?",
+        "answer": "We'll recommend a personalized skincare routine including SPF, retinoids, antioxidants, and hydrating products to maximize and maintain your results."
       }
     ],
-    "safetyInfo": "Hydra Facial is safe for all skin types and colors. Avoid if you have active rashes, sunburn, or rosacea flare-ups. Inform us of any recent chemical peels or laser treatments.",
+    "safetyInfo": "Hydra Facial is safe for all skin types and colors. Avoid if you have active rashes, sunburn, or rosacea flare-ups. Inform us of any recent chemical peels or laser treatments. Anti-aging treatments are safe when performed by qualified professionals. We customize intensity based on your skin type and concerns. Avoid if pregnant, have active infections, or are on certain medications.",
     "videoEmbed": "<iframe style=\"position:absolute;top:0;left:0;width:100%;height:100%;border:0;\" scrolling=\"no\" src=\"https://go.screenpal.com/player/cOVUf9n3tqm?ff=1&ahc=1&dcc=1&bg=transparent&share=1&download=1&embed=1&cl=1\" allowfullscreen=\"true\"></iframe>",
     "beforeAfterImages": [
       {
         "image": "/assets/pigmentation-result-1-C-Ovj2xV.png",
-        "caption": "Pigmentation Treatment - Before"
+        "caption": "Pigmentation - Before"
       },
       {
         "image": "/assets/pigmentation-result-2-DUWasAE8.png",
-        "caption": "Pigmentation Treatment - After"
+        "caption": "Pigmentation - After"
       },
       {
         "image": "/assets/acne-result-2-BKi4lopZ.png",
@@ -260,12 +315,16 @@
       {
         "image": "/assets/pigmentation-result-3-ljaq_WbL.jpg",
         "caption": "Pigmentation Before & After"
+      },
+      {
+        "image": "/assets/anti-aging-result-1-BFVv8Bna.png",
+        "caption": "Ultraformer HIFU – Neck Tightening & Rejuvenation"
       }
     ]
   },
   {
     "id": "hair-regrowth-therapy",
-    "category": "Hair Regrowth Therapy",
+    "category": "Hair Re-Growth Treatment (Injectables)",
     "tagline": "Advanced solutions for thinning hair and hair loss",
     "description": "Our Hair Regrowth Therapy uses advanced techniques including scalp microneedling, growth factors, and LED therapy to stimulate dormant hair follicles and promote natural hair growth.",
     "image": "/assets/facial-treatment-BqmdQUGZ.jpg",
@@ -341,7 +400,7 @@
   },
   {
     "id": "ultraformer-therapy",
-    "category": "Ultraformer Therapy",
+    "category": "Ultraformer",
     "tagline": "Non-invasive skin lifting using HIFU technology",
     "description": "Ultraformer III uses High-Intensity Focused Ultrasound (HIFU) to lift, tighten, and contour the face and body without surgery. It targets the deep structural layers of skin that typically only surgery could reach.",
     "image": "/assets/service-body-polish-Bq4wBFRH.jpg",
@@ -431,7 +490,7 @@
   },
   {
     "id": "laser-hair-removal",
-    "category": "Laser Hair Removal",
+    "category": "Laser Hair Removal - Ladies",
     "tagline": "Permanent hair reduction for smooth, carefree skin",
     "description": "Our medical-grade laser targets hair follicles at the root, permanently reducing unwanted hair growth. Say goodbye to shaving, waxing, and ingrown hairs for good.",
     "image": "/assets/service-skincare-DI-uuH_t.jpg",
@@ -563,113 +622,6 @@
       }
     ],
     "safetyInfo": "Laser hair removal is safe when performed by trained professionals. Avoid sun exposure before and after treatment. Not recommended during pregnancy or for those on photosensitizing medications. We perform a patch test for first-time clients."
-  },
-  {
-    "id": "anti-aging-treatment",
-    "category": "Anti-Aging Treatment",
-    "tagline": "Ultraformer HIFU – Our Primary Anti-Aging Solution",
-    "description": "Experience the gold standard in non-surgical face lifting with Ultraformer HIFU technology. This advanced treatment delivers focused ultrasound energy deep into the skin to lift, tighten, and rejuvenate—without surgery or downtime.",
-    "image": "/assets/service-lash-lift-DEJnYtOh.jpg",
-    "video": "/videos/anti-aging-treatment.mp4",
-    "problem": "Fine lines, wrinkles, sagging skin, and loss of facial volume making you look tired and older? Creams and serums not delivering the results you want?",
-    "solution": "Ultraformer HIFU targets aging at every level—from stimulating collagen in deep tissues to smoothing surface texture—for comprehensive, natural-looking rejuvenation that lasts.",
-    "howItWorks": [
-      {
-        "step": 1,
-        "title": "Comprehensive Assessment",
-        "description": "We analyze your skin, discuss concerns, and create a personalized anti-aging plan."
-      },
-      {
-        "step": 2,
-        "title": "Ultraformer HIFU Treatment",
-        "description": "Focused ultrasound energy targets the SMAS layer to lift and tighten from within."
-      },
-      {
-        "step": 3,
-        "title": "Surface Renewal",
-        "description": "Microneedling or laser resurfacing improves texture, tone, and fine lines."
-      },
-      {
-        "step": 4,
-        "title": "Active Infusion",
-        "description": "Growth factors, peptides, and antioxidants are delivered deep into the skin."
-      },
-      {
-        "step": 5,
-        "title": "Ongoing Optimization",
-        "description": "Regular maintenance and homecare ensure lasting, progressive results."
-      }
-    ],
-    "benefits": [
-      "Reduced fine lines and wrinkles",
-      "Improved skin firmness",
-      "Restored facial volume",
-      "Even skin tone and texture",
-      "Natural collagen stimulation",
-      "Lifted, contoured appearance",
-      "Hydrated, glowing skin",
-      "Non-surgical approach",
-      "Customized to your needs"
-    ],
-    "pricing": [
-      {
-        "area": "Rejuvenating Cell Renewal",
-        "singleSession": "R1 800",
-        "price": 1800
-      },
-      {
-        "area": "Prevention & Restore",
-        "singleSession": "R1 800",
-        "price": 1800
-      },
-      {
-        "area": "Advanced repair and restore",
-        "singleSession": "R2 200",
-        "price": 2200
-      },
-      {
-        "area": "RF Anti-Wrinkle",
-        "singleSession": "R1 350",
-        "price": 1350
-      },
-      {
-        "area": "Plumping and tightening",
-        "singleSession": "R3 500",
-        "price": 3500
-      },
-      {
-        "area": "Lifting:tightening full face + neck",
-        "singleSession": "R3 500",
-        "price": 3500
-      }
-    ],
-    "duration": "60-90 min",
-    "sessionsRecommended": "6+ sessions",
-    "faqs": [
-      {
-        "question": "At what age should I start anti-aging treatments?",
-        "answer": "Prevention is easier than correction! We recommend starting in your late 20s to early 30s. However, it's never too late to see improvements."
-      },
-      {
-        "question": "How long before I see results?",
-        "answer": "Some treatments offer immediate glow. Collagen-stimulating treatments show progressive improvement over 2-6 months as new collagen forms."
-      },
-      {
-        "question": "Are these treatments safe for all skin types?",
-        "answer": "Yes, we customize treatments for all skin types and tones. During your consultation, we'll select the safest and most effective approach for you."
-      },
-      {
-        "question": "How do I maintain results at home?",
-        "answer": "We'll recommend a personalized skincare routine including SPF, retinoids, antioxidants, and hydrating products to maximize and maintain your results."
-      }
-    ],
-    "safetyInfo": "Anti-aging treatments are safe when performed by qualified professionals. We customize intensity based on your skin type and concerns. Avoid if pregnant, have active infections, or are on certain medications.",
-    "beforeAfterImages": [
-      {
-        "image": "/assets/anti-aging-result-1-BFVv8Bna.png",
-        "caption": "Ultraformer HIFU – Neck Tightening & Rejuvenation"
-      }
-    ]
   },
   {
     "id": "acne-treatment",
