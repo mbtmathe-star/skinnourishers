@@ -7,28 +7,3 @@ button, a { -webkit-tap-highlight-color: transparent; }
    These small source-only additions cover native controls used in the editable rebuild. */
 input, select, textarea { color: hsl(var(--foreground)); }
 select { appearance: auto; }
-
-/* ---------------------------------------------------------------------------
-   Sharp-edged treatment, matching the clinic reference design.
-   The compiled bundle derives rounded-lg/md/sm from --radius and 2xl/xl from
-   calc(--radius +- n), so re-pointing the token does most of the work. The
-   remaining sizes are pinned explicitly because 2xl/xl/3xl would otherwise
-   still land at 6-24px. rounded-full is deliberately NOT overridden here:
-   dots, icon wells and pulse halos must stay circular, so those are handled
-   element by element in the JSX.
-   --------------------------------------------------------------------------- */
-:root { --radius: 2px; }
-
-.rounded-sm,
-.rounded-md,
-.rounded-lg,
-.rounded-xl,
-.rounded-2xl,
-.rounded-3xl { border-radius: 2px; }
-
-.rounded-t-3xl { border-radius: 2px 2px 0 0; }
-.rounded-tl-sm { border-top-left-radius: 2px; }
-
-/* The reference holds content to a fixed measure rather than letting it run
-   the full viewport width. */
-.container { max-width: 1140px; }

@@ -16,27 +16,27 @@ const rand = (n) => {
 function ServiceRow({ service, category, open, onToggle }) {
   const { openBooking } = useBooking();
   return (
-    <div className="border-b border-border/60 last:border-b-0">
+    <div className="border-b" style={{ borderColor: 'var(--line)' }}>
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center gap-4 py-4 text-left hover:bg-muted/40 transition-colors px-2 -mx-2 rounded-lg"
+        className="w-full flex items-center gap-4 py-4 text-left transition-colors"
         aria-expanded={open}
       >
-        <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`h-4 w-4 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} style={{ color: 'var(--fg-muted)' }} />
         <span className="flex-1 font-body text-foreground">{service.name}</span>
-        <span className="font-semibold text-primary whitespace-nowrap">{rand(service.price)}</span>
+        <span className="font-semibold text-sm whitespace-nowrap" style={{ color: 'hsl(var(--primary))' }}>{rand(service.price)}</span>
       </button>
       {open && (
-        <div className="px-8 pb-5 pt-1 space-y-3">
-          {service.desc && <p className="text-sm text-foreground/90 leading-relaxed">{service.desc}</p>}
-          <p className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="pl-8 pb-5 pt-1 space-y-3">
+          {service.desc && <p className="lede">{service.desc}</p>}
+          <p className="flex items-center gap-2 text-sm" style={{ color: 'var(--fg-muted)' }}>
             <Clock className="h-4 w-4" /> {service.duration}
           </p>
           <button
             type="button"
             onClick={() => openBooking({ category, service: service.name, title: service.name })}
-            className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+            className="card-book"
           >
             Book this treatment <ArrowRight className="h-4 w-4 ml-2" />
           </button>
@@ -81,29 +81,34 @@ export default function Pricing() {
         imageIndex={4}
       />
 
-      <section className="py-12 lg:py-16">
+      <section className="sec-porcelain sec-pad">
         <div className="container max-w-4xl">
+          <span className="eyebrow">Full price list</span>
+          <h2 className="d2 sec-h">Every treatment, one price.</h2>
+          <p className="lede sec-p">The same {total} treatments and prices you would find on Booksy — search by name, concern or treatment depth.</p>
+
           <div className="relative mb-10">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4" style={{ color: 'var(--fg-muted)' }} />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search treatments — e.g. brazilian, pigmentation, HIFU, laser"
-              className="w-full rounded-sm border border-border bg-card pl-11 pr-4 py-3 text-sm font-body outline-none focus:border-primary/50"
+              className="w-full border bg-card pl-11 pr-4 py-3 text-sm font-body outline-none"
+              style={{ borderColor: 'var(--line)', borderRadius: 'var(--radius)' }}
             />
           </div>
 
           {groups.length === 0 && (
-            <p className="text-center text-muted-foreground py-12">No treatments match “{query}”.</p>
+            <p className="text-center py-12" style={{ color: 'var(--fg-muted)' }}>No treatments match &ldquo;{query}&rdquo;.</p>
           )}
 
           <div className="space-y-12">
             {groups.map((group) => (
               <section key={group.category}>
-                <div className="flex items-baseline justify-between mb-2 border-b-2 border-primary/20 pb-2">
-                  <h2 className="font-heading text-2xl md:text-3xl font-light">{group.category}</h2>
-                  <span className="text-xs uppercase tracking-wide text-muted-foreground">{group.services.length} treatments</span>
+                <div className="flex items-baseline justify-between mb-2 pb-2 border-b" style={{ borderColor: 'var(--line-strong)' }}>
+                  <h3 className="d3">{group.category}</h3>
+                  <span className="eyebrow">{group.services.length} treatments</span>
                 </div>
                 {(group.tiers || [null]).map((tier) => {
                   const rows = tier
@@ -112,11 +117,7 @@ export default function Pricing() {
                   if (rows.length === 0) return null;
                   return (
                     <div key={tier || 'all'} className={tier ? 'mt-6 first:mt-3' : ''}>
-                      {tier && (
-                        <h3 className="font-body text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1 mt-4">
-                          {tier}
-                        </h3>
-                      )}
+                      {tier && <h4 className="eyebrow mb-1 mt-4">{tier}</h4>}
                       {rows.map((service) => {
                         const key = `${group.category}::${service.name}`;
                         return (
@@ -138,16 +139,14 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="pb-20 lg:pb-28">
+      <section className="sec-ash sec-pad">
         <div className="container text-center">
-          <div className="max-w-3xl mx-auto p-8 bg-secondary/30 rounded-2xl">
-            <p className="text-muted-foreground mb-6">
+          <div className="max-w-2xl mx-auto">
+            <span className="eyebrow">Ready when you are</span>
+            <p className="lede mb-8" style={{ marginInline: 'auto' }}>
               Prices match our Booksy booking system and may change. A consultation is required before certain treatments.
             </p>
-            <Link
-              to="/booking"
-              className="inline-flex items-center justify-center h-11 px-8 rounded-sm bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
-            >
+            <Link to="/booking" className="btn-ref">
               Book Your Treatment <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>

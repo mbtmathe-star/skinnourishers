@@ -1,0 +1,165 @@
+/* ===========================================================================
+   New homepage sections, restyled to the clinic's original look.
+
+   These classes back the new content added to the site (concerns grid,
+   depth explainer, most-booked cards, laser doors, stats strip) - the
+   sections themselves are new, but every visual value below is pulled
+   from the compiled bundle's own tokens (source-truth.css), so the new
+   sections render with the same fonts, corners and shadows the rest of
+   the site has always used. No separate typeface is loaded here.
+   =========================================================================== */
+
+:root {
+  --line: hsl(var(--border));
+  --fg-muted: hsl(var(--muted-foreground));
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px; --s5: 24px;
+  --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+}
+
+/* --- Display scale --------------------------------------------------------
+   font-heading/font-body already resolve through the bundle's own tokens,
+   so these just size that same type rather than pointing at a new one. */
+.d1 { font-family: var(--font-heading); font-weight: 600; font-size: clamp(36px, 6vw, 68px); line-height: 1.08; letter-spacing: -.01em; }
+.d2 { font-family: var(--font-heading); font-weight: 600; font-size: clamp(28px, 4vw, 44px); line-height: 1.15; }
+.d3 { font-family: var(--font-heading); font-weight: 600; font-size: clamp(21px, 2.6vw, 28px); line-height: 1.25; }
+.lede { font-size: 16px; line-height: 1.7; max-width: 66ch; color: var(--fg-muted); }
+
+/* --- Section label ---------------------------------------------------------
+   Matches the site's existing convention (PageHero, old sections): small
+   sans-serif uppercase, wide tracking, brand colour - not a mono label. */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: hsl(var(--primary));
+  display: block;
+}
+.sec-h { margin: var(--s4) 0 var(--s5); }
+.sec-p { margin-bottom: var(--s7); }
+
+/* --- Section bands ---------------------------------------------------------- */
+.sec-porcelain { background: hsl(var(--background)); }
+.sec-mist      { background: hsl(var(--muted)); }
+.sec-ash       { background: hsl(var(--secondary)); }
+.sec-ink       { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.sec-ink .eyebrow { color: hsl(var(--accent)); }
+.sec-ink .lede { color: hsl(var(--background) / .82); }
+.sec-pad { padding: clamp(48px, 6vw, 88px) 0; }
+
+/* --- Stats strip ------------------------------------------------------------ */
+.strip { padding: clamp(36px, 4.6vw, 56px) 0; }
+.creds { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6) var(--s5); }
+.cred { padding: var(--s5); border-radius: var(--radius); background: hsl(var(--card)); box-shadow: var(--shadow-sm); text-align: center; }
+.cred .n { font-family: var(--font-heading); font-weight: 700; font-size: clamp(24px, 2.8vw, 32px); display: block; line-height: 1.1; color: hsl(var(--primary)); }
+.cred .t { font-size: 12.5px; color: var(--fg-muted); margin-top: 6px; display: block; line-height: 1.4; }
+@media (min-width: 860px) { .creds { grid-template-columns: repeat(4, 1fr); } }
+
+/* --- Concerns list (paired with a photo, so it stays a single column) -------- */
+.concerns { display: flex; flex-direction: column; gap: var(--s3); }
+.concern {
+  background: hsl(var(--card));
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: var(--shadow-sm);
+  padding: var(--s4) var(--s5);
+  text-decoration: none; color: inherit;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: var(--s4);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.concern:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+.concern .nm { font-family: var(--font-heading); font-weight: 600; font-size: 17px; color: hsl(var(--foreground)); }
+.concern .ar { font-size: 15px; color: hsl(var(--primary)); }
+
+/* --- Stats strip icon badge ---------------------------------------------------- */
+.cred-icon {
+  width: 40px; height: 40px; margin: 0 auto var(--s2);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: hsl(var(--primary) / .12); color: hsl(var(--primary));
+}
+
+/* --- Doors (the three laser menus) ------------------------------------------- */
+.doors { display: grid; grid-template-columns: 1fr; gap: var(--s5); margin-top: var(--s7); }
+.door {
+  background: hsl(var(--primary)); color: hsl(var(--primary-foreground));
+  border-radius: calc(var(--radius) + 8px);
+  box-shadow: var(--shadow-md);
+  padding: clamp(28px, 3.6vw, 40px);
+  text-decoration: none;
+  display: flex; flex-direction: column; gap: var(--s3);
+  min-height: 210px;
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.door:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.door h3 { font-family: var(--font-heading); font-weight: 700; font-size: clamp(24px, 3vw, 30px); line-height: 1.1; }
+.door p  { font-size: 14px; line-height: 1.6; flex: 1 1; color: hsl(var(--primary-foreground) / .88); }
+.door .ct { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: hsl(var(--primary-foreground) / .82); }
+@media (min-width: 860px) { .doors { grid-template-columns: repeat(3, 1fr); } }
+
+/* --- Treatment cards ---------------------------------------------------------- */
+.cards { display: grid; grid-template-columns: 1fr; gap: var(--s5); margin-top: var(--s8); }
+@media (min-width: 720px)  { .cards { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1040px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+
+.card-ref {
+  position: relative;
+  background: hsl(var(--card));
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 8px);
+  padding: var(--s6) var(--s5) var(--s5);
+  display: flex; flex-direction: column; gap: var(--s2);
+  box-shadow: var(--shadow-sm);
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease);
+}
+.card-ref:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.card-tab { position: absolute; top: 0; left: var(--s5); width: 44px; height: 4px; border-radius: 0 0 3px 3px; background: hsl(var(--accent)); }
+.card-ref[data-tier="surface"]    .card-tab { background: hsl(var(--gold)); }
+.card-ref[data-tier="dermal"]     .card-tab { background: hsl(var(--accent)); }
+.card-ref[data-tier="structural"] .card-tab { background: hsl(var(--primary)); }
+.card-punch { display: none; }
+.card-tier { font-family: var(--font-body); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: hsl(var(--primary)); }
+.card-name { font-family: var(--font-heading); font-weight: 600; font-size: clamp(18px, 1.9vw, 21px); line-height: 1.25; }
+.card-rule { display: block; width: 26px; height: 2px; border-radius: 1px; background: hsl(var(--primary) / .3); margin: var(--s2) 0 var(--s1); }
+.card-blurb { font-size: 13px; line-height: 1.55; color: var(--fg-muted); flex: 1 1; }
+.card-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s3); margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--line); }
+.card-price { display: flex; flex-direction: column; gap: 3px; font-family: var(--font-heading); line-height: 1.3; }
+.card-price .now { font-size: 16px; font-weight: 600; color: hsl(var(--primary)); }
+.card-meta { font-size: 11px; color: var(--fg-muted); }
+.card-book {
+  font-family: var(--font-body); font-size: 12.5px; font-weight: 500;
+  border: 1px solid hsl(var(--primary) / .4); border-radius: var(--radius);
+  padding: 0 16px; min-height: 38px;
+  display: inline-flex; align-items: center; flex-shrink: 0;
+  color: hsl(var(--primary));
+  transition: background .18s var(--ease), color .18s var(--ease);
+}
+.card-book:hover { background: hsl(var(--primary) / .08); }
+
+/* --- Depth-explainer split (text left, diagram right) -------------------------
+   Custom classes, not Tailwind's md:/lg: prefixes: this project ships a
+   pre-compiled, static Tailwind bundle with no build step, so responsive
+   variant classes that weren't already used somewhere in the original app
+   were never generated and silently do nothing at any width. Real media
+   queries here always work regardless of what the frozen bundle contains. */
+.depth-wrap { display: flex; flex-direction: column; gap: var(--s7); align-items: flex-start; }
+.depth-graphic { display: none; flex-shrink: 0; }
+@media (min-width: 860px) {
+  .depth-wrap { flex-direction: row; gap: var(--s9); }
+  .depth-graphic { display: block; }
+}
+
+/* --- Reference button ---------------------------------------------------------- */
+.btn-ref {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-body); font-size: 14px; font-weight: 600;
+  padding: 0 28px; min-height: 48px; border-radius: var(--radius); text-decoration: none;
+  background: hsl(var(--primary)); color: hsl(var(--primary-foreground));
+  box-shadow: var(--shadow-md);
+  transition: background .18s var(--ease), box-shadow .18s var(--ease);
+}
+.btn-ref:hover { background: hsl(var(--accent)); box-shadow: var(--shadow-lg); }
+.sec-ink .btn-ref { background: hsl(var(--background)); color: hsl(var(--foreground)); }
+.sec-ink .btn-ref:hover { background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }

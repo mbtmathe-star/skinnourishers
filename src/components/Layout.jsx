@@ -21,12 +21,9 @@ export function useWhatsAppTopic(topic) {
 }
 
 const navigation = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Services', path: '/services' },
+  { name: 'Treatments', path: '/services' },
   { name: 'Results', path: '/results' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Blog', path: '/blog' },
+  { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -47,8 +44,6 @@ export function Header() {
       <div className="container">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-3">
-            {/* Original mark is magenta; recoloured to the clinic blue-teal here (Section 03).
-                Replace with a properly recoloured asset when available. */}
             <img src="/assets/logo-niCvp7E2.png" alt="Skin Nourishers" className="h-9 lg:h-11 w-auto" style={{ filter: 'hue-rotate(222deg) saturate(0.8)' }} />
             <div className="hidden sm:block">
               <div className="font-heading text-lg text-white leading-tight">Skin Nourishers</div>
@@ -121,7 +116,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs uppercase tracking-wide-elegant text-primary mb-6 font-body">Quick Links</h4>
             <ul className="space-y-3">
-              {[['Home','/'],['Services','/services'],['Pricing','/pricing'],['About Us','/about'],['Contact','/contact']].map(([name,path]) => <li key={path}><Link to={path} className="text-background/50 hover:text-primary transition-colors text-sm font-body">{name}</Link></li>)}
+              {[['Home','/'],['Treatments','/services'],['Pricing','/pricing'],['Results','/results'],['About Us','/about'],['Blog','/blog'],['Contact','/contact']].map(([name,path]) => <li key={path}><Link to={path} className="text-background/50 hover:text-primary transition-colors text-sm font-body">{name}</Link></li>)}
             </ul>
           </div>
           <div>

@@ -8,11 +8,12 @@ export default function NotFound() {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
+    <div className="flex min-h-screen items-center justify-center sec-mist">
       <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">Return to Home</a>
+        <span className="eyebrow mb-3" style={{ display: 'inline-block' }}>Page not found</span>
+        <h1 className="d1 mb-4">404</h1>
+        <p className="lede mb-6" style={{ marginInline: 'auto' }}>Oops! That page doesn&rsquo;t exist.</p>
+        <a href="/" className="btn-ref">Return to Home</a>
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 import Layout, { useWhatsAppTopic } from '../components/Layout';
 import PageHero from '../components/PageHero';
 import treatments from '../data/treatments.json';
-import { Card } from '../components/ui';
 import { useBooking } from '../components/BookingModal';
 import { useInquiry } from '../components/InquiryModal';
 
@@ -23,7 +22,7 @@ function bookingOptions(treatment) {
 }
 
 function CategoryNav({ active, onChange }) {
-  return <div className="relative"><div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" /><div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" /><div className="overflow-x-auto scrollbar-hide py-2 -mx-4 px-4"><div className="flex gap-2 min-w-max">{treatments.map((item) => { const selected = active === item.id; return <button key={item.id} onClick={() => onChange(item.id)} className={`relative px-5 py-2.5 rounded-sm text-sm font-medium transition-all duration-300 whitespace-nowrap ${selected ? 'text-primary-foreground bg-primary' : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'}`}>{item.category}</button>; })}</div></div></div>;
+  return <div className="relative"><div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" /><div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" /><div className="overflow-x-auto scrollbar-hide py-2 -mx-4 px-4"><div className="flex gap-2 min-w-max">{treatments.map((item) => { const selected = active === item.id; return <button key={item.id} onClick={() => onChange(item.id)} className="relative px-5 py-2.5 text-sm font-medium uppercase tracking-wide whitespace-nowrap transition-colors" style={{ borderRadius: 'var(--radius)', fontSize: '13px', background: selected ? 'hsl(var(--primary))' : 'transparent', color: selected ? 'hsl(var(--primary-foreground))' : 'var(--fg-muted)' }}>{item.category}</button>; })}</div></div></div>;
 }
 
 function TreatmentDetail({ treatment }) {
@@ -40,47 +39,63 @@ function TreatmentDetail({ treatment }) {
   const hasPackages = treatment.pricing.some((p) => p.package);
 
   return <motion.div id={treatment.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: .5 }} viewport={{ once: true }} className="scroll-mt-32">
-    <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 mb-8">
-      <div className="relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl group">
+    <div className="grid lg:grid-cols-2 gap-8 mb-16">
+      <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden group" style={{ borderRadius: 'calc(var(--radius) + 16px)', boxShadow: 'var(--shadow-lg)' }}>
         {treatment.video ? <video src={treatment.video} className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline controlsList="nodownload" disablePictureInPicture poster={treatment.image} /> : <img src={treatment.image} alt={treatment.category} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" /><div className="absolute inset-0 border-2 border-primary/20 rounded-3xl" />
-        <div className="absolute bottom-4 left-4 right-4 flex gap-3"><div className="bg-black/60 backdrop-blur-sm rounded-xl px-4 py-2"><span className="text-sm text-white">{treatment.duration}</span></div><div className="bg-black/60 backdrop-blur-sm rounded-xl px-4 py-2"><span className="text-sm text-white">{treatment.sessionsRecommended}</span></div></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute bottom-4 left-4 right-4 flex gap-3"><div className="bg-black/60 backdrop-blur-sm px-4 py-2" style={{ borderRadius: 'calc(var(--radius) + 4px)' }}><span className="text-sm text-white">{treatment.duration}</span></div><div className="bg-black/60 backdrop-blur-sm px-4 py-2" style={{ borderRadius: 'calc(var(--radius) + 4px)' }}><span className="text-sm text-white">{treatment.sessionsRecommended}</span></div></div>
       </div>
-      <div className="flex flex-col justify-center"><span className="inline-flex items-center gap-3 text-[11px] font-body uppercase tracking-[0.24em] text-primary mb-3"><span className="h-px w-8 bg-primary/40" />In detail</span><h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold mb-3"><span className="text-primary">{treatment.category}</span></h2><p className="text-lg text-foreground font-medium mb-3">{treatment.tagline}</p><p className="text-muted-foreground text-base leading-relaxed mb-4">{treatment.description}</p><div className="space-y-2 mb-5"><p className="text-muted-foreground italic">{treatment.problem}</p><p className="text-foreground">{treatment.solution}</p></div><div className="flex flex-wrap gap-3"><button type="button" onClick={bookThis} className="inline-flex items-center justify-center h-11 px-8 rounded-sm shadow-lg bg-primary text-primary-foreground text-sm font-medium">Book Now <ArrowRight className="ml-2 h-5 w-5" /></button><button type="button" onClick={askThis} className="inline-flex items-center justify-center h-11 px-6 rounded-sm border border-primary/40 text-primary hover:bg-primary/5 text-sm font-medium">Ask Sonia about this treatment</button></div></div>
+      <div className="flex flex-col justify-center">
+        <span className="eyebrow mb-3">In detail</span>
+        <h2 className="d2 mb-3">{treatment.category}</h2>
+        <p className="text-lg text-foreground font-medium mb-3">{treatment.tagline}</p>
+        <p className="lede mb-4">{treatment.description}</p>
+        <div className="space-y-2 mb-5"><p className="lede italic">{treatment.problem}</p><p className="text-foreground">{treatment.solution}</p></div>
+        <div className="flex flex-wrap gap-3"><button type="button" onClick={bookThis} className="btn-ref">Book Now <ArrowRight className="ml-2 h-5 w-5" /></button><button type="button" onClick={askThis} className="card-book">Ask Sonia about this treatment</button></div>
+      </div>
     </div>
 
-    <div className="grid lg:grid-cols-2 gap-6 mb-8">
+    <div className="grid lg:grid-cols-2 gap-10 mb-16">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-        <h3 className="font-heading text-2xl md:text-3xl font-semibold mb-4">How It <span className="text-primary">Works</span></h3>
-        <div className="space-y-3">{treatment.howItWorks.map((step) => <Card key={step.step} className="rounded-2xl border-border/30 bg-card/80"><div className="p-5"><div className="flex items-center gap-3 mb-1.5"><div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0"><span className="text-primary font-bold text-sm">{step.step}</span></div><h4 className="font-semibold text-foreground">{step.title}</h4></div><p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p></div></Card>)}</div>
+        <span className="eyebrow mb-2">Process</span>
+        <h3 className="d3 mb-5">How it works</h3>
+        <div className="space-y-0">{treatment.howItWorks.map((step) => <div key={step.step} className="flex gap-4 py-3 border-b" style={{ borderColor: 'var(--line)' }}><span className="font-semibold text-xs shrink-0 mt-0.5" style={{ color: 'var(--fg-muted)' }}>{String(step.step).padStart(2, '0')}</span><div><h4 className="font-heading font-medium text-foreground mb-1">{step.title}</h4><p className="text-sm lede">{step.description}</p></div></div>)}</div>
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-        <h3 className="font-heading text-2xl md:text-3xl font-semibold mb-4">Key <span className="text-primary">Benefits</span></h3>
-        <div className="space-y-2.5">{treatment.benefits.map((benefit) => <div key={benefit} className="flex items-start gap-3 p-3.5 rounded-2xl bg-card/60 border border-border/30"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" /><span className="text-sm text-foreground">{benefit}</span></div>)}</div>
+        <span className="eyebrow mb-2">Why it works</span>
+        <h3 className="d3 mb-5">Key benefits</h3>
+        <div className="space-y-0">{treatment.benefits.map((benefit) => <div key={benefit} className="flex items-start gap-3 py-2.5 border-b" style={{ borderColor: 'var(--line)' }}><span className="mt-2 h-1 w-1 rounded-full flex-shrink-0" style={{ background: 'hsl(var(--primary))' }} /><span className="text-sm text-foreground">{benefit}</span></div>)}</div>
       </motion.div>
     </div>
 
-    <div className="grid lg:grid-cols-2 gap-6 mb-8">
+    <div className="grid lg:grid-cols-2 gap-10 mb-16">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-        <h3 className="font-heading text-2xl md:text-3xl font-semibold mb-4"><span className="text-primary">Pricing</span></h3>
-        <Card className="rounded-3xl border-border/30 overflow-hidden"><div className="overflow-x-auto"><table className="w-full text-sm"><thead className="bg-muted/50"><tr><th className="text-left p-3 font-semibold text-foreground">Area</th><th className="text-right p-3 font-semibold text-foreground">Price</th>{hasPackages && <th className="text-right p-3 font-semibold text-foreground">Package</th>}</tr></thead><tbody className="divide-y divide-border/30">{treatment.pricing.map((price, index) => <tr key={`${price.area}-${index}`} className="hover:bg-muted/30 transition-colors"><td className="p-3 text-foreground">{price.area}</td><td className="p-3 text-right font-semibold text-primary whitespace-nowrap">{typeof price.price === 'number' ? rand(price.price) : price.singleSession}</td>{hasPackages && <td className="p-3 text-right">{price.package && <span className="font-semibold text-foreground">{price.package}</span>}</td>}</tr>)}</tbody></table></div></Card>
+        <span className="eyebrow mb-2">Pricing</span>
+        <h3 className="d3 mb-5">By area</h3>
+        <div style={{ border: '1px solid var(--line)', borderRadius: 'calc(var(--radius) + 16px)' }} className="overflow-hidden">
+          <table className="w-full text-sm">
+            <thead><tr style={{ background: 'hsl(var(--muted))' }}><th className="text-left p-3 eyebrow" style={{ display: 'table-cell' }}>Area</th><th className="text-right p-3 eyebrow" style={{ display: 'table-cell' }}>Price</th>{hasPackages && <th className="text-right p-3 eyebrow" style={{ display: 'table-cell' }}>Package</th>}</tr></thead>
+            <tbody>{treatment.pricing.map((price, index) => <tr key={`${price.area}-${index}`} className="border-t" style={{ borderColor: 'var(--line)' }}><td className="p-3 text-foreground">{price.area}</td><td className="p-3 text-right font-semibold whitespace-nowrap">{typeof price.price === 'number' ? rand(price.price) : price.singleSession}</td>{hasPackages && <td className="p-3 text-right">{price.package && <span className="font-medium text-foreground">{price.package}</span>}</td>}</tr>)}</tbody>
+          </table>
+        </div>
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-        <div className="rounded-3xl border border-primary/20 bg-primary/5 p-6 sm:p-8 h-full flex flex-col justify-center">
-          <h3 className="font-heading text-2xl md:text-3xl font-semibold mb-2">Book <span className="text-primary">{treatment.category}</span></h3>
-          <p className="text-muted-foreground mb-5">Choose your area and pay the deposit here — no redirect.</p>
-          <button type="button" onClick={bookThis} className="inline-flex items-center justify-center h-11 px-8 rounded-sm bg-primary text-primary-foreground text-sm font-medium shadow-lg self-start">Book {treatment.category} <ArrowRight className="ml-2 h-4 w-4" /></button>
+        <div className="sec-ink h-full flex flex-col justify-center p-8" style={{ borderRadius: 'calc(var(--radius) + 16px)', boxShadow: 'var(--shadow-md)' }}>
+          <span className="eyebrow mb-2">Book</span>
+          <h3 className="d3 mb-2">{treatment.category}</h3>
+          <p className="lede mb-5">Choose your area and pay the deposit here — no redirect.</p>
+          <button type="button" onClick={bookThis} className="btn-ref self-start">Book {treatment.category} <ArrowRight className="ml-2 h-4 w-4" /></button>
         </div>
       </motion.div>
     </div>
 
-    {treatment.videoEmbed && <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8"><h3 className="font-heading text-2xl md:text-3xl font-semibold mb-4 text-center">Treatment <span className="text-primary">Video</span></h3><div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-border/30"><div className="relative w-full" style={{ paddingTop: '56.25%' }} dangerouslySetInnerHTML={{ __html: treatment.videoEmbed }} /></div></motion.div>}
+    {treatment.videoEmbed && <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16"><span className="eyebrow mb-2 text-center block">Watch</span><h3 className="d3 mb-6 text-center">Treatment video</h3><div className="max-w-4xl mx-auto overflow-hidden" style={{ border: '1px solid var(--line)', borderRadius: 'calc(var(--radius) + 16px)', boxShadow: 'var(--shadow-lg)' }}><div className="relative w-full" style={{ paddingTop: '56.25%' }} dangerouslySetInnerHTML={{ __html: treatment.videoEmbed }} /></div></motion.div>}
 
-    {treatment.beforeAfterImages?.length > 0 && <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8"><h3 className="font-heading text-2xl md:text-3xl font-semibold mb-4 text-center">Before & <span className="text-primary">After</span></h3><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{treatment.beforeAfterImages.map((item) => <figure key={`${item.image}-${item.caption}`} className="rounded-2xl overflow-hidden border border-border/30 bg-card"><img src={item.image} alt={item.caption} className="w-full aspect-square object-cover" /><figcaption className="p-3 text-sm text-muted-foreground">{item.caption}</figcaption></figure>)}</div></motion.div>}
+    {treatment.beforeAfterImages?.length > 0 && <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16"><span className="eyebrow mb-2 text-center block">Real results</span><h3 className="d3 mb-6 text-center">Before &amp; after</h3><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{treatment.beforeAfterImages.map((item) => <figure key={`${item.image}-${item.caption}`} className="overflow-hidden" style={{ border: '1px solid var(--line)', borderRadius: 'calc(var(--radius) + 8px)' }}><img src={item.image} alt={item.caption} className="w-full aspect-square object-cover" /><figcaption className="p-3 text-sm lede">{item.caption}</figcaption></figure>)}</div></motion.div>}
 
-    {treatment.safetyInfo && <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8"><div className="p-5 rounded-3xl bg-muted/50 border border-border/50"><h4 className="font-semibold text-foreground mb-1">Safety &amp; Care Information</h4><p className="text-sm text-muted-foreground leading-relaxed">{treatment.safetyInfo}</p></div></motion.div>}
+    {treatment.safetyInfo && <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16"><div className="sec-mist p-5" style={{ borderRadius: 'calc(var(--radius) + 16px)' }}><h4 className="font-heading font-medium text-foreground mb-1">Safety &amp; care information</h4><p className="text-sm lede">{treatment.safetyInfo}</p></div></motion.div>}
 
-    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><h3 className="font-heading text-2xl md:text-3xl font-semibold mb-4 text-center">Frequently Asked <span className="text-primary">Questions</span></h3><Card className="rounded-3xl border-border/30 overflow-hidden">{treatment.faqs.map((faq, index) => <div key={faq.question} className="border-b last:border-b-0 border-border/30"><button onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full px-6 py-4 text-left hover:bg-muted/30 flex items-center justify-between"><span className="font-medium text-foreground pr-4">{faq.question}</span><ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`} /></button>{openFaq === index && <div className="px-6 pb-4"><p className="text-muted-foreground leading-relaxed">{faq.answer}</p></div>}</div>)}</Card></motion.div>
+    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><span className="eyebrow mb-2 text-center block">Questions</span><h3 className="d3 mb-6 text-center">Frequently asked</h3><div style={{ border: '1px solid var(--line)', borderRadius: 'calc(var(--radius) + 16px)' }}>{treatment.faqs.map((faq, index) => <div key={faq.question} className="border-b last:border-b-0" style={{ borderColor: 'var(--line)' }}><button onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full px-6 py-4 text-left flex items-center justify-between"><span className="font-medium text-foreground pr-4">{faq.question}</span><ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`} style={{ color: 'var(--fg-muted)' }} /></button>{openFaq === index && <div className="px-6 pb-4"><p className="lede">{faq.answer}</p></div>}</div>)}</div></motion.div>
   </motion.div>;
 }
 
@@ -88,7 +103,6 @@ export default function Services() {
   const [active, setActive] = useState(treatments[0].id);
   const selectTab = (id) => {
     setActive(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (window.history.replaceState) window.history.replaceState(null, '', `#${id}`);
   };
   useEffect(() => {
@@ -96,5 +110,5 @@ export default function Services() {
     if (fromHash && treatments.some((t) => t.id === fromHash)) setActive(fromHash);
   }, []);
   const current = treatments.find((t) => t.id === active) || treatments[0];
-  return <Layout><PageHero tagline="What we do" title="Premium Skin Clinic in" titleHighlight="Sandton" subtitle="Science-backed, non-invasive treatments tailored to your unique skin concerns." secondaryButtonText="View Pricing" secondaryButtonLink="/pricing" imageIndex={2} /><section className="sticky top-16 z-40 bg-background/95 backdrop-blur-lg border-b border-border/50 py-4"><div className="container"><CategoryNav active={active} onChange={selectTab} /></div></section><section className="py-10 lg:py-14"><div className="container"><TreatmentDetail key={current.id} treatment={current} /></div></section><section className="py-16 bg-primary relative overflow-hidden"><div className="container text-center relative z-10"><h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6">Ready to Transform Your Skin?</h2><p className="text-primary-foreground/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto">Book a consultation with our skin specialists and get a personalized treatment plan.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link to="/booking" className="inline-flex items-center justify-center h-11 px-10 bg-white text-primary rounded-sm shadow-2xl text-base">Book Online Now <ArrowRight className="ml-2 h-5 w-5" /></Link></div></div></section></Layout>;
+  return <Layout><PageHero tagline="What we do" title="Premium Skin Clinic in" titleHighlight="Sandton" subtitle="Science-backed, non-invasive treatments tailored to your unique skin concerns." secondaryButtonText="View Pricing" secondaryButtonLink="/pricing" imageIndex={2} /><section className="sticky top-16 z-40 bg-background/95 backdrop-blur-lg border-b py-4" style={{ borderColor: 'var(--line)' }}><div className="container"><CategoryNav active={active} onChange={selectTab} /></div></section><section className="sec-porcelain sec-pad"><div className="container"><TreatmentDetail key={current.id} treatment={current} /></div></section><section className="sec-ash sec-pad"><div className="container text-center"><span className="eyebrow">Ready when you are</span><h2 className="d2 sec-h">Ready to transform your skin?</h2><p className="lede sec-p" style={{ marginInline: 'auto' }}>Book a consultation with our skin specialists and get a personalized treatment plan.</p><Link to="/booking" className="btn-ref">Book Online Now <ArrowRight className="ml-2 h-5 w-5" /></Link></div></section></Layout>;
 }
