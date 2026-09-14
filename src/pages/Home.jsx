@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ArrowRight, Award, CalendarDays, ChevronLeft, ChevronRight, Gift, Sparkles, Star } from 'lucide-react';
 import Layout from '../components/Layout';
 import catalog from '../data/services-catalog.json';
 import reviews from '../data/reviews.json';
@@ -109,17 +109,18 @@ function HomeHero({ onOpenAssessment }) {
 
 function StatsStrip() {
   const stats = [
-    ['15+', 'Years treating skin'],
-    [String(totalServices), 'Treatments offered'],
-    ['4.7', 'Average rating on Booksy'],
-    ['Free', '30-minute consultation'],
+    [Award, '15+', 'Years treating skin'],
+    [Sparkles, String(totalServices), 'Treatments offered'],
+    [Star, '4.7', 'Average rating on Booksy'],
+    [Gift, 'Free', '30-minute consultation'],
   ];
   return (
     <section className="sec-ash strip">
       <div className="container">
         <div className="creds">
-          {stats.map(([n, t]) => (
+          {stats.map(([Icon, n, t]) => (
             <div className="cred" key={t}>
+              <div className="cred-icon" aria-hidden="true"><Icon className="h-5 w-5" /></div>
               <span className="n">{n}</span>
               <span className="t">{t}</span>
             </div>
@@ -134,19 +135,31 @@ function ConcernsGrid() {
   return (
     <section className="sec-mist sec-pad" id="concerns">
       <div className="container">
-        <span className="eyebrow">Start here</span>
-        <h2 className="d2 sec-h">What would you like to treat?</h2>
-        <p className="lede sec-p">
-          Most people know the problem, not the treatment that fixes it. Start with what is bothering
-          you and we will show you what actually works for it.
-        </p>
-        <div className="concerns">
-          {CONCERNS.map((c) => (
-            <Link className="concern" to="/pricing" key={c}>
-              <span className="nm">{c}</span>
-              <span className="ar">&rarr;</span>
-            </Link>
-          ))}
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: .6 }} viewport={{ once: true }}>
+            <img
+              src="/assets/facial-treatment-BqmdQUGZ.jpg"
+              alt="Skin treatment at Skin Nourishers"
+              className="w-full aspect-[4/5] object-cover"
+              style={{ borderRadius: 'calc(var(--radius) + 16px)', boxShadow: 'var(--shadow-lg)' }}
+            />
+          </motion.div>
+          <div>
+            <span className="eyebrow">Start here</span>
+            <h2 className="d2 sec-h">What would you like to treat?</h2>
+            <p className="lede sec-p">
+              Most people know the problem, not the treatment that fixes it. Start with what is bothering
+              you and we will show you what actually works for it.
+            </p>
+            <div className="concerns">
+              {CONCERNS.map((c) => (
+                <Link className="concern" to="/pricing" key={c}>
+                  <span className="nm">{c}</span>
+                  <span className="ar">&rarr;</span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -159,7 +172,7 @@ function DepthGraphic({ activeTier }) {
   const heights = ['18%', '58%', '100%'];
   const h = heights[activeTier];
   return (
-    <div className="hidden lg:block" style={{ position: 'sticky', top: 140, width: 240 }}>
+    <div className="hidden md:block" style={{ position: 'sticky', top: 140, width: 240 }}>
       <div style={{ position: 'relative', width: 240, height: 400, borderRadius: 'calc(var(--radius) + 8px)', overflow: 'hidden', border: '1px solid hsl(var(--background) / .15)', boxShadow: 'var(--shadow-md)', background: 'hsl(var(--background) / .06)' }}>
         <div
           style={{
@@ -167,7 +180,9 @@ function DepthGraphic({ activeTier }) {
             background: 'linear-gradient(to top, hsl(var(--foreground)), hsl(var(--accent)))',
             transition: 'height .7s cubic-bezier(.22,.61,.36,1)',
           }}
-        />
+        >
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 14, background: 'linear-gradient(to bottom, hsl(var(--background) / .35), transparent)' }} />
+        </div>
         <div
           aria-hidden="true"
           style={{
@@ -209,7 +224,7 @@ function DepthExplainer() {
           A facial and a non-surgical lift are not competing options. They work on completely
           different layers. Knowing which layer your concern lives in is most of the answer.
         </p>
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-start">
+        <div className="grid md:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-start">
           <div className="space-y-16">
             {DEPTH_BANDS.map((band, i) => (
               <motion.div key={band.tier} onViewportEnter={() => setActiveTier(i)} viewport={{ amount: 0.6, margin: '-30% 0px -30% 0px' }}>
