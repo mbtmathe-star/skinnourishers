@@ -153,7 +153,53 @@ function ConcernsGrid() {
   );
 }
 
+const TIER_LABELS = ['Surface', 'Dermal', 'Structural'];
+
+function DepthGraphic({ activeTier }) {
+  const heights = ['18%', '58%', '100%'];
+  const h = heights[activeTier];
+  return (
+    <div className="hidden lg:block" style={{ position: 'sticky', top: 140, width: 240 }}>
+      <div style={{ position: 'relative', width: 240, height: 400, borderRadius: '2px', overflow: 'hidden', border: '1px solid hsl(var(--background) / .15)', background: 'hsl(var(--background) / .06)' }}>
+        <div
+          style={{
+            position: 'absolute', left: 0, right: 0, bottom: 0, height: h,
+            background: 'linear-gradient(to top, hsl(var(--foreground)), hsl(var(--accent)))',
+            transition: 'height .7s cubic-bezier(.22,.61,.36,1)',
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute', left: '50%', top: `calc(100% - ${h})`, width: 10, height: 10,
+            borderRadius: '50%', background: 'hsl(var(--background))', border: '2px solid hsl(var(--accent))',
+            transform: 'translate(-50%, -50%)', transition: 'top .7s cubic-bezier(.22,.61,.36,1)',
+          }}
+        />
+      </div>
+      <div className="flex items-start justify-between mt-6" style={{ position: 'relative' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', left: 8, right: 8, top: 4, height: 1, background: 'hsl(var(--background) / .18)' }} />
+        {TIER_LABELS.map((label, i) => (
+          <div key={label} style={{ position: 'relative', textAlign: 'center', flex: 1 }}>
+            <div
+              aria-hidden="true"
+              style={{
+                width: 8, height: 8, margin: '0 auto', borderRadius: '50%',
+                background: activeTier === i ? 'hsl(var(--background))' : 'hsl(var(--background) / .3)',
+                boxShadow: activeTier === i ? '0 0 0 2px hsl(var(--accent))' : 'none',
+                transition: 'all .3s',
+              }}
+            />
+            <span className="eyebrow mt-2" style={{ color: activeTier === i ? 'hsl(var(--background))' : 'hsl(var(--background) / .4)' }}>{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function DepthExplainer() {
+  const [activeTier, setActiveTier] = useState(0);
   return (
     <section className="sec-ink sec-pad">
       <div className="container">
@@ -163,14 +209,17 @@ function DepthExplainer() {
           A facial and a non-surgical lift are not competing options. They work on completely
           different layers. Knowing which layer your concern lives in is most of the answer.
         </p>
-        <div className="grid gap-8 md:grid-cols-3">
-          {DEPTH_BANDS.map((band) => (
-            <div key={band.tier}>
-              <span className="eyebrow">{band.tier}</span>
-              <h3 className="d3 mt-3 mb-3">{band.title}</h3>
-              <p className="lede">{band.body}</p>
-            </div>
-          ))}
+        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-start">
+          <div className="space-y-16">
+            {DEPTH_BANDS.map((band, i) => (
+              <motion.div key={band.tier} onViewportEnter={() => setActiveTier(i)} viewport={{ amount: 0.6, margin: '-30% 0px -30% 0px' }}>
+                <span className="eyebrow">Tier 0{i + 1} &mdash; {TIER_LABELS[i]}</span>
+                <h3 className="d3 mt-3 mb-3">{band.title}</h3>
+                <p className="lede">{band.body}</p>
+              </motion.div>
+            ))}
+          </div>
+          <DepthGraphic activeTier={activeTier} />
         </div>
       </div>
     </section>

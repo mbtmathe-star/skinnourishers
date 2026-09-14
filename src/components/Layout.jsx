@@ -21,12 +21,9 @@ export function useWhatsAppTopic(topic) {
 }
 
 const navigation = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Services', path: '/services' },
+  { name: 'Treatments', path: '/services' },
   { name: 'Results', path: '/results' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Blog', path: '/blog' },
+  { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -116,7 +113,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs uppercase tracking-wide-elegant text-primary mb-6 font-body">Quick Links</h4>
             <ul className="space-y-3">
-              {[['Home','/'],['Services','/services'],['Pricing','/pricing'],['About Us','/about'],['Contact','/contact']].map(([name,path]) => <li key={path}><Link to={path} className="text-background/50 hover:text-primary transition-colors text-sm font-body">{name}</Link></li>)}
+              {[['Home','/'],['Treatments','/services'],['Pricing','/pricing'],['Results','/results'],['About Us','/about'],['Blog','/blog'],['Contact','/contact']].map(([name,path]) => <li key={path}><Link to={path} className="text-background/50 hover:text-primary transition-colors text-sm font-body">{name}</Link></li>)}
             </ul>
           </div>
           <div>
