@@ -250,21 +250,23 @@ function DepthExplainer() {
   return (
     <section className="sec-ink sec-pad">
       <div className="container">
-        <span className="eyebrow">How we think about treatment</span>
-        <h2 className="d2 sec-h">Every treatment works at a different depth</h2>
-        <p className="lede sec-p">
-          A facial and a non-surgical lift are not competing options. They work on completely
-          different layers. Knowing which layer your concern lives in is most of the answer.
-        </p>
         <div className="depth-wrap">
-          <div className="space-y-16" style={{ flex: '1 1 auto', minWidth: 0 }}>
-            {DEPTH_BANDS.map((band, i) => (
-              <motion.div key={band.tier} onViewportEnter={() => setActiveTier(i)} viewport={{ amount: 0.6, margin: '-30% 0px -30% 0px' }}>
-                <span className="eyebrow">Tier 0{i + 1} &mdash; {TIER_LABELS[i]}</span>
-                <h3 className="d3 mt-3 mb-3">{band.title}</h3>
-                <p className="lede">{band.body}</p>
-              </motion.div>
-            ))}
+          <div style={{ flex: '1 1 auto', minWidth: 0 }}>
+            <span className="eyebrow">How we think about treatment</span>
+            <h2 className="d2 sec-h">Every treatment works at a different depth</h2>
+            <p className="lede sec-p">
+              A facial and a non-surgical lift are not competing options. They work on completely
+              different layers. Knowing which layer your concern lives in is most of the answer.
+            </p>
+            <div className="space-y-16">
+              {DEPTH_BANDS.map((band, i) => (
+                <motion.div key={band.tier} onViewportEnter={() => setActiveTier(i)} viewport={{ amount: 0.6, margin: '-30% 0px -30% 0px' }}>
+                  <span className="eyebrow">Tier 0{i + 1} &mdash; {TIER_LABELS[i]}</span>
+                  <h3 className="d3 mt-3 mb-3">{band.title}</h3>
+                  <p className="lede">{band.body}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
           <DepthGraphic activeTier={activeTier} />
         </div>
