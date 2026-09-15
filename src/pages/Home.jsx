@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, CalendarDays, ChevronLeft, ChevronRight, Gift, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import Layout from '../components/Layout';
 import catalog from '../data/services-catalog.json';
 import reviews from '../data/reviews.json';
@@ -94,6 +94,26 @@ const DEPTH_BANDS = [
   },
 ];
 
+const HERO_STATS = [
+  ['15+', 'Years treating skin'],
+  [String(totalServices), 'Treatments offered'],
+  ['4.7', 'Average rating on Booksy'],
+  ['Free', '30-minute consultation'],
+];
+
+function HeroStats() {
+  return (
+    <div className="hero-stats" role="list" aria-label="Key clinic stats">
+      {HERO_STATS.map(([n, t]) => (
+        <div className="hero-stat" role="listitem" key={t}>
+          <div className="hero-stat-n">{n}</div>
+          <p className="hero-stat-t">{t}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function HomeHero({ onOpenAssessment }) {
   const [active, setActive] = useState(0);
   const next = useCallback(() => setActive((v) => (v + 1) % heroImages.length), []);
@@ -102,33 +122,9 @@ function HomeHero({ onOpenAssessment }) {
     {heroImages.map((image, index) => <motion.div key={image.image} initial={{ opacity: 0 }} animate={{ opacity: index === active ? 1 : 0 }} transition={{ duration: 1.5, ease: 'easeInOut' }} className="absolute inset-0" style={{ zIndex: index === active ? 1 : 0 }}><div className="absolute inset-0 bg-cover" style={{ backgroundImage: `url(${image.image})`, backgroundPosition: image.position }} /></motion.div>)}
     <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent z-10" />
     <div className="container relative z-20 h-full flex items-center"><div className="max-w-xl"><motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .2 }}><h1 className="d1 text-white mb-6">Experience<br /><span className="italic">Premium Skincare</span></h1><p className="font-body text-lg text-white/80 mb-10 max-w-md leading-relaxed">Personalized treatments for radiant, healthy skin. Begin with a complimentary consultation.</p></motion.div><motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .5 }}><button type="button" onClick={onOpenAssessment} className="btn-ref">Free Skin Assessment <ArrowRight className="h-4 w-4" /></button></motion.div></div></div>
+    <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .7 }} className="absolute left-0 right-0 z-20" style={{ bottom: 'clamp(44px, 6vw, 64px)' }}><div className="container"><HeroStats /></div></motion.div>
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">{heroImages.map((_, index) => <button key={index} onClick={() => setActive(index)} className={`h-1 rounded-full transition-all duration-500 ${index === active ? 'w-8 bg-white' : 'w-2 bg-white/40'}`} aria-label={`Go to slide ${index + 1}`} />)}</div>
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2, duration: .8 }} className="absolute bottom-8 right-8 z-20 hidden md:block"><motion.div animate={{ y: [0,8,0] }} transition={{ duration: 2, repeat: Infinity }} className="flex flex-col items-center gap-2"><span className="text-xs text-white/50 uppercase tracking-widest font-body">Scroll</span><div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" /></motion.div></motion.div>
   </section>;
-}
-
-function StatsStrip() {
-  const stats = [
-    [Award, '15+', 'Years treating skin'],
-    [Sparkles, String(totalServices), 'Treatments offered'],
-    [Star, '4.7', 'Average rating on Booksy'],
-    [Gift, 'Free', '30-minute consultation'],
-  ];
-  return (
-    <section className="sec-ash strip">
-      <div className="container">
-        <div className="creds">
-          {stats.map(([Icon, n, t]) => (
-            <div className="cred" key={t}>
-              <div className="cred-icon" aria-hidden="true"><Icon className="h-5 w-5" /></div>
-              <span className="n">{n}</span>
-              <span className="t">{t}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
 }
 
 function ConcernsGrid() {
