@@ -52,7 +52,7 @@ const MOST_BOOKED = [
   'Ladies & Teen - Hollywood Wax', 'Laser - Full Leg', 'Laser - Underarm', 'Dermaplaning',
   'Jet Plasma Ozone', 'Oxygen Therapy Facial', 'Pigmentation', 'Skin Tag Removal',
   'Basic Facial', 'Microneedling', 'Ultraformer Non-Surgical Face Lift', 'Laser - Brazilian',
-  'Ladies & Teen - Brazilian', 'Derma Peel', 'Acne Treatment', 'Brow Lamination',
+  'Ladies & Teen - Brazilian', 'Derma Peel', 'Acne Treatment',
   'Laser - Full Back', 'Cellulite Treatment', 'HIFU - Abdomen', 'Consultation',
 ];
 

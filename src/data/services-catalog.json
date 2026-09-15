@@ -403,13 +403,6 @@
     ],
     "services": [
       {
-        "name": "Reflexology",
-        "price": 500,
-        "duration": "30min",
-        "tier": "Massage & Body Care",
-        "desc": "A focused foot massage working pressure points, used for deep relaxation and to relieve tension."
-      },
-      {
         "name": "Body Polish",
         "price": 1200,
         "duration": "1h",
@@ -1254,13 +1247,6 @@
   {
     "category": "Brows & Lashes",
     "services": [
-      {
-        "name": "Brow Lamination",
-        "price": 500,
-        "duration": "30min",
-        "desc": "Sets the brow hairs in a fuller, brushed-up shape that holds for several weeks.",
-        "tier": "Shaping"
-      },
       {
         "name": "Eyebrow Tint",
         "price": 150,
