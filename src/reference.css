@@ -15,6 +15,12 @@
   --ease: cubic-bezier(.22, .61, .36, 1);
   --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px; --s5: 24px;
   --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+
+  /* Soft, layered "3D" card shadow: a tight contact shadow plus a wide,
+     soft ambient one underneath it, rather than a single flat blur. */
+  --shadow-3d-rest: 0 1px 2px hsl(202 22% 20% / .07), 0 10px 20px -8px hsl(202 22% 20% / .16), 0 24px 48px -16px hsl(202 22% 20% / .18);
+  --shadow-3d-hover: 0 2px 4px hsl(202 22% 20% / .09), 0 18px 30px -8px hsl(202 22% 20% / .22), 0 36px 64px -16px hsl(202 22% 20% / .26);
+  --gloss: linear-gradient(180deg, hsl(0 0% 100% / .18), hsl(0 0% 100% / 0) 45%);
 }
 
 /* --- Display scale --------------------------------------------------------
@@ -62,15 +68,15 @@
 .concern {
   background: hsl(var(--card));
   border: 1px solid var(--line);
-  border-radius: calc(var(--radius) + 4px);
-  box-shadow: var(--shadow-sm);
+  border-radius: calc(var(--radius) + 10px);
+  box-shadow: var(--shadow-3d-rest);
   padding: var(--s4) var(--s5);
   text-decoration: none; color: inherit;
   display: flex; justify-content: space-between; align-items: center;
   gap: var(--s4);
   transition: transform .22s var(--ease), box-shadow .22s var(--ease);
 }
-.concern:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+.concern:hover { transform: translateX(4px) translateY(-2px); box-shadow: var(--shadow-3d-hover); }
 .concern .nm { font-family: var(--font-heading); font-weight: 600; font-size: 17px; color: hsl(var(--foreground)); }
 .concern .ar { font-size: 15px; color: hsl(var(--primary)); }
 
@@ -81,13 +87,15 @@
    this project's static, pre-compiled CSS bundle unless the exact class
    already existed in the original app. */
 .hero-stats {
+  position: relative; overflow: hidden;
   display: grid; grid-template-columns: repeat(4, 1fr);
   background: hsl(var(--background) / .92);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  border-radius: calc(var(--radius) + 4px);
-  box-shadow: var(--shadow-lg);
+  border-radius: calc(var(--radius) + 12px);
+  box-shadow: var(--shadow-3d-hover);
   padding: var(--s4) var(--s2);
 }
+.hero-stats::before { content: ''; position: absolute; inset: 0; background: var(--gloss); pointer-events: none; }
 .hero-stat {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; padding: 0 var(--s3);
@@ -103,19 +111,24 @@
   .hero-stat:nth-child(3) { border-left: none; }
 }
 
-/* --- Doors (the three laser menus) ------------------------------------------- */
+/* --- Doors (the three laser menus) -------------------------------------------
+   Soft/3D treatment: bigger pillowy corners, a layered ambient+contact
+   shadow instead of a flat one, a glossy top-light overlay, and a lift +
+   deeper shadow on hover so the card feels like it rises off the page. */
 .doors { display: grid; grid-template-columns: 1fr; gap: var(--s5); margin-top: var(--s7); }
 .door {
+  position: relative; overflow: hidden;
   background: hsl(var(--primary)); color: hsl(var(--primary-foreground));
-  border-radius: calc(var(--radius) + 8px);
-  box-shadow: var(--shadow-md);
+  border-radius: calc(var(--radius) + 16px);
+  box-shadow: var(--shadow-3d-rest);
   padding: clamp(28px, 3.6vw, 40px);
   text-decoration: none;
   display: flex; flex-direction: column; gap: var(--s3);
   min-height: 210px;
-  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
-.door:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.door::before { content: ''; position: absolute; inset: 0; background: var(--gloss); pointer-events: none; }
+.door:hover { transform: translateY(-6px) scale(1.015); box-shadow: var(--shadow-3d-hover); }
 .door h3 { font-family: var(--font-heading); font-weight: 700; font-size: clamp(24px, 3vw, 30px); line-height: 1.1; }
 .door p  { font-size: 14px; line-height: 1.6; flex: 1 1; color: hsl(var(--primary-foreground) / .88); }
 .door .ct { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: hsl(var(--primary-foreground) / .82); }
@@ -127,16 +140,17 @@
 @media (min-width: 1040px) { .cards { grid-template-columns: repeat(3, 1fr); } }
 
 .card-ref {
-  position: relative;
+  position: relative; overflow: hidden;
   background: hsl(var(--card));
   border: 1px solid var(--line);
-  border-radius: calc(var(--radius) + 8px);
+  border-radius: calc(var(--radius) + 16px);
   padding: var(--s6) var(--s5) var(--s5);
   display: flex; flex-direction: column; gap: var(--s2);
-  box-shadow: var(--shadow-sm);
-  transition: transform .28s var(--ease), box-shadow .28s var(--ease);
+  box-shadow: var(--shadow-3d-rest);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
-.card-ref:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.card-ref::before { content: ''; position: absolute; inset: 0; background: var(--gloss); pointer-events: none; }
+.card-ref:hover { transform: translateY(-6px) scale(1.015); box-shadow: var(--shadow-3d-hover); }
 .card-tab { position: absolute; top: 0; left: var(--s5); width: 44px; height: 4px; border-radius: 0 0 3px 3px; background: hsl(var(--accent)); }
 .card-ref[data-tier="surface"]    .card-tab { background: hsl(var(--gold)); }
 .card-ref[data-tier="dermal"]     .card-tab { background: hsl(var(--accent)); }
@@ -177,11 +191,11 @@
 .btn-ref {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   font-family: var(--font-body); font-size: 14px; font-weight: 600;
-  padding: 0 28px; min-height: 48px; border-radius: var(--radius); text-decoration: none;
+  padding: 0 28px; min-height: 48px; border-radius: calc(var(--radius) + 2px); text-decoration: none;
   background: hsl(var(--primary)); color: hsl(var(--primary-foreground));
-  box-shadow: var(--shadow-md);
-  transition: background .18s var(--ease), box-shadow .18s var(--ease);
+  box-shadow: var(--shadow-3d-rest);
+  transition: background .18s var(--ease), box-shadow .18s var(--ease), transform .18s var(--ease);
 }
-.btn-ref:hover { background: hsl(var(--accent)); box-shadow: var(--shadow-lg); }
+.btn-ref:hover { background: hsl(var(--accent)); box-shadow: var(--shadow-3d-hover); transform: translateY(-2px); }
 .sec-ink .btn-ref { background: hsl(var(--background)); color: hsl(var(--foreground)); }
 .sec-ink .btn-ref:hover { background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
