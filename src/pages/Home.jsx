@@ -165,11 +165,15 @@ function ConcernsGrid() {
 const TIER_LABELS = ['Surface', 'Dermal', 'Structural'];
 const TANK_W = 240;
 const TANK_H = 420;
-const FILL_HEIGHTS = [0.16, 0.56, 0.98]; // fraction of tank height revealed per tier
+// The reference's tank is a constant illustration (white cap, teal band,
+// dark band always all visible) - only the ringed marker moves through it
+// as the tier changes. Not a fill that grows; the earlier version got this
+// wrong, which is why the ripple lines looked off at low tiers.
+const CAP_PCT = 22;   // white "surface" band
+const TEAL_PCT = 32;  // teal "dermal" band
+// remaining % is the dark "structural" band
+const MARKER_PCT = [3, 34, CAP_PCT + TEAL_PCT]; // marker position per tier, from top
 
-// A gentle scalloped wave, reused for the tank's lid and the moving water
-// surface - matches the reference's water-tank illustration rather than a
-// flat two-tone bar.
 function WaveCap({ fill, flip }) {
   return (
     <svg
@@ -187,42 +191,35 @@ function WaveCap({ fill, flip }) {
 }
 
 function DepthGraphic({ activeTier }) {
-  const fillPct = FILL_HEIGHTS[activeTier] * 100;
+  const markerTop = MARKER_PCT[activeTier];
   return (
     <div className="depth-graphic" style={{ position: 'sticky', top: 140, width: TANK_W }}>
       <div style={{ position: 'relative', width: TANK_W }}>
-        {/* decorative wavy lid, sits above the tank body */}
         <WaveCap fill="hsl(var(--background) / .92)" />
         <div style={{ position: 'relative', width: TANK_W, height: TANK_H, marginTop: -1, overflow: 'hidden', borderRadius: '0 0 calc(var(--radius) + 12px) calc(var(--radius) + 12px)', boxShadow: 'var(--shadow-md)', background: 'hsl(var(--background) / .92)' }}>
-          {/* the rising water, revealed bottom-up */}
-          <div
-            style={{
-              position: 'absolute', left: 0, right: 0, bottom: 0, height: `${fillPct}%`,
-              background: 'linear-gradient(to bottom, hsl(var(--accent)), hsl(var(--foreground)))',
-              transition: 'height .8s cubic-bezier(.22,.61,.36,1)', overflow: 'hidden',
-            }}
-          >
+          {/* teal + dark water, always fully rendered */}
+          <div style={{ position: 'absolute', left: 0, right: 0, top: `${CAP_PCT}%`, bottom: 0, background: `linear-gradient(to bottom, hsl(var(--accent)) 0%, hsl(var(--accent)) ${(TEAL_PCT / (100 - CAP_PCT)) * 100}%, hsl(var(--foreground)) 100%)` }}>
             <WaveCap fill="hsl(var(--accent))" />
-            {/* two soft ripple lines across the water */}
-            <svg aria-hidden="true" viewBox={`0 0 ${TANK_W} 60`} preserveAspectRatio="none" style={{ position: 'absolute', left: 0, right: 0, top: '18%', width: '100%', height: 40, opacity: .35 }}>
+            {/* two soft ripple lines, sitting within the teal band */}
+            <svg aria-hidden="true" viewBox={`0 0 ${TANK_W} 60`} preserveAspectRatio="none" style={{ position: 'absolute', left: 0, right: 0, top: '22%', width: '100%', height: 40, opacity: .4 }}>
               <path d={`M0,20 C 40,8 80,32 120,20 C 160,8 200,32 ${TANK_W},20`} fill="none" stroke="hsl(var(--background))" strokeWidth="2" />
             </svg>
-            <svg aria-hidden="true" viewBox={`0 0 ${TANK_W} 60`} preserveAspectRatio="none" style={{ position: 'absolute', left: 0, right: 0, top: '46%', width: '100%', height: 40, opacity: .22 }}>
+            <svg aria-hidden="true" viewBox={`0 0 ${TANK_W} 60`} preserveAspectRatio="none" style={{ position: 'absolute', left: 0, right: 0, top: '46%', width: '100%', height: 40, opacity: .25 }}>
               <path d={`M0,20 C 40,32 80,8 120,20 C 160,32 200,8 ${TANK_W},20`} fill="none" stroke="hsl(var(--background))" strokeWidth="2" />
             </svg>
-            {/* bubbles, scattered toward the deep end */}
-            {[[22, 40, 5], [70, 28, 4], [118, 52, 4], [96, 16, 3], [150, 40, 5]].map(([x, bottom, r], i) => (
-              <span key={i} aria-hidden="true" style={{ position: 'absolute', left: x, bottom, width: r * 2, height: r * 2, borderRadius: '50%', background: 'hsl(var(--background) / .35)' }} />
+            {/* bubbles, scattered through the dark band toward the bottom */}
+            {[[22, 12, 5], [70, 24, 4], [118, 8, 4], [96, 30, 3], [150, 14, 5]].map(([x, bottom, r], i) => (
+              <span key={i} aria-hidden="true" style={{ position: 'absolute', left: x, bottom: `${bottom}%`, width: r * 2, height: r * 2, borderRadius: '50%', background: 'hsl(var(--background) / .35)' }} />
             ))}
           </div>
-          {/* water-surface marker, rides the top of the fill */}
+          {/* ringed marker, slides to the current tier's depth */}
           <div
             aria-hidden="true"
             style={{
-              position: 'absolute', left: '50%', bottom: `calc(${fillPct}% - 8px)`, width: 16, height: 16,
+              position: 'absolute', left: '50%', top: `${markerTop}%`, width: 16, height: 16,
               borderRadius: '50%', background: 'hsl(var(--background))', border: '3px solid hsl(var(--accent))',
-              boxShadow: 'var(--shadow-sm)', transform: 'translateX(-50%)',
-              transition: 'bottom .8s cubic-bezier(.22,.61,.36,1)',
+              boxShadow: 'var(--shadow-sm)', transform: 'translate(-50%, -50%)',
+              transition: 'top .8s cubic-bezier(.22,.61,.36,1)',
             }}
           />
         </div>
