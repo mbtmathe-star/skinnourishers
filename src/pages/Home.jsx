@@ -415,7 +415,6 @@ export default function Home() {
   return (
     <Layout>
       <HomeHero onOpenAssessment={openAssessment} />
-      <StatsStrip />
       <ConcernsGrid />
       <DepthExplainer />
       <MostBooked />
