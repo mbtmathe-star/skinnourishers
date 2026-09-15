@@ -164,7 +164,7 @@ function ConcernsGrid() {
 
 const TIER_LABELS = ['Surface', 'Dermal', 'Structural'];
 const TANK_W = 240;
-const TANK_H = 420;
+const TANK_H = 300;
 // The reference's tank is a constant illustration (white cap, teal band,
 // dark band always all visible) - only the ringed marker moves through it
 // as the tier changes. Not a fill that grows; the earlier version got this
@@ -193,7 +193,7 @@ function WaveCap({ fill, flip }) {
 function DepthGraphic({ activeTier }) {
   const markerTop = MARKER_PCT[activeTier];
   return (
-    <div className="depth-graphic" style={{ position: 'sticky', top: 140, width: TANK_W }}>
+    <div className="depth-graphic" style={{ position: 'sticky', top: 96, width: TANK_W }}>
       <div style={{ position: 'relative', width: TANK_W }}>
         <WaveCap fill="hsl(var(--background) / .92)" />
         <div style={{ position: 'relative', width: TANK_W, height: TANK_H, marginTop: -1, overflow: 'hidden', borderRadius: '0 0 calc(var(--radius) + 12px) calc(var(--radius) + 12px)', boxShadow: 'var(--shadow-md)', background: 'hsl(var(--background) / .92)' }}>
