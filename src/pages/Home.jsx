@@ -164,7 +164,7 @@ function ConcernsGrid() {
 
 const TIER_LABELS = ['Surface', 'Dermal', 'Structural'];
 const TANK_W = 240;
-const TANK_H = 300;
+const TANK_H = 210;
 // The reference's tank is a constant illustration (white cap, teal band,
 // dark band always all visible) - only the ringed marker moves through it
 // as the tier changes. Not a fill that grows; the earlier version got this
@@ -224,7 +224,7 @@ function DepthGraphic({ activeTier }) {
           />
         </div>
       </div>
-      <div className="flex items-start justify-between mt-6" style={{ position: 'relative' }}>
+      <div className="flex items-start justify-between mt-4" style={{ position: 'relative' }}>
         <div aria-hidden="true" style={{ position: 'absolute', left: 8, right: 8, top: 4, height: 1, background: 'hsl(var(--background) / .18)' }} />
         {TIER_LABELS.map((label, i) => (
           <div key={label} style={{ position: 'relative', textAlign: 'center', flex: 1 }}>
