@@ -163,30 +163,69 @@ function ConcernsGrid() {
 }
 
 const TIER_LABELS = ['Surface', 'Dermal', 'Structural'];
+const TANK_W = 240;
+const TANK_H = 420;
+const FILL_HEIGHTS = [0.16, 0.56, 0.98]; // fraction of tank height revealed per tier
+
+// A gentle scalloped wave, reused for the tank's lid and the moving water
+// surface - matches the reference's water-tank illustration rather than a
+// flat two-tone bar.
+function WaveCap({ fill, flip }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox={`0 0 ${TANK_W} 22`}
+      preserveAspectRatio="none"
+      style={{ display: 'block', width: '100%', height: 20, transform: flip ? 'scaleY(-1)' : undefined }}
+    >
+      <path
+        d={`M0,11 C ${TANK_W * .17},0 ${TANK_W * .33},22 ${TANK_W * .5},11 C ${TANK_W * .67},0 ${TANK_W * .83},22 ${TANK_W},11 L${TANK_W},22 L0,22 Z`}
+        fill={fill}
+      />
+    </svg>
+  );
+}
 
 function DepthGraphic({ activeTier }) {
-  const heights = ['18%', '58%', '100%'];
-  const h = heights[activeTier];
+  const fillPct = FILL_HEIGHTS[activeTier] * 100;
   return (
-    <div className="depth-graphic" style={{ position: 'sticky', top: 140, width: 240 }}>
-      <div style={{ position: 'relative', width: 240, height: 400, borderRadius: 'calc(var(--radius) + 8px)', overflow: 'hidden', border: '1px solid hsl(var(--background) / .15)', boxShadow: 'var(--shadow-md)', background: 'hsl(var(--background) / .06)' }}>
-        <div
-          style={{
-            position: 'absolute', left: 0, right: 0, bottom: 0, height: h,
-            background: 'linear-gradient(to top, hsl(var(--foreground)), hsl(var(--accent)))',
-            transition: 'height .7s cubic-bezier(.22,.61,.36,1)',
-          }}
-        >
-          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 14, background: 'linear-gradient(to bottom, hsl(var(--background) / .35), transparent)' }} />
+    <div className="depth-graphic" style={{ position: 'sticky', top: 140, width: TANK_W }}>
+      <div style={{ position: 'relative', width: TANK_W }}>
+        {/* decorative wavy lid, sits above the tank body */}
+        <WaveCap fill="hsl(var(--background) / .92)" />
+        <div style={{ position: 'relative', width: TANK_W, height: TANK_H, marginTop: -1, overflow: 'hidden', borderRadius: '0 0 calc(var(--radius) + 12px) calc(var(--radius) + 12px)', boxShadow: 'var(--shadow-md)', background: 'hsl(var(--background) / .92)' }}>
+          {/* the rising water, revealed bottom-up */}
+          <div
+            style={{
+              position: 'absolute', left: 0, right: 0, bottom: 0, height: `${fillPct}%`,
+              background: 'linear-gradient(to bottom, hsl(var(--accent)), hsl(var(--foreground)))',
+              transition: 'height .8s cubic-bezier(.22,.61,.36,1)', overflow: 'hidden',
+            }}
+          >
+            <WaveCap fill="hsl(var(--accent))" />
+            {/* two soft ripple lines across the water */}
+            <svg aria-hidden="true" viewBox={`0 0 ${TANK_W} 60`} preserveAspectRatio="none" style={{ position: 'absolute', left: 0, right: 0, top: '18%', width: '100%', height: 40, opacity: .35 }}>
+              <path d={`M0,20 C 40,8 80,32 120,20 C 160,8 200,32 ${TANK_W},20`} fill="none" stroke="hsl(var(--background))" strokeWidth="2" />
+            </svg>
+            <svg aria-hidden="true" viewBox={`0 0 ${TANK_W} 60`} preserveAspectRatio="none" style={{ position: 'absolute', left: 0, right: 0, top: '46%', width: '100%', height: 40, opacity: .22 }}>
+              <path d={`M0,20 C 40,32 80,8 120,20 C 160,32 200,8 ${TANK_W},20`} fill="none" stroke="hsl(var(--background))" strokeWidth="2" />
+            </svg>
+            {/* bubbles, scattered toward the deep end */}
+            {[[22, 40, 5], [70, 28, 4], [118, 52, 4], [96, 16, 3], [150, 40, 5]].map(([x, bottom, r], i) => (
+              <span key={i} aria-hidden="true" style={{ position: 'absolute', left: x, bottom, width: r * 2, height: r * 2, borderRadius: '50%', background: 'hsl(var(--background) / .35)' }} />
+            ))}
+          </div>
+          {/* water-surface marker, rides the top of the fill */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: 'absolute', left: '50%', bottom: `calc(${fillPct}% - 8px)`, width: 16, height: 16,
+              borderRadius: '50%', background: 'hsl(var(--background))', border: '3px solid hsl(var(--accent))',
+              boxShadow: 'var(--shadow-sm)', transform: 'translateX(-50%)',
+              transition: 'bottom .8s cubic-bezier(.22,.61,.36,1)',
+            }}
+          />
         </div>
-        <div
-          aria-hidden="true"
-          style={{
-            position: 'absolute', left: '50%', top: `calc(100% - ${h})`, width: 10, height: 10,
-            borderRadius: '50%', background: 'hsl(var(--background))', border: '2px solid hsl(var(--accent))',
-            transform: 'translate(-50%, -50%)', transition: 'top .7s cubic-bezier(.22,.61,.36,1)',
-          }}
-        />
       </div>
       <div className="flex items-start justify-between mt-6" style={{ position: 'relative' }}>
         <div aria-hidden="true" style={{ position: 'absolute', left: 8, right: 8, top: 4, height: 1, background: 'hsl(var(--background) / .18)' }} />
@@ -195,9 +234,9 @@ function DepthGraphic({ activeTier }) {
             <div
               aria-hidden="true"
               style={{
-                width: 8, height: 8, margin: '0 auto', borderRadius: '50%',
+                width: 9, height: 9, margin: '0 auto', borderRadius: '50%',
                 background: activeTier === i ? 'hsl(var(--background))' : 'hsl(var(--background) / .3)',
-                boxShadow: activeTier === i ? '0 0 0 2px hsl(var(--accent))' : 'none',
+                border: activeTier === i ? '2px solid hsl(var(--accent))' : 'none',
                 transition: 'all .3s',
               }}
             />
